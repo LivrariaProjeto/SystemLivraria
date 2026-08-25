@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SystemLivraria
+namespace SystemLivraria.forms
 {
-    public partial class Form1 : Form
+    public partial class frmLogon : Form
     {
-        public Form1()
+        public frmLogon()
         {
             InitializeComponent();
         }
