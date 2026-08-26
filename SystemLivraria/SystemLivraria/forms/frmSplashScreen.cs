@@ -32,8 +32,7 @@ namespace SystemLivraria
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            this.BackColor = Color.LightGray;
-            this.TransparencyKey = Color.LightGray;
+            
 
 
         }
