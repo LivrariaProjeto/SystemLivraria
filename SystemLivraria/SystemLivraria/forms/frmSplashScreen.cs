@@ -28,7 +28,7 @@ namespace SystemLivraria
             player.Play();
 
             timer = new Timer();
-            timer.Interval = 2000;
+            timer.Interval = 8000;
             timer.Tick += Timer_Tick;
             timer.Start();
 
