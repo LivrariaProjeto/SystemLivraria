@@ -1,7 +1,3 @@
--- =====================================================================
--- TABELAS SEM DEPENDÊNCIAS (entidades "raiz")
--- =====================================================================
-
 CREATE TABLE Editoras (
     Id_Edi              INT IDENTITY(1,1) PRIMARY KEY,
     Nome_Edi            VARCHAR(100) NOT NULL,
@@ -63,14 +59,9 @@ CREATE TABLE Fornecedores (
 );
 GO
 
--- =====================================================================
--- TABELAS DEPENDENTES DE 1º NÍVEL
--- =====================================================================
-
--- Usuarios: 1 Funcionario -> 1 Usuario ; 1 Permissao -> N Usuarios
 CREATE TABLE Usuarios (
     Id_Usu     INT IDENTITY(1,1) PRIMARY KEY,
-    Id_Funci INT NOT NULL UNIQUE,   -- UNIQUE garante o relacionamento (1,1)
+    Id_Funci INT NOT NULL UNIQUE, 
     Id_Permi    INT NOT NULL,
     Login_usu           VARCHAR(50)  NOT NULL UNIQUE,
     Senha_usu           VARCHAR(255) NOT NULL,
@@ -81,7 +72,6 @@ CREATE TABLE Usuarios (
 );
 GO
 
--- Produtos: N:1 com Autores, Categorias e Editoras
 CREATE TABLE Produtos (
     Id_Pro        INT IDENTITY(1,1) PRIMARY KEY,
     Id_Autor      INT NOT NULL,
@@ -96,7 +86,6 @@ CREATE TABLE Produtos (
 );
 GO
 
--- Compras: N:1 com Fornecedores
 CREATE TABLE Compras (
     Id_CMP      INT IDENTITY(1,1) PRIMARY KEY,
     Id_Forne    INT NOT NULL,
@@ -106,7 +95,6 @@ CREATE TABLE Compras (
 );
 GO
 
--- Vendas: N:1 com Clientes
 CREATE TABLE Vendas (
     Id_VDS        INT IDENTITY(1,1) PRIMARY KEY,
     Id_Cli        INT NOT NULL,
@@ -116,11 +104,6 @@ CREATE TABLE Vendas (
 );
 GO
 
--- =====================================================================
--- TABELAS DEPENDENTES DE 2º NÍVEL
--- =====================================================================
-
--- Estoque: N:1 com Produtos e Fornecedores
 CREATE TABLE Estoque (
     Id_Est          INT IDENTITY(1,1) PRIMARY KEY,
     Id_Pro          INT NOT NULL,
@@ -133,7 +116,6 @@ CREATE TABLE Estoque (
 );
 GO
 
--- Itens_Vendas: itens de cada venda (N:1 com Vendas e Produtos)
 CREATE TABLE Itens_Vendas (
     Id_Item_VDS   INT IDENTITY(1,1) PRIMARY KEY,
     Id_VDS        INT NOT NULL,
@@ -145,7 +127,6 @@ CREATE TABLE Itens_Vendas (
 );
 GO
 
--- Itens_CMP: itens de cada compra (N:1 com Compras e Produtos)
 CREATE TABLE Itens_CMP (
     Id_Item         INT IDENTITY(1,1) PRIMARY KEY,
     Id_CMP          INT NOT NULL,
@@ -158,18 +139,16 @@ CREATE TABLE Itens_CMP (
 );
 GO
 
--- Financeiro: registra Entradas (ligadas a Vendas) e Saídas (ligadas a Compras)
 CREATE TABLE Financeiro (
     Id_Fin      INT IDENTITY(1,1) PRIMARY KEY,
     Id_CMP      INT NULL,
     Id_VDS      INT NULL,
-    Tipo_VDS    VARCHAR(20)  NOT NULL, -- 'Entrada' ou 'Saida'
+    Tipo_VDS    VARCHAR(20)  NOT NULL, 
     Desc_VDS    VARCHAR(255) NULL,
     Valor_VDS   DECIMAL(10,2) NOT NULL,
     Data_VDS    DATE NOT NULL,
     CONSTRAINT FK_Financeiro_Compras FOREIGN KEY (Id_CMP) REFERENCES Compras(Id_CMP),
     CONSTRAINT FK_Financeiro_Vendas  FOREIGN KEY (Id_VDS)  REFERENCES Vendas(Id_VDS),
-    -- garante que o registro seja OU uma entrada (venda) OU uma saída (compra), nunca os dois nem nenhum
     CONSTRAINT CK_Financeiro_Origem CHECK (
         (Id_CMP IS NOT NULL AND Id_VDS IS NULL) OR
         (Id_CMP IS NULL AND Id_VDS IS NOT NULL)
