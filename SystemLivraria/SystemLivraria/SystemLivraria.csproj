@@ -94,8 +94,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\img\1000248886.jpg" />
-    <Content Include="assets\img\1000248887.jpg" />
+    <Content Include="assets\img\logo1.jpg" />
+    <Content Include="assets\img\logoslim.jpg" />
     <Content Include="assets\img\Batman2022.png" />
     <Content Include="assets\vd\YTDown.com_YouTube_The-Perfect-Loading-Circle-4K-Green-Scre_Media_GzY-Cy3j91I_001_1080p.mp4" />
   </ItemGroup>
