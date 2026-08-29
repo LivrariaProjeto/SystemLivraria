@@ -105,14 +105,12 @@ CREATE TABLE Vendas (
 GO
 
 CREATE TABLE Estoque (
-    Id_Est          INT IDENTITY(1,1) PRIMARY KEY,
-    Id_Pro          INT NOT NULL,
-    Id_Forne        INT NOT NULL,
-    Est_Min         INT NOT NULL DEFAULT 0,
-    Est_Max         INT NOT NULL DEFAULT 0,
-    QTD_Est         INT NOT NULL DEFAULT 0,
-    CONSTRAINT FK_Estoque_Produtos     FOREIGN KEY (Id_Pro)    REFERENCES Produtos(Id_Pro),
-    CONSTRAINT FK_Estoque_Fornecedores FOREIGN KEY (Id_Forne) REFERENCES Fornecedores(Id_Forne)
+    Id_Est      INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Pro      INT NOT NULL UNIQUE,
+    Est_Min     INT NOT NULL DEFAULT 0,
+    Est_Max     INT NOT NULL DEFAULT 0,
+    QTD_Est     INT NOT NULL DEFAULT 0,
+    CONSTRAINT FK_Estoque_Produtos FOREIGN KEY (Id_Pro) REFERENCES Produtos(Id_Pro)
 );
 GO
 
