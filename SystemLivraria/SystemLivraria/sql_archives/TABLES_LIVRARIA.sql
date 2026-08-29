@@ -1,3 +1,7 @@
+CREATE DATABASE db_250064
+
+USE db_250064
+
 CREATE TABLE Editoras (
     Id_Edi              INT IDENTITY(1,1) PRIMARY KEY,
     Nome_Edi            VARCHAR(100) NOT NULL,
@@ -105,12 +109,15 @@ CREATE TABLE Vendas (
 GO
 
 CREATE TABLE Estoque (
-    Id_Est      INT IDENTITY(1,1) PRIMARY KEY,
-    Id_Pro      INT NOT NULL UNIQUE,
-    Est_Min     INT NOT NULL DEFAULT 0,
-    Est_Max     INT NOT NULL DEFAULT 0,
-    QTD_Est     INT NOT NULL DEFAULT 0,
-    CONSTRAINT FK_Estoque_Produtos FOREIGN KEY (Id_Pro) REFERENCES Produtos(Id_Pro)
+    Id_Est          INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Pro          INT NOT NULL,
+    Id_Forne        INT NOT NULL,
+    Est_Min         INT NOT NULL DEFAULT 0,
+    Est_Max         INT NOT NULL DEFAULT 0,
+    QTD_Est         INT NOT NULL DEFAULT 0,
+    CONSTRAINT FK_Estoque_Produtos     FOREIGN KEY (Id_Pro)   REFERENCES Produtos(Id_Pro),
+    CONSTRAINT FK_Estoque_Fornecedores FOREIGN KEY (Id_Forne) REFERENCES Fornecedores(Id_Forne),
+    CONSTRAINT UQ_Estoque_Produto_Forne UNIQUE (Id_Pro, Id_Forne)
 );
 GO
 
@@ -118,10 +125,12 @@ CREATE TABLE Itens_Vendas (
     Id_Item_VDS   INT IDENTITY(1,1) PRIMARY KEY,
     Id_VDS        INT NOT NULL,
     Id_Pro        INT NOT NULL,
+    Id_Est        INT NOT NULL,
     QTD_Item      INT NOT NULL,
     Preco_Uni     DECIMAL(10,2) NOT NULL,
-    CONSTRAINT FK_ItensVendas_Vendas   FOREIGN KEY (Id_VDS)   REFERENCES Vendas(Id_VDS),
-    CONSTRAINT FK_ItensVendas_Produtos FOREIGN KEY (Id_Pro) REFERENCES Produtos(Id_Pro)
+    CONSTRAINT FK_ItensVendas_Vendas   FOREIGN KEY (Id_VDS) REFERENCES Vendas(Id_VDS),
+    CONSTRAINT FK_ItensVendas_Produtos FOREIGN KEY (Id_Pro) REFERENCES Produtos(Id_Pro),
+    CONSTRAINT FK_ItensVendas_Estoque  FOREIGN KEY (Id_Est) REFERENCES Estoque(Id_Est)
 );
 GO
 
@@ -132,8 +141,8 @@ CREATE TABLE Itens_CMP (
     QTD_Item        INT NOT NULL,
     Preco_Unitario  DECIMAL(10,2) NOT NULL,
     Subtotal        DECIMAL(10,2) NOT NULL,
-    CONSTRAINT FK_ItensCMP_Compras  FOREIGN KEY (Id_CMP)   REFERENCES Compras(Id_CMP),
-    CONSTRAINT FK_ItensCMP_Produtos FOREIGN KEY (Id_PrO) REFERENCES Produtos(Id_Pro)
+    CONSTRAINT FK_ItensCMP_Compras  FOREIGN KEY (Id_CMP) REFERENCES Compras(Id_CMP),
+    CONSTRAINT FK_ItensCMP_Produtos FOREIGN KEY (Id_Pro) REFERENCES Produtos(Id_Pro)
 );
 GO
 
@@ -153,3 +162,4 @@ CREATE TABLE Financeiro (
     )
 );
 GO
+
