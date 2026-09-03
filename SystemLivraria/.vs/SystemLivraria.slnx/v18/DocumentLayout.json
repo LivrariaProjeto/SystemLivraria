@@ -1,22 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\",
+  "WorkspaceRootPath": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\systemlivraria\\forms\\frmsplashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\system_livraria\\systemlivraria\\systemlivraria\\data\\dataset2.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\data\\dataset2.xsd||{07AC752B-D2B0-4DCD-AD9C-237BF561A30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\system_livraria\\systemlivraria\\systemlivraria\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\system_livraria\\systemlivraria\\systemlivraria\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\system_livraria\\systemlivraria\\systemlivraria\\forms\\frmsplashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmsplashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\systemlivraria\\forms\\frmsplashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\systemlivraria\\forms\\frmsplashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmsplashscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +38,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -35,46 +51,85 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "DataSet2.xsd",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\data\\DataSet2.xsd",
+              "RelativeDocumentMoniker": "SystemLivraria\\data\\DataSet2.xsd",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\data\\DataSet2.xsd",
+              "RelativeToolTip": "SystemLivraria\\data\\DataSet2.xsd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003579|",
+              "WhenOpened": "2026-09-03T17:47:17.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLogon.cs",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAcwA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T23:11:26.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "SystemLivraria\\Properties\\Settings.settings",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\Properties\\Settings.settings",
+              "RelativeToolTip": "SystemLivraria\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2026-09-03T17:21:52.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\App.config",
+              "RelativeDocumentMoniker": "SystemLivraria\\App.config",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\App.config",
+              "RelativeToolTip": "SystemLivraria\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-09-03T17:18:27.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "frmSplashScreen.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmSplashScreen.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs",
               "RelativeToolTip": "SystemLivraria\\forms\\frmSplashScreen.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-29T22:12:56.968Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmLogon.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
-              "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAADMAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-28T23:11:26.596Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "frmLogon.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs [Design]",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs [Design]",
               "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-08-28T23:03:56.453Z"
+              "WhenOpened": "2026-08-28T23:03:56.453Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "frmSplashScreen.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs",
+              "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmSplashScreen.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs [Design]",
+              "ToolTip": "C:\\Users\\epsm\\source\\repos\\System_Livraria\\SystemLivraria\\SystemLivraria\\forms\\frmSplashScreen.cs [Design]",
               "RelativeToolTip": "SystemLivraria\\forms\\frmSplashScreen.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-08-28T23:03:55.114Z",

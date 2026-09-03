@@ -26,8 +26,8 @@ namespace SystemLivraria.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-N90LA24R\\MSSQLSERVER2;Initial Catalog=LIVRARIA;Integrated Secu" +
-            "rity=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-N90LA24R\\MSSQLSERVER2;Initial Catalog=db_250064;Integrated Sec" +
+            "urity=True;TrustServerCertificate=True")]
         public string LIVRARIAConnectionString {
             get {
                 return ((string)(this["LIVRARIAConnectionString"]));
