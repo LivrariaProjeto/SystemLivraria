@@ -62,6 +62,12 @@
     <Compile Include="forms\frmLogon.Designer.cs">
       <DependentUpon>frmLogon.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMDI.Designer.cs">
+      <DependentUpon>frmMDI.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmSplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\frmLogon.resx">
       <DependentUpon>frmLogon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMDI.resx">
+      <DependentUpon>frmMDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSplashScreen.resx">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
@@ -84,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="assets\.gitkeep" />
     <None Include="assets\img\.gitkeep" />
@@ -115,6 +125,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\icones\autores.png" />
+    <Content Include="assets\icones\categorias.png" />
+    <Content Include="assets\icones\clientes.png" />
+    <Content Include="assets\icones\compras.png" />
+    <Content Include="assets\icones\editoras.png" />
+    <Content Include="assets\icones\estoque.png" />
+    <Content Include="assets\icones\financeiro.png" />
+    <Content Include="assets\icones\fornecedores.png" />
+    <Content Include="assets\icones\produtos.png" />
+    <Content Include="assets\icones\relatorios.png" />
+    <Content Include="assets\icones\usuarios.png" />
+    <Content Include="assets\icones\vendas.png" />
     <Content Include="assets\img\Batman2022.png" />
     <Content Include="assets\img\logo oficial.png" />
     <Content Include="assets\img\lp.jpg" />
