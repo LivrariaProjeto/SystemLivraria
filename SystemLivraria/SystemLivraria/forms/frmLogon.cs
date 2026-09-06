@@ -60,10 +60,14 @@ namespace SystemLivraria.forms
                 if(result.Rows.Count > 0)//se achar o usuario verifique a senha
                 {
                         MessageBox.Show("Login realizado com sucesso!", "    LOGIN REALIZADO!", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        frmMDI FormPrincipal = new frmMDI();
+                        FormPrincipal.Show();
+                        this.Close();
                         //shów é o método que possui a classe MessageBox,
                         //que exibe uma caixa de diálogo com uma mensagem para o usuário
                         //o método Show possui vários parâmetros, como o texto da mensagem,
                         //o título da caixa de diálogo, os botões que serão exibidos e o ícone que será exibido
+                        
                 }
                 else
                 {
