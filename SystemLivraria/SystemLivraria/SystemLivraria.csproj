@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\PanelPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="data\DataSet2.cs">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
@@ -55,6 +58,42 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadAutores.Designer.cs">
+      <DependentUpon>frmCadAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadEditoras.Designer.cs">
+      <DependentUpon>frmCadEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadFornecedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadFornecedores.Designer.cs">
+      <DependentUpon>frmCadFornecedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadClientes.Designer.cs">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadFuncionarios.Designer.cs">
+      <DependentUpon>frmCadFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadProdutos.Designer.cs">
+      <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmLogon.cs">
       <SubType>Form</SubType>
@@ -76,6 +115,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\Cadastro\frmCadAutores.resx">
+      <DependentUpon>frmCadAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastro\frmCadEditoras.resx">
+      <DependentUpon>frmCadEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastro\frmCadFornecedores.resx">
+      <DependentUpon>frmCadFornecedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastro\frmCadClientes.resx">
+      <DependentUpon>frmCadClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastro\frmCadFuncionarios.resx">
+      <DependentUpon>frmCadFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Cadastro\frmCadProdutos.resx">
+      <DependentUpon>frmCadProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogon.resx">
       <DependentUpon>frmLogon.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,7 +182,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\icones\adicionar.png" />
     <Content Include="assets\icones\autores.png" />
+    <Content Include="assets\icones\cancelar.png" />
     <Content Include="assets\icones\categorias.png" />
     <Content Include="assets\icones\clientes.png" />
     <Content Include="assets\icones\compras.png" />
@@ -135,6 +194,11 @@
     <Content Include="assets\icones\fornecedores.png" />
     <Content Include="assets\icones\produtos.png" />
     <Content Include="assets\icones\relatorios.png" />
+    <Content Include="assets\icones\salvar.png" />
+    <Content Include="assets\icones\setagradeesq.png" />
+    <Content Include="assets\icones\setagrandedir.png" />
+    <Content Include="assets\icones\setapequenadir.png" />
+    <Content Include="assets\icones\setapequenaesq.png" />
     <Content Include="assets\icones\usuarios.png" />
     <Content Include="assets\icones\vendas.png" />
     <Content Include="assets\img\Batman2022.png" />

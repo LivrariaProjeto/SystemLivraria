@@ -47,7 +47,7 @@
             this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.estoqueToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.financeiroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStrip_mdi = new System.Windows.Forms.ToolStrip();
             this.tsbtn_produtos = new System.Windows.Forms.ToolStripButton();
             this.tsbtn_categorias = new System.Windows.Forms.ToolStripButton();
             this.tsbtn_autores = new System.Windows.Forms.ToolStripButton();
@@ -61,7 +61,7 @@
             this.tsbtn_relatorios = new System.Windows.Forms.ToolStripButton();
             this.tsbtn_usuarios = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
+            this.toolStrip_mdi.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -196,11 +196,11 @@
             this.financeiroToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.financeiroToolStripMenuItem1.Text = "Financeiro";
             // 
-            // toolStrip1
+            // toolStrip_mdi
             // 
-            this.toolStrip1.AutoSize = false;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(19, 19);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStrip_mdi.AutoSize = false;
+            this.toolStrip_mdi.ImageScalingSize = new System.Drawing.Size(19, 19);
+            this.toolStrip_mdi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbtn_produtos,
             this.tsbtn_categorias,
             this.tsbtn_autores,
@@ -213,11 +213,11 @@
             this.tsbtn_financeiro,
             this.tsbtn_relatorios,
             this.tsbtn_usuarios});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1904, 40);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip_mdi.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip_mdi.Name = "toolStrip_mdi";
+            this.toolStrip_mdi.Size = new System.Drawing.Size(1904, 40);
+            this.toolStrip_mdi.TabIndex = 3;
+            this.toolStrip_mdi.Text = "Menu de Navegação";
             // 
             // tsbtn_produtos
             // 
@@ -344,7 +344,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.toolStrip_mdi);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -354,8 +354,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.toolStrip_mdi.ResumeLayout(false);
+            this.toolStrip_mdi.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,7 +381,7 @@
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem financeiroToolStripMenuItem1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip_mdi;
         private System.Windows.Forms.ToolStripButton tsbtn_produtos;
         private System.Windows.Forms.ToolStripButton tsbtn_categorias;
         private System.Windows.Forms.ToolStripButton tsbtn_autores;
