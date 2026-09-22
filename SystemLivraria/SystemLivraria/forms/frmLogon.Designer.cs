@@ -46,26 +46,30 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(90, 177);
+            this.textBox1.Location = new System.Drawing.Point(120, 218);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(471, 26);
+            this.textBox1.Size = new System.Drawing.Size(627, 30);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(90, 232);
+            this.textBox2.Location = new System.Drawing.Point(120, 286);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(471, 26);
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.Size = new System.Drawing.Size(627, 30);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // btn_login
             // 
-            this.btn_login.Location = new System.Drawing.Point(445, 301);
+            this.btn_login.Location = new System.Drawing.Point(593, 370);
+            this.btn_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(148, 25);
+            this.btn_login.Size = new System.Drawing.Size(197, 31);
             this.btn_login.TabIndex = 2;
             this.btn_login.Text = "LOGIN";
             this.btn_login.UseVisualStyleBackColor = true;
@@ -74,9 +78,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(567, 177);
+            this.pictureBox1.Location = new System.Drawing.Point(756, 218);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -85,9 +90,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(567, 232);
+            this.pictureBox2.Location = new System.Drawing.Point(756, 286);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox2.Size = new System.Drawing.Size(35, 32);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -95,9 +101,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(90, 28);
+            this.pictureBox3.Location = new System.Drawing.Point(120, 34);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(503, 87);
+            this.pictureBox3.Size = new System.Drawing.Size(671, 107);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
@@ -105,27 +112,30 @@
             // lbl_user
             // 
             this.lbl_user.AutoSize = true;
-            this.lbl_user.Location = new System.Drawing.Point(87, 161);
+            this.lbl_user.Location = new System.Drawing.Point(116, 198);
+            this.lbl_user.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_user.Name = "lbl_user";
-            this.lbl_user.Size = new System.Drawing.Size(109, 13);
+            this.lbl_user.Size = new System.Drawing.Size(133, 16);
             this.lbl_user.TabIndex = 6;
             this.lbl_user.Text = "NOME DE USUÁRIO";
             // 
             // lbl_senha
             // 
             this.lbl_senha.AutoSize = true;
-            this.lbl_senha.Location = new System.Drawing.Point(87, 216);
+            this.lbl_senha.Location = new System.Drawing.Point(116, 266);
+            this.lbl_senha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_senha.Name = "lbl_senha";
-            this.lbl_senha.Size = new System.Drawing.Size(44, 13);
+            this.lbl_senha.Size = new System.Drawing.Size(54, 16);
             this.lbl_senha.TabIndex = 7;
             this.lbl_senha.Text = "SENHA";
             // 
             // lbl_esqueceu
             // 
             this.lbl_esqueceu.AutoSize = true;
-            this.lbl_esqueceu.Location = new System.Drawing.Point(87, 307);
+            this.lbl_esqueceu.Location = new System.Drawing.Point(116, 378);
+            this.lbl_esqueceu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_esqueceu.Name = "lbl_esqueceu";
-            this.lbl_esqueceu.Size = new System.Drawing.Size(122, 13);
+            this.lbl_esqueceu.Size = new System.Drawing.Size(151, 16);
             this.lbl_esqueceu.TabIndex = 9;
             this.lbl_esqueceu.TabStop = true;
             this.lbl_esqueceu.Text = "ESQUECEU A SENHA?";
@@ -133,9 +143,9 @@
             // 
             // frmLogon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 401);
+            this.ClientSize = new System.Drawing.Size(921, 494);
             this.Controls.Add(this.lbl_esqueceu);
             this.Controls.Add(this.lbl_senha);
             this.Controls.Add(this.lbl_user);
@@ -146,6 +156,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmLogon";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
