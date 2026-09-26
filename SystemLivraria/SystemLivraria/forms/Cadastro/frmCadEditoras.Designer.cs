@@ -43,7 +43,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.CadastraEditora = new System.Windows.Forms.ToolStripButton();
             this.dataSet2 = new SystemLivraria.data.DataSet2();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.ProdutosTableAdapter();
@@ -94,6 +94,7 @@
             this.bindingNavigator1.BackColor = System.Drawing.Color.Gainsboro;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -106,7 +107,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.toolStripButton1});
+            this.CadastraEditora});
             this.bindingNavigator1.Location = new System.Drawing.Point(20, 20);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -114,7 +115,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(929, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(929, 27);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -124,13 +125,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -140,7 +141,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
@@ -149,7 +150,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -158,13 +159,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -179,7 +180,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -187,7 +188,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -196,22 +197,23 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
-            // toolStripButton1
+            // CadastraEditora
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.CadastraEditora.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.CadastraEditora.Image = ((System.Drawing.Image)(resources.GetObject("CadastraEditora.Image")));
+            this.CadastraEditora.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.CadastraEditora.Name = "CadastraEditora";
+            this.CadastraEditora.Size = new System.Drawing.Size(29, 24);
+            this.CadastraEditora.Text = "Cadastrar";
+            this.CadastraEditora.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // dataSet2
             // 
@@ -233,7 +235,7 @@
             this.lbl_nomeedit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeedit.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeedit.Name = "lbl_nomeedit";
-            this.lbl_nomeedit.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeedit.Size = new System.Drawing.Size(66, 23);
             this.lbl_nomeedit.TabIndex = 6;
             this.lbl_nomeedit.Text = "Nome";
             this.lbl_nomeedit.Click += new System.EventHandler(this.lbl__Click);
@@ -244,7 +246,7 @@
             this.lbl_emailedit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_emailedit.Location = new System.Drawing.Point(521, 73);
             this.lbl_emailedit.Name = "lbl_emailedit";
-            this.lbl_emailedit.Size = new System.Drawing.Size(48, 18);
+            this.lbl_emailedit.Size = new System.Drawing.Size(61, 23);
             this.lbl_emailedit.TabIndex = 7;
             this.lbl_emailedit.Text = "Email";
             this.lbl_emailedit.Click += new System.EventHandler(this.label1_Click);
@@ -255,7 +257,7 @@
             this.lbl_siteedit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_siteedit.Location = new System.Drawing.Point(38, 141);
             this.lbl_siteedit.Name = "lbl_siteedit";
-            this.lbl_siteedit.Size = new System.Drawing.Size(34, 18);
+            this.lbl_siteedit.Size = new System.Drawing.Size(43, 23);
             this.lbl_siteedit.TabIndex = 8;
             this.lbl_siteedit.Text = "Site";
             // 
@@ -265,7 +267,7 @@
             this.lbl_telefoneedit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_telefoneedit.Location = new System.Drawing.Point(521, 141);
             this.lbl_telefoneedit.Name = "lbl_telefoneedit";
-            this.lbl_telefoneedit.Size = new System.Drawing.Size(71, 18);
+            this.lbl_telefoneedit.Size = new System.Drawing.Size(87, 23);
             this.lbl_telefoneedit.TabIndex = 10;
             this.lbl_telefoneedit.Text = "Telefone";
             // 
@@ -300,7 +302,7 @@
             this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefone.Location = new System.Drawing.Point(15, 5);
             this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(421, 20);
+            this.txt_telefone.Size = new System.Drawing.Size(421, 25);
             this.txt_telefone.TabIndex = 0;
             // 
             // panelPersonalizado4
@@ -334,7 +336,7 @@
             this.txt_site.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_site.Location = new System.Drawing.Point(15, 5);
             this.txt_site.Name = "txt_site";
-            this.txt_site.Size = new System.Drawing.Size(431, 20);
+            this.txt_site.Size = new System.Drawing.Size(431, 25);
             this.txt_site.TabIndex = 0;
             // 
             // panelPersonalizado3
@@ -368,7 +370,7 @@
             this.txt_email.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(15, 5);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(421, 20);
+            this.txt_email.Size = new System.Drawing.Size(421, 25);
             this.txt_email.TabIndex = 0;
             // 
             // panelPersonalizado2
@@ -402,7 +404,7 @@
             this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(15, 5);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(431, 20);
+            this.txt_nome.Size = new System.Drawing.Size(431, 25);
             this.txt_nome.TabIndex = 0;
             // 
             // panelPersonalizado1
@@ -466,6 +468,7 @@
             this.idEdiDataGridViewTextBoxColumn.DataPropertyName = "Id_Edi";
             this.idEdiDataGridViewTextBoxColumn.FillWeight = 80F;
             this.idEdiDataGridViewTextBoxColumn.HeaderText = "Id_Edi";
+            this.idEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idEdiDataGridViewTextBoxColumn.Name = "idEdiDataGridViewTextBoxColumn";
             this.idEdiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -475,6 +478,7 @@
             this.nomeEdiDataGridViewTextBoxColumn.DataPropertyName = "Nome_Edi";
             this.nomeEdiDataGridViewTextBoxColumn.FillWeight = 200F;
             this.nomeEdiDataGridViewTextBoxColumn.HeaderText = "Nome_Edi";
+            this.nomeEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeEdiDataGridViewTextBoxColumn.Name = "nomeEdiDataGridViewTextBoxColumn";
             this.nomeEdiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -484,6 +488,7 @@
             this.emailEdiDataGridViewTextBoxColumn.DataPropertyName = "Email_Edi";
             this.emailEdiDataGridViewTextBoxColumn.FillWeight = 200F;
             this.emailEdiDataGridViewTextBoxColumn.HeaderText = "Email_Edi";
+            this.emailEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailEdiDataGridViewTextBoxColumn.Name = "emailEdiDataGridViewTextBoxColumn";
             this.emailEdiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -493,6 +498,7 @@
             this.siteEdiDataGridViewTextBoxColumn.DataPropertyName = "Site_Edi";
             this.siteEdiDataGridViewTextBoxColumn.FillWeight = 150F;
             this.siteEdiDataGridViewTextBoxColumn.HeaderText = "Site_Edi";
+            this.siteEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.siteEdiDataGridViewTextBoxColumn.Name = "siteEdiDataGridViewTextBoxColumn";
             this.siteEdiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -501,6 +507,7 @@
             this.telefoneEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telefoneEdiDataGridViewTextBoxColumn.DataPropertyName = "Telefone_Edi";
             this.telefoneEdiDataGridViewTextBoxColumn.HeaderText = "Telefone_Edi";
+            this.telefoneEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telefoneEdiDataGridViewTextBoxColumn.Name = "telefoneEdiDataGridViewTextBoxColumn";
             this.telefoneEdiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -578,7 +585,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton CadastraEditora;
         private classes.PanelPersonalizado panelPersonalizado1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private data.DataSet2 dataSet2;

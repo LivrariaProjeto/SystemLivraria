@@ -51,9 +51,15 @@
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.lbl_email = new System.Windows.Forms.Label();
             this.lbl_endereco = new System.Windows.Forms.Label();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.ClienteTableAdapter();
+            this.lbl_cpf = new System.Windows.Forms.Label();
             this.panelPersonalizado6 = new SystemLivraria.classes.PanelPersonalizado();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txt_endereco = new System.Windows.Forms.TextBox();
+            this.panelPersonalizado5 = new SystemLivraria.classes.PanelPersonalizado();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.txt_cpf = new System.Windows.Forms.TextBox();
             this.panelPersonalizado4 = new SystemLivraria.classes.PanelPersonalizado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_email = new System.Windows.Forms.TextBox();
@@ -63,32 +69,26 @@
             this.panelPersonalizado2 = new SystemLivraria.classes.PanelPersonalizado();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_nome = new System.Windows.Forms.TextBox();
-            this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
+            this.DataGridView = new SystemLivraria.classes.PanelPersonalizado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.ClienteTableAdapter();
             this.idCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoCliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_cpf = new System.Windows.Forms.Label();
-            this.txt_cpf = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panelPersonalizado5 = new SystemLivraria.classes.PanelPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.panelPersonalizado6.SuspendLayout();
+            this.panelPersonalizado5.SuspendLayout();
             this.panelPersonalizado4.SuspendLayout();
             this.panelPersonalizado3.SuspendLayout();
             this.panelPersonalizado2.SuspendLayout();
-            this.panelPersonalizado1.SuspendLayout();
+            this.DataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            this.panelPersonalizado5.SuspendLayout();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -97,6 +97,7 @@
             this.bindingNavigator1.BackColor = System.Drawing.Color.Gainsboro;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -117,7 +118,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(929, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(929, 27);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -127,13 +128,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -143,7 +144,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
@@ -152,7 +153,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -161,13 +162,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -182,7 +183,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -190,7 +191,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -199,13 +200,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripButton1
             // 
@@ -213,8 +214,9 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // dataSet2
             // 
@@ -236,7 +238,7 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(66, 23);
             this.lbl_nomeprod.TabIndex = 6;
             this.lbl_nomeprod.Text = "Nome";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
@@ -247,7 +249,7 @@
             this.lbl_telefone.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_telefone.Location = new System.Drawing.Point(521, 73);
             this.lbl_telefone.Name = "lbl_telefone";
-            this.lbl_telefone.Size = new System.Drawing.Size(71, 18);
+            this.lbl_telefone.Size = new System.Drawing.Size(87, 23);
             this.lbl_telefone.TabIndex = 7;
             this.lbl_telefone.Text = "Telefone";
             this.lbl_telefone.Click += new System.EventHandler(this.label1_Click);
@@ -258,7 +260,7 @@
             this.lbl_email.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_email.Location = new System.Drawing.Point(38, 141);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(48, 18);
+            this.lbl_email.Size = new System.Drawing.Size(61, 23);
             this.lbl_email.TabIndex = 8;
             this.lbl_email.Text = "Email";
             // 
@@ -268,10 +270,29 @@
             this.lbl_endereco.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_endereco.Location = new System.Drawing.Point(521, 143);
             this.lbl_endereco.Name = "lbl_endereco";
-            this.lbl_endereco.Size = new System.Drawing.Size(70, 18);
+            this.lbl_endereco.Size = new System.Drawing.Size(86, 23);
             this.lbl_endereco.TabIndex = 9;
             this.lbl_endereco.Text = "Enderço";
             this.lbl_endereco.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.dataSet2;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // lbl_cpf
+            // 
+            this.lbl_cpf.AutoSize = true;
+            this.lbl_cpf.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cpf.Location = new System.Drawing.Point(751, 73);
+            this.lbl_cpf.Name = "lbl_cpf";
+            this.lbl_cpf.Size = new System.Drawing.Size(45, 23);
+            this.lbl_cpf.TabIndex = 10;
+            this.lbl_cpf.Text = "CPF";
             // 
             // panelPersonalizado6
             // 
@@ -304,8 +325,42 @@
             this.txt_endereco.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_endereco.Location = new System.Drawing.Point(15, 5);
             this.txt_endereco.Name = "txt_endereco";
-            this.txt_endereco.Size = new System.Drawing.Size(412, 20);
+            this.txt_endereco.Size = new System.Drawing.Size(412, 25);
             this.txt_endereco.TabIndex = 0;
+            // 
+            // panelPersonalizado5
+            // 
+            this.panelPersonalizado5.BackColor = System.Drawing.Color.Transparent;
+            this.panelPersonalizado5.BorderRadius = 30;
+            this.panelPersonalizado5.Controls.Add(this.panel4);
+            this.panelPersonalizado5.Controls.Add(this.txt_cpf);
+            this.panelPersonalizado5.ForeColor = System.Drawing.Color.Black;
+            this.panelPersonalizado5.GradientAngle = 90F;
+            this.panelPersonalizado5.GradientBottomColor = System.Drawing.Color.Transparent;
+            this.panelPersonalizado5.GradientTopColor = System.Drawing.Color.Transparent;
+            this.panelPersonalizado5.Location = new System.Drawing.Point(739, 96);
+            this.panelPersonalizado5.Name = "panelPersonalizado5";
+            this.panelPersonalizado5.Size = new System.Drawing.Size(200, 31);
+            this.panelPersonalizado5.TabIndex = 13;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 28);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 3);
+            this.panel4.TabIndex = 1;
+            // 
+            // txt_cpf
+            // 
+            this.txt_cpf.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_cpf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cpf.Location = new System.Drawing.Point(15, 5);
+            this.txt_cpf.Name = "txt_cpf";
+            this.txt_cpf.Size = new System.Drawing.Size(182, 25);
+            this.txt_cpf.TabIndex = 0;
             // 
             // panelPersonalizado4
             // 
@@ -338,7 +393,7 @@
             this.txt_email.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(15, 5);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(431, 20);
+            this.txt_email.Size = new System.Drawing.Size(431, 25);
             this.txt_email.TabIndex = 0;
             // 
             // panelPersonalizado3
@@ -372,7 +427,7 @@
             this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefone.Location = new System.Drawing.Point(15, 5);
             this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(182, 20);
+            this.txt_telefone.Size = new System.Drawing.Size(182, 25);
             this.txt_telefone.TabIndex = 0;
             // 
             // panelPersonalizado2
@@ -406,24 +461,24 @@
             this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(15, 5);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(431, 20);
+            this.txt_nome.Size = new System.Drawing.Size(431, 25);
             this.txt_nome.TabIndex = 0;
             // 
-            // panelPersonalizado1
+            // DataGridView
             // 
-            this.panelPersonalizado1.BackColor = System.Drawing.Color.Turquoise;
-            this.panelPersonalizado1.BorderRadius = 20;
-            this.panelPersonalizado1.Controls.Add(this.dataGridView1);
-            this.panelPersonalizado1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
-            this.panelPersonalizado1.GradientAngle = 90F;
-            this.panelPersonalizado1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panelPersonalizado1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panelPersonalizado1.Location = new System.Drawing.Point(20, 222);
-            this.panelPersonalizado1.Margin = new System.Windows.Forms.Padding(0);
-            this.panelPersonalizado1.Name = "panelPersonalizado1";
-            this.panelPersonalizado1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 15);
-            this.panelPersonalizado1.Size = new System.Drawing.Size(929, 303);
-            this.panelPersonalizado1.TabIndex = 1;
+            this.DataGridView.BackColor = System.Drawing.Color.Turquoise;
+            this.DataGridView.BorderRadius = 20;
+            this.DataGridView.Controls.Add(this.dataGridView1);
+            this.DataGridView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
+            this.DataGridView.GradientAngle = 90F;
+            this.DataGridView.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.DataGridView.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.DataGridView.Location = new System.Drawing.Point(20, 222);
+            this.DataGridView.Margin = new System.Windows.Forms.Padding(0);
+            this.DataGridView.Name = "DataGridView";
+            this.DataGridView.Padding = new System.Windows.Forms.Padding(4, 0, 4, 15);
+            this.DataGridView.Size = new System.Drawing.Size(929, 303);
+            this.DataGridView.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -465,21 +520,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(921, 288);
             this.dataGridView1.TabIndex = 0;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.dataSet2;
-            // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
             // idCliDataGridViewTextBoxColumn
             // 
             this.idCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idCliDataGridViewTextBoxColumn.DataPropertyName = "Id_Cli";
             this.idCliDataGridViewTextBoxColumn.FillWeight = 80F;
             this.idCliDataGridViewTextBoxColumn.HeaderText = "Id_Cli";
+            this.idCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idCliDataGridViewTextBoxColumn.Name = "idCliDataGridViewTextBoxColumn";
             this.idCliDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -489,6 +536,7 @@
             this.nomeCliDataGridViewTextBoxColumn.DataPropertyName = "Nome_Cli";
             this.nomeCliDataGridViewTextBoxColumn.FillWeight = 150F;
             this.nomeCliDataGridViewTextBoxColumn.HeaderText = "Nome_Cli";
+            this.nomeCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeCliDataGridViewTextBoxColumn.Name = "nomeCliDataGridViewTextBoxColumn";
             this.nomeCliDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -497,6 +545,7 @@
             this.telCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telCliDataGridViewTextBoxColumn.DataPropertyName = "Tel_Cli";
             this.telCliDataGridViewTextBoxColumn.HeaderText = "Tel_Cli";
+            this.telCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telCliDataGridViewTextBoxColumn.Name = "telCliDataGridViewTextBoxColumn";
             this.telCliDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -505,6 +554,7 @@
             this.cPFCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cPFCliDataGridViewTextBoxColumn.DataPropertyName = "CPF_Cli";
             this.cPFCliDataGridViewTextBoxColumn.HeaderText = "CPF_Cli";
+            this.cPFCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cPFCliDataGridViewTextBoxColumn.Name = "cPFCliDataGridViewTextBoxColumn";
             this.cPFCliDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -514,6 +564,7 @@
             this.emailCliDataGridViewTextBoxColumn.DataPropertyName = "Email_Cli";
             this.emailCliDataGridViewTextBoxColumn.FillWeight = 150F;
             this.emailCliDataGridViewTextBoxColumn.HeaderText = "Email_Cli";
+            this.emailCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailCliDataGridViewTextBoxColumn.Name = "emailCliDataGridViewTextBoxColumn";
             this.emailCliDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -523,52 +574,9 @@
             this.enderecoCliDataGridViewTextBoxColumn.DataPropertyName = "Endereco_Cli";
             this.enderecoCliDataGridViewTextBoxColumn.FillWeight = 150F;
             this.enderecoCliDataGridViewTextBoxColumn.HeaderText = "Endereco_Cli";
+            this.enderecoCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.enderecoCliDataGridViewTextBoxColumn.Name = "enderecoCliDataGridViewTextBoxColumn";
             this.enderecoCliDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lbl_cpf
-            // 
-            this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cpf.Location = new System.Drawing.Point(751, 73);
-            this.lbl_cpf.Name = "lbl_cpf";
-            this.lbl_cpf.Size = new System.Drawing.Size(35, 18);
-            this.lbl_cpf.TabIndex = 10;
-            this.lbl_cpf.Text = "CPF";
-            // 
-            // txt_cpf
-            // 
-            this.txt_cpf.BackColor = System.Drawing.Color.Gainsboro;
-            this.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_cpf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cpf.Location = new System.Drawing.Point(15, 5);
-            this.txt_cpf.Name = "txt_cpf";
-            this.txt_cpf.Size = new System.Drawing.Size(182, 20);
-            this.txt_cpf.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 28);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 3);
-            this.panel4.TabIndex = 1;
-            // 
-            // panelPersonalizado5
-            // 
-            this.panelPersonalizado5.BackColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado5.BorderRadius = 30;
-            this.panelPersonalizado5.Controls.Add(this.panel4);
-            this.panelPersonalizado5.Controls.Add(this.txt_cpf);
-            this.panelPersonalizado5.ForeColor = System.Drawing.Color.Black;
-            this.panelPersonalizado5.GradientAngle = 90F;
-            this.panelPersonalizado5.GradientBottomColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado5.GradientTopColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado5.Location = new System.Drawing.Point(739, 96);
-            this.panelPersonalizado5.Name = "panelPersonalizado5";
-            this.panelPersonalizado5.Size = new System.Drawing.Size(200, 31);
-            this.panelPersonalizado5.TabIndex = 13;
             // 
             // frmCadClientes
             // 
@@ -585,31 +593,31 @@
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.lbl_telefone);
             this.Controls.Add(this.lbl_nomeprod);
-            this.Controls.Add(this.panelPersonalizado1);
+            this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.bindingNavigator1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmCadClientes";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Cadastro de Clientes";
-            this.Load += new System.EventHandler(this.frmCadProdutos_Load);
+            this.Load += new System.EventHandler(this.frmCadClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.panelPersonalizado6.ResumeLayout(false);
             this.panelPersonalizado6.PerformLayout();
+            this.panelPersonalizado5.ResumeLayout(false);
+            this.panelPersonalizado5.PerformLayout();
             this.panelPersonalizado4.ResumeLayout(false);
             this.panelPersonalizado4.PerformLayout();
             this.panelPersonalizado3.ResumeLayout(false);
             this.panelPersonalizado3.PerformLayout();
             this.panelPersonalizado2.ResumeLayout(false);
             this.panelPersonalizado2.PerformLayout();
-            this.panelPersonalizado1.ResumeLayout(false);
+            this.DataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            this.panelPersonalizado5.ResumeLayout(false);
-            this.panelPersonalizado5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,7 +638,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private classes.PanelPersonalizado panelPersonalizado1;
+        private classes.PanelPersonalizado DataGridView;
         private System.Windows.Forms.DataGridView dataGridView1;
         private data.DataSet2 dataSet2;
         private System.Windows.Forms.BindingSource produtosBindingSource;
