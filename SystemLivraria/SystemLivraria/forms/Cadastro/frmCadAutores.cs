@@ -14,7 +14,7 @@ namespace SystemLivraria.forms
 {
     public partial class frmCadAutores : Form
     {
-        private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.LIVRARIAConnectionString"].ConnectionString;
+        private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
 
         public frmCadAutores()
         {

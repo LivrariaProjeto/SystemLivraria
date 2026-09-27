@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFornecedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnAdicionar_Fornecedores = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -97,6 +97,7 @@
             this.bindingNavigator1.BackColor = System.Drawing.Color.Gainsboro;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.btnExcluir_Fornecedores;
+            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -117,7 +118,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(929, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(929, 27);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -127,14 +128,14 @@
             this.btnAdicionar_Fornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar_Fornecedores.Image")));
             this.btnAdicionar_Fornecedores.Name = "btnAdicionar_Fornecedores";
             this.btnAdicionar_Fornecedores.RightToLeftAutoMirrorImage = true;
-            this.btnAdicionar_Fornecedores.Size = new System.Drawing.Size(23, 22);
+            this.btnAdicionar_Fornecedores.Size = new System.Drawing.Size(29, 24);
             this.btnAdicionar_Fornecedores.Text = "Adicionar novo";
             this.btnAdicionar_Fornecedores.Click += new System.EventHandler(this.btnAdicionar_Fornecedores_Click);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -144,7 +145,7 @@
             this.btnExcluir_Fornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir_Fornecedores.Image")));
             this.btnExcluir_Fornecedores.Name = "btnExcluir_Fornecedores";
             this.btnExcluir_Fornecedores.RightToLeftAutoMirrorImage = true;
-            this.btnExcluir_Fornecedores.Size = new System.Drawing.Size(23, 22);
+            this.btnExcluir_Fornecedores.Size = new System.Drawing.Size(29, 24);
             this.btnExcluir_Fornecedores.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
@@ -153,7 +154,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -162,13 +163,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -183,7 +184,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -191,7 +192,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -200,13 +201,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // btnSalvar_Fornecedores
             // 
@@ -214,9 +215,9 @@
             this.btnSalvar_Fornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar_Fornecedores.Image")));
             this.btnSalvar_Fornecedores.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvar_Fornecedores.Name = "btnSalvar_Fornecedores";
-            this.btnSalvar_Fornecedores.Size = new System.Drawing.Size(23, 22);
+            this.btnSalvar_Fornecedores.Size = new System.Drawing.Size(29, 24);
             this.btnSalvar_Fornecedores.Text = "toolStripButton1";
-            this.btnSalvar_Fornecedores.Click += new System.EventHandler(this.btnSalvar_Fornecedores_Click);
+            this.btnSalvar_Fornecedores.Click += new System.EventHandler(this.btnAdicionar_Fornecedores_Click);
             // 
             // dataSet2
             // 
@@ -238,7 +239,7 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(66, 23);
             this.lbl_nomeprod.TabIndex = 6;
             this.lbl_nomeprod.Text = "Nome";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
@@ -249,7 +250,7 @@
             this.lbl_endereco.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_endereco.Location = new System.Drawing.Point(521, 73);
             this.lbl_endereco.Name = "lbl_endereco";
-            this.lbl_endereco.Size = new System.Drawing.Size(80, 18);
+            this.lbl_endereco.Size = new System.Drawing.Size(98, 23);
             this.lbl_endereco.TabIndex = 7;
             this.lbl_endereco.Text = "Endereço";
             this.lbl_endereco.Click += new System.EventHandler(this.label1_Click);
@@ -260,7 +261,7 @@
             this.lbl_editoraprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_editoraprod.Location = new System.Drawing.Point(38, 141);
             this.lbl_editoraprod.Name = "lbl_editoraprod";
-            this.lbl_editoraprod.Size = new System.Drawing.Size(46, 18);
+            this.lbl_editoraprod.Size = new System.Drawing.Size(59, 23);
             this.lbl_editoraprod.TabIndex = 8;
             this.lbl_editoraprod.Text = "CNPJ";
             // 
@@ -270,7 +271,7 @@
             this.lbl_email.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_email.Location = new System.Drawing.Point(607, 143);
             this.lbl_email.Name = "lbl_email";
-            this.lbl_email.Size = new System.Drawing.Size(48, 18);
+            this.lbl_email.Size = new System.Drawing.Size(61, 23);
             this.lbl_email.TabIndex = 9;
             this.lbl_email.Text = "Email";
             this.lbl_email.Click += new System.EventHandler(this.label3_Click);
@@ -281,7 +282,7 @@
             this.lbl_telefone.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_telefone.Location = new System.Drawing.Point(318, 141);
             this.lbl_telefone.Name = "lbl_telefone";
-            this.lbl_telefone.Size = new System.Drawing.Size(71, 18);
+            this.lbl_telefone.Size = new System.Drawing.Size(87, 23);
             this.lbl_telefone.TabIndex = 10;
             this.lbl_telefone.Text = "Telefone";
             // 
@@ -316,7 +317,7 @@
             this.txt_email.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(15, 5);
             this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(335, 20);
+            this.txt_email.Size = new System.Drawing.Size(335, 25);
             this.txt_email.TabIndex = 0;
             // 
             // panelPersonalizado5
@@ -350,7 +351,7 @@
             this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefone.Location = new System.Drawing.Point(15, 5);
             this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(244, 20);
+            this.txt_telefone.Size = new System.Drawing.Size(244, 25);
             this.txt_telefone.TabIndex = 0;
             // 
             // panelPersonalizado4
@@ -384,7 +385,7 @@
             this.txt_cnpj.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cnpj.Location = new System.Drawing.Point(15, 5);
             this.txt_cnpj.Name = "txt_cnpj";
-            this.txt_cnpj.Size = new System.Drawing.Size(228, 20);
+            this.txt_cnpj.Size = new System.Drawing.Size(228, 25);
             this.txt_cnpj.TabIndex = 0;
             // 
             // panelPersonalizado3
@@ -418,7 +419,7 @@
             this.txt_endereco.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_endereco.Location = new System.Drawing.Point(15, 5);
             this.txt_endereco.Name = "txt_endereco";
-            this.txt_endereco.Size = new System.Drawing.Size(421, 20);
+            this.txt_endereco.Size = new System.Drawing.Size(421, 25);
             this.txt_endereco.TabIndex = 0;
             // 
             // panelPersonalizado2
@@ -452,7 +453,7 @@
             this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(15, 5);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(431, 20);
+            this.txt_nome.Size = new System.Drawing.Size(431, 25);
             this.txt_nome.TabIndex = 0;
             // 
             // panelPersonalizado1
@@ -480,14 +481,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idForneDataGridViewTextBoxColumn,
@@ -517,6 +518,7 @@
             this.idForneDataGridViewTextBoxColumn.DataPropertyName = "Id_Forne";
             this.idForneDataGridViewTextBoxColumn.FillWeight = 80F;
             this.idForneDataGridViewTextBoxColumn.HeaderText = "Id_Forne";
+            this.idForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idForneDataGridViewTextBoxColumn.Name = "idForneDataGridViewTextBoxColumn";
             this.idForneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -526,6 +528,7 @@
             this.nomeForneDataGridViewTextBoxColumn.DataPropertyName = "Nome_Forne";
             this.nomeForneDataGridViewTextBoxColumn.FillWeight = 150F;
             this.nomeForneDataGridViewTextBoxColumn.HeaderText = "Nome_Forne";
+            this.nomeForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeForneDataGridViewTextBoxColumn.Name = "nomeForneDataGridViewTextBoxColumn";
             this.nomeForneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -535,6 +538,7 @@
             this.enderecoForneDataGridViewTextBoxColumn.DataPropertyName = "Endereco_Forne";
             this.enderecoForneDataGridViewTextBoxColumn.FillWeight = 200F;
             this.enderecoForneDataGridViewTextBoxColumn.HeaderText = "Endereco_Forne";
+            this.enderecoForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.enderecoForneDataGridViewTextBoxColumn.Name = "enderecoForneDataGridViewTextBoxColumn";
             this.enderecoForneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -543,6 +547,7 @@
             this.cNPJForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cNPJForneDataGridViewTextBoxColumn.DataPropertyName = "CNPJ_Forne";
             this.cNPJForneDataGridViewTextBoxColumn.HeaderText = "CNPJ_Forne";
+            this.cNPJForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cNPJForneDataGridViewTextBoxColumn.Name = "cNPJForneDataGridViewTextBoxColumn";
             this.cNPJForneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -551,6 +556,7 @@
             this.telForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telForneDataGridViewTextBoxColumn.DataPropertyName = "Tel_Forne";
             this.telForneDataGridViewTextBoxColumn.HeaderText = "Tel_Forne";
+            this.telForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telForneDataGridViewTextBoxColumn.Name = "telForneDataGridViewTextBoxColumn";
             this.telForneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -560,6 +566,7 @@
             this.emailForneDataGridViewTextBoxColumn.DataPropertyName = "Email_Forne";
             this.emailForneDataGridViewTextBoxColumn.FillWeight = 150F;
             this.emailForneDataGridViewTextBoxColumn.HeaderText = "Email_Forne";
+            this.emailForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailForneDataGridViewTextBoxColumn.Name = "emailForneDataGridViewTextBoxColumn";
             this.emailForneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
