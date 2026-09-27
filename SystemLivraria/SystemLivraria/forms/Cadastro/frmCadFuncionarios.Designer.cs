@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFuncionarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.btnAdicionar_Funcionarios = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.btnDelete_Funcionarios = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -43,7 +43,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnSalvar_Funcionarios = new System.Windows.Forms.ToolStripButton();
             this.dataSet2 = new SystemLivraria.data.DataSet2();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.ProdutosTableAdapter();
@@ -61,10 +61,10 @@
             this.panelPersonalizado4 = new SystemLivraria.classes.PanelPersonalizado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_cargo = new System.Windows.Forms.TextBox();
-            this.panelPersonalizado3 = new SystemLivraria.classes.PanelPersonalizado();
+            this.txtcpf_Funcionarios = new SystemLivraria.classes.PanelPersonalizado();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_cpf = new System.Windows.Forms.TextBox();
-            this.panelPersonalizado2 = new SystemLivraria.classes.PanelPersonalizado();
+            this.txtnome_Funcionarios = new SystemLivraria.classes.PanelPersonalizado();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
@@ -89,8 +89,8 @@
             this.panelPersonalizado6.SuspendLayout();
             this.panelPersonalizado5.SuspendLayout();
             this.panelPersonalizado4.SuspendLayout();
-            this.panelPersonalizado3.SuspendLayout();
-            this.panelPersonalizado2.SuspendLayout();
+            this.txtcpf_Funcionarios.SuspendLayout();
+            this.txtnome_Funcionarios.SuspendLayout();
             this.panelPersonalizado1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
@@ -99,10 +99,10 @@
             // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.AddNewItem = this.btnAdicionar_Funcionarios;
             this.bindingNavigator1.BackColor = System.Drawing.Color.Gainsboro;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.DeleteItem = this.btnDelete_Funcionarios;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -113,9 +113,9 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.toolStripButton1});
+            this.btnAdicionar_Funcionarios,
+            this.btnDelete_Funcionarios,
+            this.btnSalvar_Funcionarios});
             this.bindingNavigator1.Location = new System.Drawing.Point(20, 20);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -127,14 +127,14 @@
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
+            // btnAdicionar_Funcionarios
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
+            this.btnAdicionar_Funcionarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAdicionar_Funcionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar_Funcionarios.Image")));
+            this.btnAdicionar_Funcionarios.Name = "btnAdicionar_Funcionarios";
+            this.btnAdicionar_Funcionarios.RightToLeftAutoMirrorImage = true;
+            this.btnAdicionar_Funcionarios.Size = new System.Drawing.Size(23, 22);
+            this.btnAdicionar_Funcionarios.Text = "Adicionar novo";
             // 
             // bindingNavigatorCountItem
             // 
@@ -143,14 +143,14 @@
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
-            // bindingNavigatorDeleteItem
+            // btnDelete_Funcionarios
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.btnDelete_Funcionarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnDelete_Funcionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete_Funcionarios.Image")));
+            this.btnDelete_Funcionarios.Name = "btnDelete_Funcionarios";
+            this.btnDelete_Funcionarios.RightToLeftAutoMirrorImage = true;
+            this.btnDelete_Funcionarios.Size = new System.Drawing.Size(23, 22);
+            this.btnDelete_Funcionarios.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -213,14 +213,15 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton1
+            // btnSalvar_Funcionarios
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.btnSalvar_Funcionarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSalvar_Funcionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar_Funcionarios.Image")));
+            this.btnSalvar_Funcionarios.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvar_Funcionarios.Name = "btnSalvar_Funcionarios";
+            this.btnSalvar_Funcionarios.Size = new System.Drawing.Size(23, 22);
+            this.btnSalvar_Funcionarios.Text = "toolStripButton1";
+            this.btnSalvar_Funcionarios.Click += new System.EventHandler(this.btnSalvar_Funcionarios_Click);
             // 
             // dataSet2
             // 
@@ -391,20 +392,20 @@
             this.txt_cargo.Size = new System.Drawing.Size(228, 20);
             this.txt_cargo.TabIndex = 0;
             // 
-            // panelPersonalizado3
+            // txtcpf_Funcionarios
             // 
-            this.panelPersonalizado3.BackColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado3.BorderRadius = 30;
-            this.panelPersonalizado3.Controls.Add(this.panel2);
-            this.panelPersonalizado3.Controls.Add(this.txt_cpf);
-            this.panelPersonalizado3.ForeColor = System.Drawing.Color.Black;
-            this.panelPersonalizado3.GradientAngle = 90F;
-            this.panelPersonalizado3.GradientBottomColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado3.GradientTopColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado3.Location = new System.Drawing.Point(509, 96);
-            this.panelPersonalizado3.Name = "panelPersonalizado3";
-            this.panelPersonalizado3.Size = new System.Drawing.Size(212, 31);
-            this.panelPersonalizado3.TabIndex = 12;
+            this.txtcpf_Funcionarios.BackColor = System.Drawing.Color.Transparent;
+            this.txtcpf_Funcionarios.BorderRadius = 30;
+            this.txtcpf_Funcionarios.Controls.Add(this.panel2);
+            this.txtcpf_Funcionarios.Controls.Add(this.txt_cpf);
+            this.txtcpf_Funcionarios.ForeColor = System.Drawing.Color.Black;
+            this.txtcpf_Funcionarios.GradientAngle = 90F;
+            this.txtcpf_Funcionarios.GradientBottomColor = System.Drawing.Color.Transparent;
+            this.txtcpf_Funcionarios.GradientTopColor = System.Drawing.Color.Transparent;
+            this.txtcpf_Funcionarios.Location = new System.Drawing.Point(509, 96);
+            this.txtcpf_Funcionarios.Name = "txtcpf_Funcionarios";
+            this.txtcpf_Funcionarios.Size = new System.Drawing.Size(212, 31);
+            this.txtcpf_Funcionarios.TabIndex = 12;
             // 
             // panel2
             // 
@@ -425,20 +426,21 @@
             this.txt_cpf.Size = new System.Drawing.Size(194, 20);
             this.txt_cpf.TabIndex = 0;
             // 
-            // panelPersonalizado2
+            // txtnome_Funcionarios
             // 
-            this.panelPersonalizado2.BackColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado2.BorderRadius = 30;
-            this.panelPersonalizado2.Controls.Add(this.panel1);
-            this.panelPersonalizado2.Controls.Add(this.txt_nome);
-            this.panelPersonalizado2.ForeColor = System.Drawing.Color.Black;
-            this.panelPersonalizado2.GradientAngle = 90F;
-            this.panelPersonalizado2.GradientBottomColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado2.GradientTopColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado2.Location = new System.Drawing.Point(27, 96);
-            this.panelPersonalizado2.Name = "panelPersonalizado2";
-            this.panelPersonalizado2.Size = new System.Drawing.Size(452, 31);
-            this.panelPersonalizado2.TabIndex = 11;
+            this.txtnome_Funcionarios.BackColor = System.Drawing.Color.Transparent;
+            this.txtnome_Funcionarios.BorderRadius = 30;
+            this.txtnome_Funcionarios.Controls.Add(this.panel1);
+            this.txtnome_Funcionarios.Controls.Add(this.txt_nome);
+            this.txtnome_Funcionarios.ForeColor = System.Drawing.Color.Black;
+            this.txtnome_Funcionarios.GradientAngle = 90F;
+            this.txtnome_Funcionarios.GradientBottomColor = System.Drawing.Color.Transparent;
+            this.txtnome_Funcionarios.GradientTopColor = System.Drawing.Color.Transparent;
+            this.txtnome_Funcionarios.Location = new System.Drawing.Point(27, 96);
+            this.txtnome_Funcionarios.Name = "txtnome_Funcionarios";
+            this.txtnome_Funcionarios.Size = new System.Drawing.Size(452, 31);
+            this.txtnome_Funcionarios.TabIndex = 11;
+            this.txtnome_Funcionarios.Paint += new System.Windows.Forms.PaintEventHandler(this.txtnome_Funcionarios_Paint);
             // 
             // panel1
             // 
@@ -484,14 +486,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFunciDataGridViewTextBoxColumn,
@@ -639,8 +641,8 @@
             this.Controls.Add(this.panelPersonalizado6);
             this.Controls.Add(this.panelPersonalizado5);
             this.Controls.Add(this.panelPersonalizado4);
-            this.Controls.Add(this.panelPersonalizado3);
-            this.Controls.Add(this.panelPersonalizado2);
+            this.Controls.Add(this.txtcpf_Funcionarios);
+            this.Controls.Add(this.txtnome_Funcionarios);
             this.Controls.Add(this.lbl_dataadmissao);
             this.Controls.Add(this.lbl_email);
             this.Controls.Add(this.lbl_cargo);
@@ -652,7 +654,7 @@
             this.Name = "frmCadFuncionarios";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Cadastro de Produtos";
-            this.Load += new System.EventHandler(this.frmCadProdutos_Load);
+            this.Load += new System.EventHandler(this.frmCadFuncionarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -664,10 +666,10 @@
             this.panelPersonalizado5.PerformLayout();
             this.panelPersonalizado4.ResumeLayout(false);
             this.panelPersonalizado4.PerformLayout();
-            this.panelPersonalizado3.ResumeLayout(false);
-            this.panelPersonalizado3.PerformLayout();
-            this.panelPersonalizado2.ResumeLayout(false);
-            this.panelPersonalizado2.PerformLayout();
+            this.txtcpf_Funcionarios.ResumeLayout(false);
+            this.txtcpf_Funcionarios.PerformLayout();
+            this.txtnome_Funcionarios.ResumeLayout(false);
+            this.txtnome_Funcionarios.PerformLayout();
             this.panelPersonalizado1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).EndInit();
@@ -681,9 +683,9 @@
         #endregion
 
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton btnAdicionar_Funcionarios;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton btnDelete_Funcionarios;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -692,7 +694,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnSalvar_Funcionarios;
         private classes.PanelPersonalizado panelPersonalizado1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private data.DataSet2 dataSet2;
@@ -703,10 +705,10 @@
         private System.Windows.Forms.Label lbl_cargo;
         private System.Windows.Forms.Label lbl_email;
         private System.Windows.Forms.Label lbl_dataadmissao;
-        private classes.PanelPersonalizado panelPersonalizado2;
+        private classes.PanelPersonalizado txtnome_Funcionarios;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Panel panel1;
-        private classes.PanelPersonalizado panelPersonalizado3;
+        private classes.PanelPersonalizado txtcpf_Funcionarios;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txt_cpf;
         private classes.PanelPersonalizado panelPersonalizado4;

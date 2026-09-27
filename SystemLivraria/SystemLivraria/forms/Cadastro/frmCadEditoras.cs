@@ -8,7 +8,7 @@ namespace SystemLivraria.forms
 {
     public partial class frmCadEditoras : Form
     {
-        private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
+        private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.LIVRARIAConnectionString"].ConnectionString;
         public frmCadEditoras()
         {
             InitializeComponent();

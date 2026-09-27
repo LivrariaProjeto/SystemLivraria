@@ -9,7 +9,7 @@ namespace SystemLivraria.forms
     public partial class frmCadClientes : Form
     {
         // Obtém a conexão diretamente do App.config
-        private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
+        private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.LIVRARIAConnectionString"].ConnectionString;
 
         public frmCadClientes()
         {
@@ -85,5 +85,10 @@ namespace SystemLivraria.forms
         private void label3_Click(object sender, EventArgs e) { }
         private void panelPersonalizado2_Paint(object sender, PaintEventArgs e) { }
         private void lbl__Click(object sender, EventArgs e) { }
+
+        private void btnExcluir_Autor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
