@@ -8280,7 +8280,7 @@ SELECT Id_Usu, Id_Funci, Id_Permi, Login_usu, Senha_usu, Ativo_usu, Perfil_usu F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::SystemLivraria.Properties.Settings.Default.LIVRARIAConnectionString;
+            this._connection.ConnectionString = global::SystemLivraria.Properties.Settings.Default.db_250064ConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
