@@ -727,3 +727,98 @@ begin
 	where Data_VDS between @dataini and @datafin;
 end;
 go
+
+
+
+ALTER TABLE Categorias ADD CONSTRAINT UQ_Categorias_Nome UNIQUE (Nome_Cat);
+ALTER TABLE Editoras   ADD CONSTRAINT UQ_Editoras_Nome   UNIQUE (Nome_Edi);
+ALTER TABLE Autores    ADD CONSTRAINT UQ_Autores_Nome    UNIQUE (Nome_Autor);
+GO
+ 
+DROP PROCEDURE IF EXISTS sp_CadastrarProdutoPorNome;
+GO
+CREATE PROCEDURE sp_CadastrarProdutoPorNome
+    @Nome_Pro    VARCHAR(150),
+    @Nome_Autor  VARCHAR(100),
+    @Nome_Cat    VARCHAR(50),
+    @Nome_Edi    VARCHAR(100),
+    @Preco_Pro   DECIMAL(10,2),
+    @ISBN_Pro    VARCHAR(20) = NULL,
+    @Id_Pro      INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+ 
+    DECLARE @Id_Autor INT, @Id_Cat INT, @Id_Edi INT, @Msg NVARCHAR(200);
+ 
+    SELECT @Id_Autor = Id_Autor FROM Autores    WHERE Nome_Autor = LTRIM(RTRIM(@Nome_Autor));
+    SELECT @Id_Cat   = Id_Cat   FROM Categorias WHERE Nome_Cat   = LTRIM(RTRIM(@Nome_Cat));
+    SELECT @Id_Edi   = Id_Edi   FROM Editoras   WHERE Nome_Edi   = LTRIM(RTRIM(@Nome_Edi));
+ 
+    IF @Id_Autor IS NULL
+    BEGIN
+        SET @Msg = CONCAT('Autor não encontrado: ', @Nome_Autor);
+        THROW 50011, @Msg, 1;
+    END;
+ 
+    IF @Id_Cat IS NULL
+    BEGIN
+        SET @Msg = CONCAT('Categoria não encontrada: ', @Nome_Cat);
+        THROW 50012, @Msg, 1;
+    END;
+ 
+    IF @Id_Edi IS NULL
+    BEGIN
+        SET @Msg = CONCAT('Editora não encontrada: ', @Nome_Edi);
+        THROW 50013, @Msg, 1;
+    END;
+ 
+    EXEC sp_CadastrarProduto
+        @Nome_Pro  = @Nome_Pro,
+        @Id_Autor  = @Id_Autor,
+        @Id_Cat    = @Id_Cat,
+        @Id_Edi    = @Id_Edi,
+        @Preco_Pro = @Preco_Pro,
+        @ISBN_Pro  = @ISBN_Pro,
+        @Id_Pro    = @Id_Pro OUTPUT;
+END;
+GO
+ 
+CREATE OR ALTER VIEW vw_Produtos
+AS
+SELECT
+    P.Id_Pro,
+    P.Nome_Pro,
+    A.Nome_Autor,
+    C.Nome_Cat,
+    E.Nome_Edi,
+    P.Preco_Pro,
+    P.ISBN_Pro
+FROM Produtos P
+INNER JOIN Autores    A ON A.Id_Autor = P.Id_Autor
+INNER JOIN Categorias C ON C.Id_Cat   = P.Id_Cat
+INNER JOIN Editoras   E ON E.Id_Edi   = P.Id_Edi;
+GO
+ 
+
+DECLARE @Id INT;
+ 
+EXEC sp_CadastrarProdutoPorNome
+    @Nome_Pro   = 'Laços de Família',
+    @Nome_Autor = 'Clarice Lispector',
+    @Nome_Cat   = 'Romance',
+    @Nome_Edi   = 'Rocco',
+    @Preco_Pro  = 42.90,
+    @ISBN_Pro   = '978-85-000-0010-0',
+    @Id_Pro     = @Id OUTPUT;
+ 
+SELECT * FROM vw_Produtos WHERE Id_Pro = @Id;
+ 
+-- Teste negativo (descomente): categoria inexistente -> erro claro
+/*
+EXEC sp_CadastrarProdutoPorNome
+    @Nome_Pro = 'Teste', @Nome_Autor = 'Clarice Lispector',
+    @Nome_Cat = 'Categoria Que Nao Existe', @Nome_Edi = 'Rocco',
+    @Preco_Pro = 10.00, @Id_Pro = @Id OUTPUT;
+-- Esperado: "Categoria não encontrada: Categoria Que Nao Existe"
+*/
