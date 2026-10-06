@@ -14,8 +14,8 @@ namespace SystemLivraria.classes
         //campos
         private int borderRadius = 30;
         private float gradientAngle = 90F;
-        private Color gradientTopColor = Color.DodgerBlue;
-        private Color gradientBottomColor = Color.CadetBlue;
+        private Color gradientTopColor = Color.Gray;
+        private Color gradientBottomColor = Color.Gray;
 
         //contrutores
         public PanelPersonalizado() { 

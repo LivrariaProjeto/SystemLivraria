@@ -100,7 +100,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.btnAdicionar_Funcionarios;
-            this.bindingNavigator1.BackColor = System.Drawing.Color.Gainsboro;
+            this.bindingNavigator1.BackColor = System.Drawing.Color.Silver;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.btnDelete_Funcionarios;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -316,7 +316,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_email.BackColor = System.Drawing.Color.Silver;
             this.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_email.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Location = new System.Drawing.Point(15, 5);
@@ -350,7 +350,7 @@
             // 
             // txt_dataadmissao
             // 
-            this.txt_dataadmissao.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_dataadmissao.BackColor = System.Drawing.Color.Silver;
             this.txt_dataadmissao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_dataadmissao.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dataadmissao.Location = new System.Drawing.Point(15, 5);
@@ -384,7 +384,7 @@
             // 
             // txt_cargo
             // 
-            this.txt_cargo.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_cargo.BackColor = System.Drawing.Color.Silver;
             this.txt_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cargo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cargo.Location = new System.Drawing.Point(15, 5);
@@ -418,7 +418,7 @@
             // 
             // txt_cpf
             // 
-            this.txt_cpf.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_cpf.BackColor = System.Drawing.Color.Silver;
             this.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cpf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cpf.Location = new System.Drawing.Point(15, 5);
@@ -453,7 +453,7 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_nome.BackColor = System.Drawing.Color.Silver;
             this.txt_nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(15, 5);
@@ -483,7 +483,7 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -609,7 +609,7 @@
             // 
             // txt_telefone
             // 
-            this.txt_telefone.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_telefone.BackColor = System.Drawing.Color.Silver;
             this.txt_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefone.Location = new System.Drawing.Point(15, 5);
@@ -634,7 +634,7 @@
             // frmCadFuncionarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(969, 548);
             this.Controls.Add(this.lbl_telefone);
             this.Controls.Add(this.panelPersonalizado7);

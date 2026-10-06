@@ -96,6 +96,12 @@
     <Compile Include="forms\Cadastro\frmCadProdutos.Designer.cs">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Consulta\frmConAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Consulta\frmConAutores.Designer.cs">
+      <DependentUpon>frmConAutores.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmLogon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Cadastro\frmCadProdutos.resx">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Consulta\frmConAutores.resx">
+      <DependentUpon>frmConAutores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogon.resx">
       <DependentUpon>frmLogon.cs</DependentUpon>

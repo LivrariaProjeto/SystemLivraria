@@ -97,7 +97,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BackColor = System.Drawing.Color.Gainsboro;
+            this.bindingNavigator1.BackColor = System.Drawing.Color.Silver;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -131,13 +131,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -147,7 +147,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
             // 
             // bindingNavigatorMoveFirstItem
@@ -156,7 +156,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -165,7 +165,7 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
@@ -194,7 +194,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -203,7 +203,7 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
@@ -217,7 +217,7 @@
             this.CadProduto.Image = ((System.Drawing.Image)(resources.GetObject("CadProduto.Image")));
             this.CadProduto.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.CadProduto.Name = "CadProduto";
-            this.CadProduto.Size = new System.Drawing.Size(29, 24);
+            this.CadProduto.Size = new System.Drawing.Size(24, 24);
             this.CadProduto.Text = "Cadastrar Produto";
             this.CadProduto.Click += new System.EventHandler(this.CadProduto_Click);
             // 
@@ -241,7 +241,7 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(66, 23);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
             this.lbl_nomeprod.TabIndex = 6;
             this.lbl_nomeprod.Text = "Nome";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
@@ -252,7 +252,7 @@
             this.lbl_autorprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_autorprod.Location = new System.Drawing.Point(521, 73);
             this.lbl_autorprod.Name = "lbl_autorprod";
-            this.lbl_autorprod.Size = new System.Drawing.Size(59, 23);
+            this.lbl_autorprod.Size = new System.Drawing.Size(47, 18);
             this.lbl_autorprod.TabIndex = 7;
             this.lbl_autorprod.Text = "Autor";
             this.lbl_autorprod.Click += new System.EventHandler(this.label1_Click);
@@ -263,7 +263,7 @@
             this.lbl_editoraprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_editoraprod.Location = new System.Drawing.Point(38, 141);
             this.lbl_editoraprod.Name = "lbl_editoraprod";
-            this.lbl_editoraprod.Size = new System.Drawing.Size(75, 23);
+            this.lbl_editoraprod.Size = new System.Drawing.Size(59, 18);
             this.lbl_editoraprod.TabIndex = 8;
             this.lbl_editoraprod.Text = "Editora";
             // 
@@ -273,7 +273,7 @@
             this.lbl_precoprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_precoprod.Location = new System.Drawing.Point(548, 141);
             this.lbl_precoprod.Name = "lbl_precoprod";
-            this.lbl_precoprod.Size = new System.Drawing.Size(63, 23);
+            this.lbl_precoprod.Size = new System.Drawing.Size(51, 18);
             this.lbl_precoprod.TabIndex = 9;
             this.lbl_precoprod.Text = "Preço";
             this.lbl_precoprod.Click += new System.EventHandler(this.label3_Click);
@@ -284,7 +284,7 @@
             this.lbl_categoriaprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_categoriaprod.Location = new System.Drawing.Point(318, 141);
             this.lbl_categoriaprod.Name = "lbl_categoriaprod";
-            this.lbl_categoriaprod.Size = new System.Drawing.Size(105, 23);
+            this.lbl_categoriaprod.Size = new System.Drawing.Size(83, 18);
             this.lbl_categoriaprod.TabIndex = 10;
             this.lbl_categoriaprod.Text = "Categoria";
             // 
@@ -314,12 +314,12 @@
             // 
             // txt_preco
             // 
-            this.txt_preco.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_preco.BackColor = System.Drawing.Color.Silver;
             this.txt_preco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_preco.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_preco.Location = new System.Drawing.Point(15, 5);
             this.txt_preco.Name = "txt_preco";
-            this.txt_preco.Size = new System.Drawing.Size(167, 25);
+            this.txt_preco.Size = new System.Drawing.Size(167, 20);
             this.txt_preco.TabIndex = 0;
             // 
             // panelPersonalizado5
@@ -348,12 +348,12 @@
             // 
             // txt_categoria
             // 
-            this.txt_categoria.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_categoria.BackColor = System.Drawing.Color.Silver;
             this.txt_categoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_categoria.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_categoria.Location = new System.Drawing.Point(15, 5);
             this.txt_categoria.Name = "txt_categoria";
-            this.txt_categoria.Size = new System.Drawing.Size(182, 25);
+            this.txt_categoria.Size = new System.Drawing.Size(182, 20);
             this.txt_categoria.TabIndex = 0;
             // 
             // panelPersonalizado4
@@ -382,12 +382,12 @@
             // 
             // txt_editora
             // 
-            this.txt_editora.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_editora.BackColor = System.Drawing.Color.Silver;
             this.txt_editora.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_editora.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_editora.Location = new System.Drawing.Point(15, 5);
             this.txt_editora.Name = "txt_editora";
-            this.txt_editora.Size = new System.Drawing.Size(228, 25);
+            this.txt_editora.Size = new System.Drawing.Size(228, 20);
             this.txt_editora.TabIndex = 0;
             // 
             // panelPersonalizado3
@@ -416,12 +416,12 @@
             // 
             // txt_autor
             // 
-            this.txt_autor.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_autor.BackColor = System.Drawing.Color.Silver;
             this.txt_autor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_autor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_autor.Location = new System.Drawing.Point(15, 5);
             this.txt_autor.Name = "txt_autor";
-            this.txt_autor.Size = new System.Drawing.Size(421, 25);
+            this.txt_autor.Size = new System.Drawing.Size(421, 20);
             this.txt_autor.TabIndex = 0;
             // 
             // panelPersonalizado2
@@ -450,12 +450,12 @@
             // 
             // txt_nome
             // 
-            this.txt_nome.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_nome.BackColor = System.Drawing.Color.Silver;
             this.txt_nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(15, 5);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(431, 25);
+            this.txt_nome.Size = new System.Drawing.Size(431, 20);
             this.txt_nome.TabIndex = 0;
             // 
             // panelPersonalizado1
@@ -480,7 +480,7 @@
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -607,12 +607,12 @@
             // 
             // txt_isbn
             // 
-            this.txt_isbn.BackColor = System.Drawing.Color.Gainsboro;
+            this.txt_isbn.BackColor = System.Drawing.Color.Silver;
             this.txt_isbn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_isbn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_isbn.Location = new System.Drawing.Point(15, 5);
             this.txt_isbn.Name = "txt_isbn";
-            this.txt_isbn.Size = new System.Drawing.Size(179, 25);
+            this.txt_isbn.Size = new System.Drawing.Size(179, 20);
             this.txt_isbn.TabIndex = 0;
             // 
             // lbl_isbnprod
@@ -621,14 +621,14 @@
             this.lbl_isbnprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_isbnprod.Location = new System.Drawing.Point(763, 143);
             this.lbl_isbnprod.Name = "lbl_isbnprod";
-            this.lbl_isbnprod.Size = new System.Drawing.Size(50, 23);
+            this.lbl_isbnprod.Size = new System.Drawing.Size(40, 18);
             this.lbl_isbnprod.TabIndex = 16;
             this.lbl_isbnprod.Text = "ISBN";
             // 
             // frmCadProdutos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(969, 548);
             this.Controls.Add(this.lbl_isbnprod);
             this.Controls.Add(this.panelPersonalizado7);
