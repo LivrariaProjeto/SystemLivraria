@@ -1,0 +1,109 @@
+select * from Autores;
+
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('mat escolar', 'mat escolar');
+
+-- Romance
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Jane Austen', 'Reino Unido');
+
+-- Drama
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Frances Hodgson Burnett', 'França');
+
+
+-- Terror
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('H.P Lovecraft', 'Estados Unidos');
+
+-- Suspense
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES (' Freida McFadden', 'Estados Unidos');
+
+-- Fantasia
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('J.R.R. Tolkien', 'Reino Unido');
+
+-- Ficção Científica
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('H.G. wells', 'Estados Unidos');
+
+-- Policial
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Agatha Christie', 'Reino Unido');
+
+-- Aventura
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Jules Verne', 'França');
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Lewis Carrol', 'Reino Unido');
+
+-- Comédia
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Mark Twain', 'Estados Unidos');
+
+-- Poesia
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Clarice Lispector', 'Brasil');
+
+-- História
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Emma Marriott ', 'Reino Unido');
+
+-- Filosofia
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Friedrich Nietzsche', 'Alemanha');
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Franz kafka', 'Rep. tcheca');
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Karl Marx', 'Alemanha');
+
+-- Sociologia
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Émile Durkheim', 'França');
+
+-- Direito
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Miguel Reale', 'Brasil');
+
+-- Economia
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Adam Smith', 'Reino Unido');
+GO
+
+
+INSERT INTO Produtos (Id_Autor, Id_Cat, Id_Edi, Nome_Pro, Preco_Pro, ISBN_Pro) VALUES 
+-- 1. Jane Austen -> Orgulho e Preconceito
+(1, 1, 5, 'Orgulho e Preconceito', 49.90, '9788525434149'),
+
+-- 2. Frances Hodgson Burnett -> O Jardim Secreto
+(2, 2, 5, 'O Jardim Secreto', 39.90, '9788574066912'),
+
+-- 3. H.P. Lovecraft -> O Chamado de Cthulhu
+(3, 3, 3, 'O Chamado de Cthulhu', 59.90, '9788594540773'),
+
+-- 4. Freida McFadden -> A Empregada
+(4, 4, 6, 'A Empregada', 44.90, '9788556511451'),
+
+-- 5. J.R.R. Tolkien -> O Senhor dos Anéis: A Sociedade do Anel
+(5, 5, 5, 'O Senhor dos Anéis: A Sociedade do Anel', 79.90, '9788595084759'),
+
+-- 6. H.G. Wells -> A Máquina do Tempo
+(6, 6, 2, 'A Máquina do Tempo', 34.90, '9788537814895'),
+
+-- 7. Agatha Christie -> E Não Sobrou Nenhum (O Caso dos Dez Negrinhos)
+(7, 7, 5, 'E Não Sobrou Nenhum', 49.90, '9788555341238'),
+
+-- 8. Jules Verne -> Viagem ao Centro da Terra
+(8, 8, 7, 'Viagem ao Centro da Terra', 29.90, '9788525422894'),
+
+-- 9. Lewis Carroll -> Alice no País das Maravilhas
+(9, 2, 1, 'Alice no País das Maravilhas', 39.90, '9786558170012'),
+
+-- 10. Mark Twain -> As Aventuras de Tom Sawyer
+(10, 8, 7, 'As Aventuras de Tom Sawyer', 32.90, '9788525411232'),
+
+-- 11. Clarice Lispector -> A Hora da Estrela
+(11, 9, 8, 'A Hora da Estrela', 42.90, '9788535931228'),
+
+-- 12. Emma Marriott -> A História do Mundo para Quem Tem Pressa
+(12, 10, 4, 'A História do Mundo para Quem Tem Pressa', 49.90, '9788501108258'),
+
+-- 13. Friedrich Nietzsche -> Assim Falou Zaratustra
+(13, 11, 2, 'Assim Falou Zaratustra', 54.90, '9788537813256'),
+
+-- 14. Franz Kafka -> A Metamorfose
+(14, 1, 1, 'A Metamorfose', 39.90, '9786580309141'),
+
+-- 15. Karl Marx -> O Manifesto Comunista
+(15, 12, 2, 'O Manifesto Comunista', 29.90, '9788537803622'),
+
+-- 16. Émile Durkheim -> As Formas Elementares da Vida Religiosa
+(16, 13, 4, 'As Formas Elementares da Vida Religiosa', 69.90, '9788535231427'),
+
+-- 17. Miguel Reale -> Filosofia do Direito
+(17, 11, 4, 'Filosofia do Direito', 119.90, '9788502154825'),
+
+-- 18. Adam Smith -> A Riqueza das Nações
+(18, 12, 2, 'A Riqueza das Nações', 89.90, '9788537817452');
