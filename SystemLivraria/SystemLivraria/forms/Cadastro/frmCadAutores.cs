@@ -21,47 +21,6 @@ namespace SystemLivraria.forms
             InitializeComponent();
         }
 
-        //private void frmCadProdutos_Load(object sender, EventArgs e)
-        //{
-            // TODO: esta linha de código carrega dados na tabela 'dataSet2.Funcionarios'. Você pode movê-la ou removê-la conforme necessário.
-            //this.funcionariosTableAdapter.Fill(this.dataSet2.Funcionarios);
-            // TODO: esta linha de código carrega dados na tabela 'dataSet2.Autores'. Você pode movê-la ou removê-la conforme necessário.
-            //this.autoresTableAdapter.Fill(this.dataSet2.Autores);
-            // TODO: esta linha de código carrega dados na tabela 'dataSet2.Produtos'. Você pode movê-la ou removê-la conforme necessário.
-          //  this.produtosTableAdapter.Fill(this.dataSet2.Produtos);
-
-        //}
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelPersonalizado2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl__Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void frmCadAutores_Load(object sender, EventArgs e)
-        {
-            CarregarTabela();
-        }
-
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             string sql = @"INSERT INTO Autores (Nome_Autor, Pais_Autor)
@@ -115,6 +74,36 @@ namespace SystemLivraria.forms
             txt_pais.Clear();
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelPersonalizado2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl__Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmCadAutores_Load(object sender, EventArgs e)
+        {
+            CarregarTabela();
+        }
+
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
@@ -164,9 +153,9 @@ namespace SystemLivraria.forms
             }
         }
 
-        private void btnSalvar_Autor_Click(object sender, EventArgs e)
-        {
-            btnAdicionar_Click(sender, e);
-        }
+       // private void btnSalvar_Autor_Click(object sender, EventArgs e)
+        //{
+          //  btnAdicionar_Click(sender, e);
+       // } -- estava dando erro quando eu tirei essa função
     }
 }
