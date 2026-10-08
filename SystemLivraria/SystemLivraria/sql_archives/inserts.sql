@@ -94,6 +94,9 @@ INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Émile Durkheim', 'França
 INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Miguel Reale', 'Brasil');
 -- Economia
 INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Adam Smith', 'Reino Unido');
+
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('J. K. Rowling', 'Reino Unido');
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Holly Black', 'Estados Unidos');
 GO
 
 
@@ -101,99 +104,103 @@ GO
 INSERT INTO Produtos
 (Nome_Pro, Id_Autor, Id_Cat, Id_Edi, Preco_Pro, ISBN_Pro)
 VALUES
-('Caderno Universitário 10 Matérias', 19, 7, 1, 34.90, '101'),
-('Caderno Universitário 1 Matéria', 19, 7, 1, 14.90, '102'),
-('Caderno Inteligente Médio', 19, 7, 1, 89.90, '103'),
-('Agenda Escolar 2027', 19, 7, 1, 29.90, '104'),
+('Caderno Universitário 10 Matérias', 1, 1, 1, 34.90, '101'),
+('Caderno Universitário 1 Matéria', 1, 1, 1, 14.90, '102'),
+('Caderno Inteligente Médio', 1, 1, 1, 89.90, '103'),
+('Agenda Escolar 2027', 1, 1, 1, 29.90, '104'),
 
-('Caneta Esferográfica Azul', 19, 8, 1, 3.50, '105'),
-('Caneta Esferográfica Preta', 19, 8, 1, 3.50, '106'),
-('Caneta Esferográfica Vermelha', 19, 8, 1, 3.50, '107'),
-('Caneta Gel Preta 0.5mm', 19, 8, 1, 7.90, '108'),
-('Kit Canetas Coloridas 12 Cores', 19, 8, 1, 24.90, '109'),
+('Caneta Esferográfica Azul', 1, 1, 1, 3.50, '105'),
+('Caneta Esferográfica Preta', 1, 1, 1, 3.50, '106'),
+('Caneta Esferográfica Vermelha', 1, 1, 1, 3.50, '107'),
+('Caneta Gel Preta 0.5mm', 1, 1, 1, 7.90, '108'),
+('Kit Canetas Coloridas 12 Cores', 1, 1, 1, 24.90, '109'),
 
-('Marca-Texto Amarelo', 19, 8, 1, 6.90, '110'),
-('Marca-Texto Rosa', 19, 8, 1, 6.90, '111'),
-('Kit Marca-Texto Pastel 6 Cores', 19, 8, 1, 29.90, '112'),
+('Marca-Texto Amarelo', 1, 1, 1, 6.90, '110'),
+('Marca-Texto Rosa', 1, 1, 1, 6.90, '111'),
+('Kit Marca-Texto Pastel 6 Cores', 1, 1, 1, 29.90, '112'),
 
-('Lápis Preto HB', 19, 8, 1, 2.50, '113'),
-('Lapiseira 0.5mm', 19, 8, 1, 12.90, '114'),
-('Grafite 0.5mm HB', 19, 8, 1, 5.90, '115'),
-('Borracha Branca', 19, 8, 1, 3.90, '116'),
-('Apontador com Depósito', 19, 8, 1, 6.50, '117'),
+('Lápis Preto HB', 1, 1, 1, 2.50, '113'),
+('Lapiseira 0.5mm', 1, 1, 1, 12.90, '114'),
+('Grafite 0.5mm HB', 1, 1, 1, 5.90, '115'),
+('Borracha Branca', 1, 1, 1, 3.90, '116'),
+('Apontador com Depósito', 1, 1, 1, 6.50, '117'),
 
-('Estojo Escolar Grande', 19, 9, 1, 39.90, '118'),
-('Estojo Escolar Simples', 19, 9, 1, 19.90, '119'),
-('Mochila Escolar', 19, 9, 1, 119.90, '120'),
+('Estojo Escolar Grande', 1, 1, 1, 39.90, '118'),
+('Estojo Escolar Simples', 1, 1, 1, 19.90, '119'),
+('Mochila Escolar', 1, 1, 1, 119.90, '120'),
 
-('Régua 30cm', 19, 10, 1, 4.90, '121'),
-('Transferidor 180 Graus', 19, 10, 1, 6.90, '122'),
-('Compasso Escolar', 19, 10, 1, 14.90, '123'),
-('Kit Geométrico Escolar', 19, 10, 1, 19.90, '124'),
+('Régua 30cm', 1, 1, 1, 4.90, '121'),
+('Transferidor 180 Graus', 1, 1, 1, 6.90, '122'),
+('Compasso Escolar', 1, 1, 1, 14.90, '123'),
+('Kit Geométrico Escolar', 1, 1, 1, 19.90, '124'),
 
-('Cola Bastão 20g', 19, 11, 1, 7.90, '125'),
-('Cola Branca 90g', 19, 11, 1, 6.90, '126'),
-('Tesoura Escolar sem Ponta', 19, 11, 1, 9.90, '127'),
+('Cola Bastão 20g', 1, 1, 1, 7.90, '125'),
+('Cola Branca 90g', 1, 1, 1, 6.90, '126'),
+('Tesoura Escolar sem Ponta', 1, 1, 1, 9.90, '127'),
 
-('Bloco de Notas Adesivas', 19, 12, 1, 9.90, '128'),
-('Post-it Colorido 5 Blocos', 19, 12, 1, 19.90, '129'),
-('Fichário Universitário', 19, 12, 1, 49.90, '130'),
-('Pasta Catálogo 50 Plásticos', 19, 12, 1, 28.90, '131'),
-('Pasta Sanfonada A4', 19, 12, 1, 24.90, '132'),
+('Bloco de Notas Adesivas', 1, 1, 1, 9.90, '128'),
+('Post-it Colorido 5 Blocos', 1, 1, 1, 19.90, '129'),
+('Fichário Universitário', 1, 1, 1, 49.90, '130'),
+('Pasta Catálogo 50 Plásticos', 1, 1, 1, 28.90, '131'),
+('Pasta Sanfonada A4', 1, 1, 1, 24.90, '132'),
 
-('Papel Sulfite A4 500 Folhas', 19, 13, 1, 32.90, '133'),
-('Papel Colorido A4 100 Folhas', 19, 13, 1, 18.90, '134'),
-('Cartolina Branca', 19, 13, 1, 2.50, '135'),
-('Cartolina Colorida', 19, 13, 1, 2.90, '136'),
+('Papel Sulfite A4 500 Folhas', 1, 1, 1, 32.90, '133'),
+('Papel Colorido A4 100 Folhas', 1, 1, 1, 18.90, '134'),
+('Cartolina Branca', 1, 1, 1, 2.50, '135'),
+('Cartolina Colorida', 1, 1, 1, 2.90, '136'),
 
-('Kit Washi Tape 10 Unidades', 19, 14, 1, 24.90, '137'),
-('Cartela de Adesivos Decorativos', 19, 14, 1, 8.90, '138'),
-('Planner Semanal', 19, 14, 1, 24.90, '139'),
-('Planner Mensal', 19, 14, 1, 29.90, '140'),
-('Kit Sticky Notes Pastel', 19, 14, 1, 14.90, '141'),
-('Caderno Pontilhado para Bullet Journal', 19, 14, 1, 39.90, '142'),
-('Kit Canetas Brush 12 Cores', 19, 14, 1, 49.90, '143'),
-('Mini Grampeador', 19, 14, 1, 14.90, '144'),
-('Clips Coloridos Caixa com 100', 19, 14, 1, 9.90, '145');
+('Kit Washi Tape 10 Unidades', 1, 1, 1, 24.90, '137'),
+('Cartela de Adesivos Decorativos', 1, 1, 1, 8.90, '138'),
+('Planner Semanal', 1, 1, 1, 24.90, '139'),
+('Planner Mensal', 1, 1, 1, 29.90, '140'),
+('Kit Sticky Notes Pastel', 1, 1, 1, 14.90, '141'),
+('Caderno Pontilhado para Bullet Journal', 1, 1, 1, 39.90, '142'),
+('Kit Canetas Brush 12 Cores', 1, 1, 1, 49.90, '143'),
+('Mini Grampeador', 1, 1, 1, 14.90, '144'),
+('Clips Coloridos Caixa com 100', 1, 1, 1, 9.90, '145');
 
 --LIVROS
 INSERT INTO Produtos (Id_Autor, Id_Cat, Id_Edi, Nome_Pro, Preco_Pro, ISBN_Pro) VALUES 
--- 1. Jane Auste
-(1, 1, 5, 'Orgulho e Preconceito', 49.90, '9788525434149'),
--- 2. Frances Hodgson Burnet
-(2, 2, 5, 'O Jardim Secreto', 39.90, '9788574066912'),
+-- 1. Jane Austen
+(2, 1, 5, 'Orgulho e Preconceito', 49.90, '9788525434149'),
+-- 2. Frances Hodgson Burnett
+(3, 2, 5, 'O Jardim Secreto', 39.90, '9788574066912'),
 -- 3. H.P. Lovecraft
-(3, 3, 3, 'O Chamado de Cthulhu', 59.90, '9788594540773'),
+(4, 3, 3, 'O Chamado de Cthulhu', 59.90, '9788594540773'),
 -- 4. Freida McFadden
-(4, 4, 6, 'A Empregada', 44.90, '9788556511451'),
+(5, 4, 6, 'A Empregada', 44.90, '9788556511451'),
 -- 5. J.R.R. Tolkien
-(5, 5, 5, 'O Senhor dos Anéis: A Sociedade do Anel', 79.90, '9788595084759'),
--- 6. H.G. Well
-(6, 6, 2, 'A Máquina do Tempo', 34.90, '9788537814895'),
+(6, 5, 5, 'O Senhor dos Anéis: A Sociedade do Anel', 79.90, '9788595084759'),
+-- 6. H.G. Wells
+(7, 6, 2, 'A Máquina do Tempo', 34.90, '9788537814895'),
 -- 7. Agatha Christie
-(7, 7, 5, 'E Não Sobrou Nenhum', 49.90, '9788555341238'),
--- 8. Jules Verne 
-(8, 8, 7, 'Viagem ao Centro da Terra', 29.90, '9788525422894'),
+(8, 7, 5, 'E Não Sobrou Nenhum', 49.90, '9788555341238'),
+-- 8. Jules Verne
+(9, 8, 7, 'Viagem ao Centro da Terra', 29.90, '9788525422894'),
 -- 9. Lewis Carroll
-(9, 2, 1, 'Alice no País das Maravilhas', 39.90, '9786558170012'),
+(10, 2, 2, 'Alice no País das Maravilhas', 39.90, '9786558170012'),
 -- 10. Mark Twain
-(10, 8, 7, 'As Aventuras de Tom Sawyer', 32.90, '9788525411232'),
+(11, 8, 7, 'As Aventuras de Tom Sawyer', 32.90, '9788525411232'),
 -- 11. Clarice Lispector
-(11, 9, 8, 'A Hora da Estrela', 42.90, '9788535931228'),
+(12, 9, 8, 'A Hora da Estrela', 42.90, '9788535931228'),
 -- 12. Emma Marriott
-(12, 10, 4, 'A História do Mundo para Quem Tem Pressa', 49.90, '9788501108258'),
--- 13. Friedrich Nietzsche -> Assim Falou Zaratustra
-(13, 11, 2, 'Ecce Homo', 54.90, '9788537813256'),
+(13, 10, 4, 'A História do Mundo para Quem Tem Pressa', 49.90, '9788501108258'),
+-- 13. Friedrich Nietzsche
+(14, 11, 2, 'Ecce Homo', 54.90, '9788537813256'),
 -- 14. Franz Kafka
-(14, 1, 1, 'A Metamorfose', 39.90, '9786580309141'),
+(15, 1, 2, 'A Metamorfose', 39.90, '9786580309141'),
 -- 15. Karl Marx
-(15, 12, 2, 'O Manifesto Comunista', 29.90, '9788537803622'),
+(16, 12, 2, 'O Manifesto Comunista', 29.90, '9788537803622'),
 -- 16. Émile Durkheim
-(16, 13, 4, 'As Formas Elementares da Vida Religiosa', 69.90, '9788535231427'),
+(17, 13, 4, 'As Formas Elementares da Vida Religiosa', 69.90, '9788535231427'),
 -- 17. Miguel Reale
-(17, 11, 4, 'Filosofia do Direito', 119.90, '9788502154825'),
--- 18. Adam Smith -> A Riqueza das Nações
-(18, 12, 2, 'A Riqueza das Nações', 89.90, '9788537817452');
+(18, 11, 4, 'Filosofia do Direito', 119.90, '9788502154825'),
+-- 18. Adam Smith
+(19, 12, 2, 'A Riqueza das Nações', 89.90, '9788537817452'),
+-- 19. J.K. Rowling
+(20, 5, 4, 'Harry Potter e a Pedra Filosofal', 45.42, '9788532511010'),
+-- 20. Holly Black
+(21, 5, 4, 'O Principe Cruel', 89.90, '9788501115553');
 
 --ESTOQUE
 ALTER TABLE Estoque
