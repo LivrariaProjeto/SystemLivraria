@@ -96,11 +96,11 @@
     <Compile Include="forms\Cadastro\frmCadProdutos.Designer.cs">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Consulta\frmConAutores.cs">
+    <Compile Include="forms\Consulta\frmConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Consulta\frmConAutores.Designer.cs">
-      <DependentUpon>frmConAutores.cs</DependentUpon>
+    <Compile Include="forms\Consulta\frmConsulta.Designer.cs">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmLogon.cs">
       <SubType>Form</SubType>
@@ -140,8 +140,8 @@
     <EmbeddedResource Include="forms\Cadastro\frmCadProdutos.resx">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Consulta\frmConAutores.resx">
-      <DependentUpon>frmConAutores.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Consulta\frmConsulta.resx">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogon.resx">
       <DependentUpon>frmLogon.cs</DependentUpon>
