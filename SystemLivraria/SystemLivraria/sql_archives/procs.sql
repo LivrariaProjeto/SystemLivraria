@@ -1,6 +1,7 @@
 EXEC nome_da_procedure 'valor1', 123;
 
 --> Alterar Produto <--
+go
 create procedure Proc_AlterarLivro
 	@idpro int,
 	@nomepro varchar(150),
@@ -33,10 +34,11 @@ EXEC Proc_AlterarLivro
     '9780000000001';
 SELECT * FROM Produtos
 WHERE Id_Pro = 1;
-
+go
 --> Excluir Produto <--
 --(pode dar problema se existir algum registro relacionado a esse produto, o SQL Server pode impedir a exclusão por causa das FKs)
-alter procedure Proc_ExcluirPro
+--alter 
+create procedure Proc_ExcluirPro
 	@idpro int
 as 
 begin
@@ -55,7 +57,7 @@ go
 EXEC Proc_ExcluirPro 2;
 SELECT * FROM Produtos
 WHERE Id_Pro = 2;
-
+go
 --> Cadastros <--
 create procedure Proc_CadastroPro
 	@nomepro varchar(150),
@@ -81,8 +83,9 @@ EXEC Proc_CadastroPro
     49.90,
     '9780000000123';
 SELECT * FROM Produtos;
+go
 
-alter procedure Proc_CadastroCli
+create procedure Proc_CadastroCli
 	@nomecli varchar(100),
 	@telcli varchar(20),
 	@cpfcli varchar(14),
@@ -104,8 +107,9 @@ EXEC Proc_CadastroCli
     'michelle@email.com',
     'Rua das Flores, 100';
 select * from Cliente
+go
 
-alter procedure Proc_CadastroForne
+create procedure Proc_CadastroForne
 	@nomeforne varchar(100),
 	@enderecoforne varchar(200),
 	@cnpjforne varchar(18),
@@ -127,8 +131,9 @@ EXEC Proc_CadastroForne
     'fornecedor@email.com',
     '15988888888';
 select * from Fornecedores
+go
 
-alter procedure Proc_CadastroFunci
+create procedure Proc_CadastroFunci
 	@nomefunci varchar(100),
 	@cpffunci varchar(14),
 	@cargofunci varchar(50),
@@ -152,8 +157,9 @@ EXEC Proc_CadastroFunci
     '2026-09-04',
     'joao@email.com';
 select * from Funcionarios
+go
 
-alter procedure Proc_CadastroUsu
+create procedure Proc_CadastroUsu
 	@idfunci int,
 	@idpermi int,
 	@loginusu varchar(50),
@@ -177,7 +183,7 @@ EXEC Proc_CadastroUsu
     'Caixa',
     1;
 select * from Usuarios
-
+go
 --> Realizar Venda <--
 create type ItensVDS as table
 (
@@ -185,6 +191,8 @@ create type ItensVDS as table
 	QTD_Item int
 );
 go
+
+
 create procedure Proc_RealizarVDS
 	@idcli int,
 	@itensvds ItensVDS readonly--pode consultar a tabelinha mas não mudar
