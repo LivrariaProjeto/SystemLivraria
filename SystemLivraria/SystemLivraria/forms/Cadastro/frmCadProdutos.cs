@@ -21,7 +21,8 @@ namespace SystemLivraria.forms
             CarregarTabela();
         }
 
-        private void CadProduto_Click(object sender, EventArgs e)
+
+private void CadProduto_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txt_nome.Text) ||
                 string.IsNullOrWhiteSpace(txt_preco.Text) ||
@@ -29,42 +30,100 @@ namespace SystemLivraria.forms
                 string.IsNullOrWhiteSpace(txt_categoria.Text) ||
                 string.IsNullOrWhiteSpace(txt_editora.Text))
             {
-                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Por favor, preencha todos os campos obrigatórios.",
+                    "Atenção",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
                 return;
             }
 
-            // Query ajustada estritamente aos nomes do DER
-            string sql = @"INSERT INTO Produtos 
-                            (Id_Autor, Id_Cat, ID_Edi, Nome_Pro, Preco_Pro, ISBN_Pro)
-                            VALUES 
-                            (@IdAutor, @IdCategoria, @IdEditora, @Nome, @Preco, @ISBN)";
+            decimal preco;
+
+            if (!decimal.TryParse(
+                txt_preco.Text,
+                System.Globalization.NumberStyles.Number,
+                System.Globalization.CultureInfo.GetCultureInfo("pt-BR"),
+                out preco))
+            {
+                MessageBox.Show(
+                    "Digite um preço válido. Exemplo: 49,90",
+                    "Preço inválido",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "sp_CadastrarProdutoPorNome";
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(conexao))
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@IdAutor", Convert.ToInt32(txt_autor.Text));
-                    cmd.Parameters.AddWithValue("@IdCategoria", Convert.ToInt32(txt_categoria.Text));
-                    cmd.Parameters.AddWithValue("@IdEditora", Convert.ToInt32(txt_editora.Text));
-                    cmd.Parameters.AddWithValue("@Nome", txt_nome.Text);
-                    cmd.Parameters.AddWithValue("@Preco", Convert.ToDecimal(txt_preco.Text));
-                    cmd.Parameters.AddWithValue("@ISBN", txt_isbn.Text);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@Nome_Pro", SqlDbType.VarChar, 150)
+                        .Value = txt_nome.Text.Trim();
+
+                    cmd.Parameters.Add("@Nome_Autor", SqlDbType.VarChar, 100)
+                        .Value = txt_autor.Text.Trim();
+
+                    cmd.Parameters.Add("@Nome_Cat", SqlDbType.VarChar, 50)
+                        .Value = txt_categoria.Text.Trim();
+
+                    cmd.Parameters.Add("@Nome_Edi", SqlDbType.VarChar, 100)
+                        .Value = txt_editora.Text.Trim();
+
+                    cmd.Parameters.Add("@Preco_Pro", SqlDbType.Decimal)
+                        .Value = preco;
+
+                    cmd.Parameters["@Preco_Pro"].Precision = 10;
+                    cmd.Parameters["@Preco_Pro"].Scale = 2;
+
+                    cmd.Parameters.Add("@ISBN_Pro", SqlDbType.VarChar, 20)
+                        .Value = string.IsNullOrWhiteSpace(txt_isbn.Text)
+                            ? (object)DBNull.Value
+                            : txt_isbn.Text.Trim();
+
+                    SqlParameter idProduto = cmd.Parameters.Add(
+                        "@Id_Pro", SqlDbType.Int);
+
+                    idProduto.Direction = ParameterDirection.Output;
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    int idGerado = Convert.ToInt32(idProduto.Value);
+
+                    MessageBox.Show(
+                        "Produto cadastrado com sucesso!\nID do produto: " + idGerado,
+                        "Sucesso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
                     LimparCampos();
                     CarregarTabela();
                 }
             }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(
+                    "Erro ao cadastrar produto:\n" + ex.Message,
+                    "Erro no banco de dados",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao cadastrar produto: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Erro ao cadastrar produto:\n" + ex.Message,
+                    "Erro",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
+
 
         private void CarregarTabela()
         {
