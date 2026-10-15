@@ -59,21 +59,83 @@ SELECT * FROM Produtos
 WHERE Id_Pro = 2;
 go
 --> Cadastros <--
-create procedure Proc_CadastroPro
-	@nomepro varchar(150),
-	@autor int,
-	@categoria int,
-	@editora int,
-	@preco decimal(10,2),
-	@isbn varchar(20)
-as
-begin
-	insert into Produtos
-	(Nome_Pro, Id_Autor, Id_Cat, Id_Edi, Preco_Pro, ISBN_Pro)
-	values
-	(@nomepro, @autor, @categoria, @editora, @preco, @isbn);
-end
-go
+CREATE OR ALTER PROCEDURE dbo.Proc_CadastroPro
+    @Nomepro   VARCHAR(150),
+    @autor     INT,
+    @categoria INT,
+    @editora   INT,
+    @preco     DECIMAL(10,2),
+    @isbn      VARCHAR(20) = NULL,
+    @Id_Pro    INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Produtos
+        (Nome_Pro, Id_Autor, Id_Cat, Id_Edi, Preco_Pro, ISBN_Pro)
+    VALUES
+        (@Nomepro, @autor, @categoria, @editora, @preco, @isbn);
+
+    SET @Id_Pro = CONVERT(INT, SCOPE_IDENTITY());
+END;
+GO
+
+
+-- 2. PROCEDURE DE CADASTRO USANDO OS NOMES
+CREATE OR ALTER PROCEDURE dbo.sp_CadastrarProdutoPorNome
+    @Nome_Pro   VARCHAR(150),
+    @Nome_Autor VARCHAR(100),
+    @Nome_Cat   VARCHAR(50),
+    @Nome_Edi   VARCHAR(100),
+    @Preco_Pro  DECIMAL(10,2),
+    @ISBN_Pro   VARCHAR(20) = NULL,
+    @Id_Pro     INT OUTPUT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @Id_Autor INT,
+            @Id_Cat INT,
+            @Id_Edi INT;
+
+    -- Buscar o ID do autor
+    SELECT @Id_Autor = Id_Autor
+    FROM Autores
+    WHERE LTRIM(RTRIM(Nome_Autor)) =
+          LTRIM(RTRIM(@Nome_Autor));
+
+    IF @Id_Autor IS NULL
+        THROW 50011, 'Autor nao encontrado.', 1;
+
+    -- Buscar o ID da categoria
+    SELECT @Id_Cat = Id_Cat
+    FROM Categorias
+    WHERE LTRIM(RTRIM(Nome_Cat)) =
+          LTRIM(RTRIM(@Nome_Cat));
+
+    IF @Id_Cat IS NULL
+        THROW 50012, 'Categoria nao encontrada.', 1;
+
+    -- Buscar o ID da editora
+    SELECT @Id_Edi = Id_Edi
+    FROM Editoras
+    WHERE LTRIM(RTRIM(Nome_Edi)) =
+          LTRIM(RTRIM(@Nome_Edi));
+
+    IF @Id_Edi IS NULL
+        THROW 50013, 'Editora nao encontrada.', 1;
+
+    -- Cadastrar e receber o ID gerado
+    EXEC dbo.Proc_CadastroPro
+        @Nomepro = @Nome_Pro,
+        @autor = @Id_Autor,
+        @categoria = @Id_Cat,
+        @editora = @Id_Edi,
+        @preco = @Preco_Pro,
+        @isbn = @ISBN_Pro,
+        @Id_Pro = @Id_Pro OUTPUT;
+END;
+GO
 --=> TESTE
 EXEC Proc_CadastroPro
     'A Mansão Hollow',
@@ -743,90 +805,3 @@ ALTER TABLE Editoras   ADD CONSTRAINT UQ_Editoras_Nome   UNIQUE (Nome_Edi);
 ALTER TABLE Autores    ADD CONSTRAINT UQ_Autores_Nome    UNIQUE (Nome_Autor);
 GO
  
-DROP PROCEDURE IF EXISTS sp_CadastrarProdutoPorNome;
-GO
-CREATE PROCEDURE sp_CadastrarProdutoPorNome
-    @Nome_Pro    VARCHAR(150),
-    @Nome_Autor  VARCHAR(100),
-    @Nome_Cat    VARCHAR(50),
-    @Nome_Edi    VARCHAR(100),
-    @Preco_Pro   DECIMAL(10,2),
-    @ISBN_Pro    VARCHAR(20) = NULL,
-    @Id_Pro      INT OUTPUT
-AS
-BEGIN
-    SET NOCOUNT ON;
- 
-    DECLARE @Id_Autor INT, @Id_Cat INT, @Id_Edi INT, @Msg NVARCHAR(200);
- 
-    SELECT @Id_Autor = Id_Autor FROM Autores    WHERE Nome_Autor = LTRIM(RTRIM(@Nome_Autor));
-    SELECT @Id_Cat   = Id_Cat   FROM Categorias WHERE Nome_Cat   = LTRIM(RTRIM(@Nome_Cat));
-    SELECT @Id_Edi   = Id_Edi   FROM Editoras   WHERE Nome_Edi   = LTRIM(RTRIM(@Nome_Edi));
- 
-    IF @Id_Autor IS NULL
-    BEGIN
-        SET @Msg = CONCAT('Autor não encontrado: ', @Nome_Autor);
-        THROW 50011, @Msg, 1;
-    END;
- 
-    IF @Id_Cat IS NULL
-    BEGIN
-        SET @Msg = CONCAT('Categoria não encontrada: ', @Nome_Cat);
-        THROW 50012, @Msg, 1;
-    END;
- 
-    IF @Id_Edi IS NULL
-    BEGIN
-        SET @Msg = CONCAT('Editora não encontrada: ', @Nome_Edi);
-        THROW 50013, @Msg, 1;
-    END;
- 
-    EXEC sp_CadastrarProduto
-        @Nome_Pro  = @Nome_Pro,
-        @Id_Autor  = @Id_Autor,
-        @Id_Cat    = @Id_Cat,
-        @Id_Edi    = @Id_Edi,
-        @Preco_Pro = @Preco_Pro,
-        @ISBN_Pro  = @ISBN_Pro,
-        @Id_Pro    = @Id_Pro OUTPUT;
-END;
-GO
- 
-CREATE OR ALTER VIEW vw_Produtos
-AS
-SELECT
-    P.Id_Pro,
-    P.Nome_Pro,
-    A.Nome_Autor,
-    C.Nome_Cat,
-    E.Nome_Edi,
-    P.Preco_Pro,
-    P.ISBN_Pro
-FROM Produtos P
-INNER JOIN Autores    A ON A.Id_Autor = P.Id_Autor
-INNER JOIN Categorias C ON C.Id_Cat   = P.Id_Cat
-INNER JOIN Editoras   E ON E.Id_Edi   = P.Id_Edi;
-GO
- 
-
-DECLARE @Id INT;
- 
-EXEC sp_CadastrarProdutoPorNome
-    @Nome_Pro   = 'Laços de Família',
-    @Nome_Autor = 'Clarice Lispector',
-    @Nome_Cat   = 'Romance',
-    @Nome_Edi   = 'Rocco',
-    @Preco_Pro  = 42.90,
-    @ISBN_Pro   = '978-85-000-0010-0',
-    @Id_Pro     = @Id OUTPUT;
- 
-SELECT * FROM vw_Produtos WHERE Id_Pro = @Id;
- 
--- Teste negativo (descomente): categoria inexistente -> erro claro
-/*
-EXEC sp_CadastrarProdutoPorNome
-    @Nome_Pro = 'Teste', @Nome_Autor = 'Clarice Lispector',
-    @Nome_Cat = 'Categoria Que Nao Existe', @Nome_Edi = 'Rocco',
-    @Preco_Pro = 10.00, @Id_Pro = @Id OUTPUT;
--- Esperado: "Categoria não encontrada: Categoria Que Nao Existe"
-*/
