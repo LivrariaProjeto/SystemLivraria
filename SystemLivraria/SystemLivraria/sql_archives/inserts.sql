@@ -52,7 +52,7 @@ INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Frances Hodgson Burnett', 
 -- Terror
 INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('H.P Lovecraft', 'Estados Unidos');
 -- Suspense
-INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES (' Freida McFadden', 'Estados Unidos');
+INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('Freida McFadden', 'Estados Unidos');
 -- Fantasia
 INSERT INTO Autores (Nome_Autor, Pais_Autor) VALUES ('J.R.R. Tolkien', 'Reino Unido');
 -- Ficção Científica
