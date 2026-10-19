@@ -1,8 +1,8 @@
-EXEC nome_da_procedure 'valor1', 123;
+--EXEC nome_da_procedure 'valor1', 123;
 
 --> Alterar Produto <--
 go
-create procedure Proc_AlterarLivro
+create procedure sp_AlterarLivro
 	@idpro int,
 	@nomepro varchar(150),
 	@autor int,
@@ -24,7 +24,7 @@ begin
 end
 go
 --=> TESTE
-EXEC Proc_AlterarLivro
+EXEC sp_AlterarLivro
     1,
     'Dom Casmurro',
     1,
@@ -38,7 +38,7 @@ go
 --> Excluir Produto <--
 --(pode dar problema se existir algum registro relacionado a esse produto, o SQL Server pode impedir a exclusão por causa das FKs)
 --alter 
-create procedure Proc_ExcluirPro
+create procedure sp_ExcluirPro
 	@idpro int
 as 
 begin
@@ -54,12 +54,12 @@ begin
 end 
 go
 --=> TESTE
-EXEC Proc_ExcluirPro 2;
+EXEC sp_ExcluirPro 2;
 SELECT * FROM Produtos
 WHERE Id_Pro = 2;
 go
 --> Cadastros <--
-CREATE OR ALTER PROCEDURE dbo.Proc_CadastroPro
+CREATE OR ALTER PROCEDURE dbo.sp_CadastroPro
     @Nomepro   VARCHAR(150),
     @autor     INT,
     @categoria INT,
@@ -126,7 +126,7 @@ BEGIN
         THROW 50013, 'Editora nao encontrada.', 1;
 
     -- Cadastrar e receber o ID gerado
-    EXEC dbo.Proc_CadastroPro
+    EXEC dbo.sp_CadastroPro
         @Nomepro = @Nome_Pro,
         @autor = @Id_Autor,
         @categoria = @Id_Cat,
@@ -137,7 +137,7 @@ BEGIN
 END;
 GO
 --=> TESTE
-EXEC Proc_CadastroPro
+EXEC sp_CadastroPro
     'A Mansão Hollow',
     10,
     4,
@@ -147,7 +147,7 @@ EXEC Proc_CadastroPro
 SELECT * FROM Produtos;
 go
 
-create procedure Proc_CadastroCli
+create procedure sp_CadastroCli
 	@nomecli varchar(100),
 	@telcli varchar(20),
 	@cpfcli varchar(14),
@@ -162,7 +162,7 @@ begin
 end
 go
 --=> TESTE
-EXEC Proc_CadastroCli
+EXEC sp_CadastroCli
     'Michelle',
     '15999999999',
     '111.111.111-11',
@@ -171,7 +171,7 @@ EXEC Proc_CadastroCli
 select * from Cliente
 go
 
-create procedure Proc_CadastroForne
+create procedure sp_CadastroForne
 	@nomeforne varchar(100),
 	@enderecoforne varchar(200),
 	@cnpjforne varchar(18),
@@ -186,7 +186,7 @@ begin
 end
 go
 --=> TESTE
-EXEC Proc_CadastroForne
+EXEC sp_CadastroForne
     'Fornecedor ABC',
     'Rua Principal, 100',
     '11.111.111/0001-11',
@@ -195,7 +195,7 @@ EXEC Proc_CadastroForne
 select * from Fornecedores
 go
 
-create procedure Proc_CadastroFunci
+create procedure sp_CadastroFunci
 	@nomefunci varchar(100),
 	@cpffunci varchar(14),
 	@cargofunci varchar(50),
@@ -211,7 +211,7 @@ begin
 end
 go
 --=> TESTE
-EXEC Proc_CadastroFunci
+EXEC sp_CadastroFunci
     'João Silva',
     '222.222.222-22',
     'Vendedor',
@@ -221,7 +221,7 @@ EXEC Proc_CadastroFunci
 select * from Funcionarios
 go
 
-create procedure Proc_CadastroUsu
+create procedure sp_CadastroUsu
 	@idfunci int,
 	@idpermi int,
 	@loginusu varchar(50),
@@ -237,7 +237,7 @@ begin
 end
 go
 --=> TESTE
-EXEC Proc_CadastroUsu
+EXEC sp_CadastroUsu
     7,
     5,
     'joao',
@@ -255,7 +255,7 @@ create type ItensVDS as table
 go
 
 
-create procedure Proc_RealizarVDS
+create procedure sp_RealizarVDS
 	@idcli int,
 	@itensvds ItensVDS readonly--pode consultar a tabelinha mas não mudar
 as
@@ -396,7 +396,7 @@ go
 --=> TESTE
 declare @itens ItensVDS;
 insert into @itens values (1, 2), (2, 1);
-exec Proc_RealizarVDS @idcli = 3, @itensvds = @itens;
+exec sp_RealizarVDS @idcli = 3, @itensvds = @itens;
 
 --> Registrar Compra <--
 create type ItensCMP as table
@@ -406,7 +406,7 @@ create type ItensCMP as table
 	Preco_Unitario decimal(10,2)
 );
 go
-create procedure Proc_RealizarCMP
+create procedure sp_RealizarCMP
     @idforne int,
     @itenscmp ItensCMP readonly
 as
@@ -514,7 +514,7 @@ end catch;
 end;
 go
 --> Cancelar Venda <--
-create procedure Proc_EstornarVDS
+create procedure sp_EstornarVDS
     @idvds int
 as
 begin
@@ -578,7 +578,7 @@ end catch;
 end;
 go
 --> Entrada Estoque <--
-create procedure Proc_EntradaEsto
+create procedure sp_EntradaEsto
     @idpro int,
     @idforne int,
     @quantidade int
@@ -647,7 +647,7 @@ end catch;
 end;
 go
 --> Saida Estoque <--
-create procedure Proc_SaidaEsto
+create procedure sp_SaidaEsto
     @idpro int,
     @idforne int,
     @quantidade int
@@ -721,7 +721,7 @@ end catch;
 end;
 go
 --> Produtos Estoque Baixo <--
-create procedure Proc_ProEstoqBaixo
+create procedure sp_ProEstoqBaixo
 as
 begin
 	set nocount on;
@@ -735,7 +735,7 @@ begin
 end;
 go
 --> Vendas por Período <--
-create procedure Proc_VendasPorPeriodo
+create procedure sp_VendasPorPeriodo
     @dataini date,
     @datafin date
 as
@@ -758,7 +758,7 @@ begin
 end;
 go
 --> Compras por Período <--
-create procedure Proc_ComprasPorPeriodo
+create procedure sp_ComprasPorPeriodo
     @dataini date,
     @datafin date
 as
@@ -779,7 +779,7 @@ begin
 end;
 go
 --> Faturamento por Período <--
-create procedure Proc_FaturamentoPorPeriodo
+create procedure sp_FaturamentoPorPeriodo
     @dataini date,
     @datafin date
 as
