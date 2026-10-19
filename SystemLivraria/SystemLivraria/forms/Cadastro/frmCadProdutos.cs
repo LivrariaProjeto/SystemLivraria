@@ -16,8 +16,19 @@ namespace SystemLivraria.forms
             InitializeComponent();
         }
 
+        // Gêneros/categorias de livro (mesmos nomes cadastrados na tabela Categorias)
+        private static readonly string[] Generos = new string[]
+        {
+            "Romance", "Drama", "Terror", "Suspense", "Fantasia",
+            "Ficção Científica", "Policial", "Aventura", "Comédia", "Poesia",
+            "História", "Filosofia", "Sociologia", "Direito", "Economia"
+        };
+
         private void frmCadProdutos_Load(object sender, EventArgs e)
         {
+            cbo_categoria.Items.Clear();
+            cbo_categoria.Items.AddRange(Generos);
+            cbo_categoria.SelectedIndex = -1;
             CarregarTabela();
         }
 
@@ -27,7 +38,7 @@ private void CadProduto_Click(object sender, EventArgs e)
             if (string.IsNullOrWhiteSpace(txt_nome.Text) ||
                 string.IsNullOrWhiteSpace(txt_preco.Text) ||
                 string.IsNullOrWhiteSpace(txt_autor.Text) ||
-                string.IsNullOrWhiteSpace(txt_categoria.Text) ||
+                cbo_categoria.SelectedIndex < 0 ||
                 string.IsNullOrWhiteSpace(txt_editora.Text))
             {
                 MessageBox.Show(
@@ -70,7 +81,7 @@ private void CadProduto_Click(object sender, EventArgs e)
                         .Value = txt_autor.Text.Trim();
 
                     cmd.Parameters.Add("@Nome_Cat", SqlDbType.VarChar, 50)
-                        .Value = txt_categoria.Text.Trim();
+                        .Value = cbo_categoria.SelectedItem.ToString();
 
                     cmd.Parameters.Add("@Nome_Edi", SqlDbType.VarChar, 100)
                         .Value = txt_editora.Text.Trim();
@@ -153,7 +164,7 @@ private void CadProduto_Click(object sender, EventArgs e)
         {
             txt_nome.Clear();
             txt_autor.Clear();
-            txt_categoria.Clear();
+            cbo_categoria.SelectedIndex = -1;
             txt_editora.Clear();
             txt_preco.Clear();
             txt_isbn.Clear();

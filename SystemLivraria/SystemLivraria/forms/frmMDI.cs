@@ -107,6 +107,24 @@ namespace SystemLivraria.forms
             novoForm.Show();
         }
 
+        private void excluirProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form formAberto in this.MdiChildren)
+            {
+                if (formAberto is frmExcluirProdutos)
+                {
+                    formAberto.Activate();
+                    return;
+                }
+            }
+
+            frmExcluirProdutos novoForm = new frmExcluirProdutos
+            {
+                MdiParent = this
+            };
+            novoForm.Show();
+        }
+
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form formAberto in this.MdiChildren)

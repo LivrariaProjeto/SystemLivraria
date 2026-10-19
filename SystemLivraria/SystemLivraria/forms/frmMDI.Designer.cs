@@ -42,6 +42,7 @@
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.funcionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirProdutosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.relatóriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -121,7 +122,8 @@
             this.editorasToolStripMenuItem,
             this.fornecedoresToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.funcionáriosToolStripMenuItem});
+            this.funcionáriosToolStripMenuItem,
+            this.excluirProdutosToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -167,6 +169,13 @@
             this.funcionáriosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.funcionáriosToolStripMenuItem.Text = "Funcionários";
             this.funcionáriosToolStripMenuItem.Click += new System.EventHandler(this.funcionáriosToolStripMenuItem_Click);
+            // 
+            // excluirProdutosToolStripMenuItem
+            // 
+            this.excluirProdutosToolStripMenuItem.Name = "excluirProdutosToolStripMenuItem";
+            this.excluirProdutosToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.excluirProdutosToolStripMenuItem.Text = "Excluir Produtos";
+            this.excluirProdutosToolStripMenuItem.Click += new System.EventHandler(this.excluirProdutosToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -385,6 +394,7 @@
         private System.Windows.Forms.ToolStripMenuItem fornecedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem funcionáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirProdutosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem estoqueToolStripMenuItem1;

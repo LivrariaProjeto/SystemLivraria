@@ -57,7 +57,7 @@
             this.txt_preco = new System.Windows.Forms.TextBox();
             this.panelPersonalizado5 = new SystemLivraria.classes.PanelPersonalizado();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txt_categoria = new System.Windows.Forms.TextBox();
+            this.cbo_categoria = new System.Windows.Forms.ComboBox();
             this.panelPersonalizado4 = new SystemLivraria.classes.PanelPersonalizado();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txt_editora = new System.Windows.Forms.TextBox();
@@ -327,7 +327,7 @@
             this.panelPersonalizado5.BackColor = System.Drawing.Color.Transparent;
             this.panelPersonalizado5.BorderRadius = 30;
             this.panelPersonalizado5.Controls.Add(this.panel4);
-            this.panelPersonalizado5.Controls.Add(this.txt_categoria);
+            this.panelPersonalizado5.Controls.Add(this.cbo_categoria);
             this.panelPersonalizado5.ForeColor = System.Drawing.Color.Black;
             this.panelPersonalizado5.GradientAngle = 90F;
             this.panelPersonalizado5.GradientBottomColor = System.Drawing.Color.Transparent;
@@ -346,15 +346,18 @@
             this.panel4.Size = new System.Drawing.Size(200, 3);
             this.panel4.TabIndex = 1;
             // 
-            // txt_categoria
+            // cbo_categoria
             // 
-            this.txt_categoria.BackColor = System.Drawing.Color.Silver;
-            this.txt_categoria.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_categoria.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_categoria.Location = new System.Drawing.Point(15, 5);
-            this.txt_categoria.Name = "txt_categoria";
-            this.txt_categoria.Size = new System.Drawing.Size(182, 20);
-            this.txt_categoria.TabIndex = 0;
+            this.cbo_categoria.BackColor = System.Drawing.Color.Silver;
+            this.cbo_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_categoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbo_categoria.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_categoria.FormattingEnabled = true;
+            this.cbo_categoria.Location = new System.Drawing.Point(10, 1);
+            this.cbo_categoria.MaxDropDownItems = 15;
+            this.cbo_categoria.Name = "cbo_categoria";
+            this.cbo_categoria.Size = new System.Drawing.Size(187, 28);
+            this.cbo_categoria.TabIndex = 0;
             // 
             // panelPersonalizado4
             // 
@@ -716,7 +719,7 @@
         private System.Windows.Forms.TextBox txt_editora;
         private classes.PanelPersonalizado panelPersonalizado5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txt_categoria;
+        private System.Windows.Forms.ComboBox cbo_categoria;
         private classes.PanelPersonalizado panelPersonalizado6;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txt_preco;
