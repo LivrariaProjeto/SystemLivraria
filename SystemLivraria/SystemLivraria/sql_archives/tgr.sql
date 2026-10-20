@@ -18,3 +18,30 @@ begin
 	);
 end;
 go
+
+CREATE TRIGGER trg_HistoricoEstoque
+ON Estoque
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Historico_Estoque (
+        Id_Est,
+        Id_Pro,
+        Tipo_Operacao,
+        Qtd_Anterior,
+        Qtd_Nova
+    )
+    SELECT
+        i.Id_Est,
+        i.Id_Pro,
+        'UPDATE',
+        d.QTD_Est,
+        i.QTD_Est
+    FROM inserted i
+    INNER JOIN deleted d
+        ON i.Id_Est = d.Id_Est
+    WHERE i.QTD_Est <> d.QTD_Est;
+END;
+go
