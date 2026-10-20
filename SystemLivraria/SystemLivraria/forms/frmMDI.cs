@@ -142,6 +142,25 @@ namespace SystemLivraria.forms
             };
             novoForm.Show();
         }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form formAberto in this.MdiChildren)
+            {
+                if (formAberto is frmConsulta)
+                {
+                    formAberto.Activate();
+                    return;
+                }
+            }
+
+            frmConsulta novoForm = new frmConsulta
+            {
+                MdiParent = this
+            };
+            novoForm.Show();
+
+        }
     }
 }
 
