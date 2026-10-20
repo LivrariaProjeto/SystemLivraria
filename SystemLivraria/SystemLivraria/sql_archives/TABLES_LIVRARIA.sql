@@ -163,3 +163,14 @@ CREATE TABLE Financeiro (
 );
 GO
 
+CREATE TABLE Historico_Estoque (
+    Id_Historico INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Est INT,
+    Id_Pro INT,
+    Tipo_Operacao VARCHAR(10),
+    Qtd_Anterior INT,
+    Qtd_Nova INT,
+    Data_Alteracao DATETIME2 DEFAULT SYSDATETIME()
+);
+GO
+
