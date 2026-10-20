@@ -105,7 +105,7 @@ namespace SystemLivraria.forms
             try
             {
                 using (SqlConnection conn = new SqlConnection(conexao))
-                using (SqlCommand cmd = new SqlCommand("Proc_ExcluirPro", conn))
+                using (SqlCommand cmd = new SqlCommand("sp_ExcluirPro", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@idpro", SqlDbType.Int).Value = id;
