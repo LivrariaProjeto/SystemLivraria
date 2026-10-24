@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Limpar = new System.Windows.Forms.Button();
+            this.btn_Consultar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_filtro = new System.Windows.Forms.TextBox();
             this.cbo_filtro = new System.Windows.Forms.ComboBox();
@@ -42,24 +44,22 @@
             this.cbo_tabela = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_buscar = new System.Windows.Forms.Label();
+            this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataSet2 = new SystemLivraria.data.DataSet2();
             this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.VendasTableAdapter();
             this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editorasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.EditorasTableAdapter();
-            this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_Consultar = new System.Windows.Forms.Button();
-            this.btn_Limpar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelPersonalizado1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).BeginInit();
-            this.panelPersonalizado1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,30 +73,55 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lbl_buscar);
-            this.panel1.Location = new System.Drawing.Point(23, 32);
+            this.panel1.Location = new System.Drawing.Point(31, 39);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(255, 445);
+            this.panel1.Size = new System.Drawing.Size(340, 548);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btn_Limpar
+            // 
+            this.btn_Limpar.Location = new System.Drawing.Point(184, 409);
+            this.btn_Limpar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Limpar.Name = "btn_Limpar";
+            this.btn_Limpar.Size = new System.Drawing.Size(132, 60);
+            this.btn_Limpar.TabIndex = 9;
+            this.btn_Limpar.Text = "Limpar";
+            this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.btn_Limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            // 
+            // btn_Consultar
+            // 
+            this.btn_Consultar.Location = new System.Drawing.Point(28, 409);
+            this.btn_Consultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Consultar.Name = "btn_Consultar";
+            this.btn_Consultar.Size = new System.Drawing.Size(136, 60);
+            this.btn_Consultar.TabIndex = 8;
+            this.btn_Consultar.Text = "Consultar";
+            this.btn_Consultar.UseVisualStyleBackColor = true;
+            this.btn_Consultar.Click += new System.EventHandler(this.btn_consulta_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panel4.Controls.Add(this.txt_filtro);
             this.panel4.Controls.Add(this.cbo_filtro);
-            this.panel4.Location = new System.Drawing.Point(1, 186);
+            this.panel4.Location = new System.Drawing.Point(1, 229);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(3);
-            this.panel4.Size = new System.Drawing.Size(254, 68);
+            this.panel4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Size = new System.Drawing.Size(339, 84);
             this.panel4.TabIndex = 7;
             // 
             // txt_filtro
             // 
             this.txt_filtro.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.txt_filtro.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filtro.Location = new System.Drawing.Point(3, 36);
+            this.txt_filtro.Location = new System.Drawing.Point(4, 46);
+            this.txt_filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txt_filtro.Name = "txt_filtro";
-            this.txt_filtro.Size = new System.Drawing.Size(248, 29);
+            this.txt_filtro.Size = new System.Drawing.Size(331, 34);
             this.txt_filtro.TabIndex = 1;
             // 
             // cbo_filtro
@@ -105,18 +130,20 @@
             this.cbo_filtro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_filtro.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_filtro.FormattingEnabled = true;
-            this.cbo_filtro.Location = new System.Drawing.Point(3, 3);
+            this.cbo_filtro.Location = new System.Drawing.Point(4, 4);
+            this.cbo_filtro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbo_filtro.Name = "cbo_filtro";
-            this.cbo_filtro.Size = new System.Drawing.Size(248, 29);
+            this.cbo_filtro.Size = new System.Drawing.Size(331, 31);
             this.cbo_filtro.TabIndex = 0;
             // 
             // lbl_filtrar
             // 
             this.lbl_filtrar.AutoSize = true;
             this.lbl_filtrar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_filtrar.Location = new System.Drawing.Point(0, 163);
+            this.lbl_filtrar.Location = new System.Drawing.Point(0, 201);
+            this.lbl_filtrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_filtrar.Name = "lbl_filtrar";
-            this.lbl_filtrar.Size = new System.Drawing.Size(96, 23);
+            this.lbl_filtrar.Size = new System.Drawing.Size(121, 28);
             this.lbl_filtrar.TabIndex = 6;
             this.lbl_filtrar.Text = "Filtrar por";
             // 
@@ -124,10 +151,11 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panel3.Controls.Add(this.cbo_coluna);
-            this.panel3.Location = new System.Drawing.Point(1, 106);
+            this.panel3.Location = new System.Drawing.Point(1, 130);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(3);
-            this.panel3.Size = new System.Drawing.Size(254, 34);
+            this.panel3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Size = new System.Drawing.Size(339, 42);
             this.panel3.TabIndex = 5;
             // 
             // cbo_coluna
@@ -136,9 +164,10 @@
             this.cbo_coluna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_coluna.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_coluna.FormattingEnabled = true;
-            this.cbo_coluna.Location = new System.Drawing.Point(3, 3);
+            this.cbo_coluna.Location = new System.Drawing.Point(4, 4);
+            this.cbo_coluna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbo_coluna.Name = "cbo_coluna";
-            this.cbo_coluna.Size = new System.Drawing.Size(248, 29);
+            this.cbo_coluna.Size = new System.Drawing.Size(331, 31);
             this.cbo_coluna.TabIndex = 0;
             this.cbo_coluna.SelectedIndexChanged += new System.EventHandler(this.cbo_coluna_SelectedIndexChanged);
             // 
@@ -146,9 +175,10 @@
             // 
             this.lbl_procurar.AutoSize = true;
             this.lbl_procurar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_procurar.Location = new System.Drawing.Point(0, 80);
+            this.lbl_procurar.Location = new System.Drawing.Point(0, 98);
+            this.lbl_procurar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_procurar.Name = "lbl_procurar";
-            this.lbl_procurar.Size = new System.Drawing.Size(123, 23);
+            this.lbl_procurar.Size = new System.Drawing.Size(155, 28);
             this.lbl_procurar.TabIndex = 4;
             this.lbl_procurar.Text = "Procurar por";
             // 
@@ -156,10 +186,11 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panel2.Controls.Add(this.cbo_tabela);
-            this.panel2.Location = new System.Drawing.Point(1, 26);
+            this.panel2.Location = new System.Drawing.Point(1, 32);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(3);
-            this.panel2.Size = new System.Drawing.Size(254, 34);
+            this.panel2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Size = new System.Drawing.Size(339, 42);
             this.panel2.TabIndex = 2;
             // 
             // cbo_tabela
@@ -184,9 +215,10 @@
             "Produtos",
             "Usuarios",
             "Vendas"});
-            this.cbo_tabela.Location = new System.Drawing.Point(3, 3);
+            this.cbo_tabela.Location = new System.Drawing.Point(4, 4);
+            this.cbo_tabela.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbo_tabela.Name = "cbo_tabela";
-            this.cbo_tabela.Size = new System.Drawing.Size(248, 29);
+            this.cbo_tabela.Size = new System.Drawing.Size(331, 31);
             this.cbo_tabela.TabIndex = 0;
             this.cbo_tabela.SelectedIndexChanged += new System.EventHandler(this.cbo_tabela_SelectedIndexChanged);
             // 
@@ -194,9 +226,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(0, 72);
+            this.label2.Location = new System.Drawing.Point(0, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 23);
+            this.label2.Size = new System.Drawing.Size(0, 28);
             this.label2.TabIndex = 3;
             // 
             // lbl_buscar
@@ -204,34 +237,12 @@
             this.lbl_buscar.AutoSize = true;
             this.lbl_buscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_buscar.Location = new System.Drawing.Point(0, 0);
+            this.lbl_buscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_buscar.Name = "lbl_buscar";
-            this.lbl_buscar.Size = new System.Drawing.Size(106, 23);
+            this.lbl_buscar.Size = new System.Drawing.Size(135, 28);
             this.lbl_buscar.TabIndex = 0;
             this.lbl_buscar.Text = "Buscar em";
             this.lbl_buscar.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vendasBindingSource
-            // 
-            this.vendasBindingSource.DataMember = "Vendas";
-            this.vendasBindingSource.DataSource = this.dataSet2;
-            // 
-            // vendasTableAdapter
-            // 
-            this.vendasTableAdapter.ClearBeforeFill = true;
-            // 
-            // editorasBindingSource
-            // 
-            this.editorasBindingSource.DataMember = "Editoras";
-            this.editorasBindingSource.DataSource = this.dataSet2;
-            // 
-            // editorasTableAdapter
-            // 
-            this.editorasTableAdapter.ClearBeforeFill = true;
             // 
             // panelPersonalizado1
             // 
@@ -243,11 +254,11 @@
             this.panelPersonalizado1.GradientAngle = 90F;
             this.panelPersonalizado1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panelPersonalizado1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panelPersonalizado1.Location = new System.Drawing.Point(298, 20);
+            this.panelPersonalizado1.Location = new System.Drawing.Point(397, 25);
             this.panelPersonalizado1.Margin = new System.Windows.Forms.Padding(0);
             this.panelPersonalizado1.Name = "panelPersonalizado1";
-            this.panelPersonalizado1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 15);
-            this.panelPersonalizado1.Size = new System.Drawing.Size(709, 457);
+            this.panelPersonalizado1.Padding = new System.Windows.Forms.Padding(5, 0, 5, 18);
+            this.panelPersonalizado1.Size = new System.Drawing.Size(945, 562);
             this.panelPersonalizado1.TabIndex = 2;
             // 
             // dataGridView1
@@ -272,40 +283,47 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.dataGridView1.Location = new System.Drawing.Point(4, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 35;
-            this.dataGridView1.Size = new System.Drawing.Size(701, 442);
+            this.dataGridView1.Size = new System.Drawing.Size(935, 544);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btn_Consultar
+            // dataSet2
             // 
-            this.btn_Consultar.Location = new System.Drawing.Point(21, 332);
-            this.btn_Consultar.Name = "btn_Consultar";
-            this.btn_Consultar.Size = new System.Drawing.Size(102, 49);
-            this.btn_Consultar.TabIndex = 8;
-            this.btn_Consultar.Text = "Consultar";
-            this.btn_Consultar.UseVisualStyleBackColor = true;
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btn_Limpar
+            // vendasBindingSource
             // 
-            this.btn_Limpar.Location = new System.Drawing.Point(138, 332);
-            this.btn_Limpar.Name = "btn_Limpar";
-            this.btn_Limpar.Size = new System.Drawing.Size(99, 49);
-            this.btn_Limpar.TabIndex = 9;
-            this.btn_Limpar.Text = "Limpar";
-            this.btn_Limpar.UseVisualStyleBackColor = true;
+            this.vendasBindingSource.DataMember = "Vendas";
+            this.vendasBindingSource.DataSource = this.dataSet2;
+            // 
+            // vendasTableAdapter
+            // 
+            this.vendasTableAdapter.ClearBeforeFill = true;
+            // 
+            // editorasBindingSource
+            // 
+            this.editorasBindingSource.DataMember = "Editoras";
+            this.editorasBindingSource.DataSource = this.dataSet2;
+            // 
+            // editorasTableAdapter
+            // 
+            this.editorasTableAdapter.ClearBeforeFill = true;
             // 
             // frmConsulta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1027, 497);
+            this.ClientSize = new System.Drawing.Size(1369, 612);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPersonalizado1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmConsulta";
-            this.Padding = new System.Windows.Forms.Padding(20);
+            this.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.Text = "Consulta";
             this.Load += new System.EventHandler(this.frmConsulta_Load);
             this.panel1.ResumeLayout(false);
@@ -314,11 +332,11 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panelPersonalizado1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).EndInit();
-            this.panelPersonalizado1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

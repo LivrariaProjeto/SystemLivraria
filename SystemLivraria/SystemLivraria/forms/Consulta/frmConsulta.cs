@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace SystemLivraria.forms
 {
-    public partial class frmConsulta : Form
+    public partial class frmConsulta : System.Windows.Forms.Form
     {
         private string tabela = "";
         private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
@@ -132,12 +132,12 @@ namespace SystemLivraria.forms
         private void btn_limpar_Click(object sender, EventArgs e)
         {
             txt_filtro.Clear();
-            cbo_filtro.SelectedIndex = 0;
+
+            if (cbo_filtro.Items.Count > 0)
+                cbo_filtro.SelectedIndex = 0;
 
             if (cbo_coluna.Items.Count > 0)
-            {
                 cbo_coluna.SelectedIndex = 0;
-            }
 
             CarregarTabela();
         }
@@ -237,6 +237,11 @@ namespace SystemLivraria.forms
         private void panelPersonalizado3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_Consultar_Click(object sender, EventArgs e)
+        {
+            CarregarTabela();
         }
     }
 }
