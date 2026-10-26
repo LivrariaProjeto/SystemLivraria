@@ -224,24 +224,16 @@ namespace SystemLivraria.forms
             e.DrawFocusRectangle();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelPersonalizado3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btn_Consultar_Click(object sender, EventArgs e)
         {
             CarregarTabela();
         }
+
+        private void label1_Click(object sender, EventArgs e) { }
+
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+
+        private void panelPersonalizado3_Paint(object sender, PaintEventArgs e) { }
+
     }
 }
