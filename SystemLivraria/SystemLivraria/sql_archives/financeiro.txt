@@ -1,0 +1,217 @@
+--O que esse código faz?
+--Funcionalidade	Como funciona
+--Campos financeiros	
+	--Acrescenta categoria, situação, usuário e datas
+    
+--Origem financeira	Permite distinguir vendas, compras e despesas independentes
+--Pagamentos e recebimentos	Registra cada valor efetivamente pago ou recebido
+
+--Controle de duplicidade	Impede dois lançamentos financeiros para a mesma venda ou compra
+--Histórico financeiro	Trigger registra inserções, alterações e exclusões
+--Procedure de pagamento	Verifica saldo, registra pagamento e atualiza situação
+--Relatórios	Separa valores originais, pendentes e realizados
+
+--1-Adicionar os campos ao Financeiro
+
+ALTER TABLE Financeiro
+ADD
+    Categoria_Fin VARCHAR(50) NULL,
+    Situacao_Fin VARCHAR(20) NOT NULL
+        CONSTRAINT DF_Fin_Situacao DEFAULT 'Pendente',
+    Id_UsuFin INT NULL,
+    Data_Vencimento DATE NULL,
+    Data_Quitacao DATE NULL;
+
+--Ajustar a restrição
+ALTER TABLE Financeiro
+DROP CONSTRAINT CK_Financeiro_Origem;
+GO
+
+ALTER TABLE dbo.Financeiro ADD CONSTRAINT CK_Financeiro_Origem CHECK (
+   NOT (Id_CMP IS NOT NULL AND Id_VDS IS NOT NULL)
+   AND (Id_CMP IS NOT NULL OR Id_VDS IS NOT NULL OR Categoria_Fin IS NOT NULL)
+);
+GO
+
+
+--2- Criar a tabela de movimentações
+
+CREATE TABLE Movimentacoes_Financeiro (
+    Id_Mov INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Fin INT NOT NULL,
+    Valor_Mov DECIMAL(10,2) NOT NULL,
+    Data_Mov DATETIME2 NOT NULL
+        DEFAULT SYSDATETIME(),
+    Id_Usu INT NULL,
+
+    CONSTRAINT FK_Mov_Fin
+        FOREIGN KEY (Id_Fin)
+        REFERENCES Financeiro(Id_Fin),
+
+    CONSTRAINT CK_Valor_Mov
+        CHECK (Valor_Mov > 0)
+);
+IF COL_LENGTH('dbo.Movimentacoes_Financeiro','Referencia_Mov') IS NULL
+    ALTER TABLE dbo.Movimentacoes_Financeiro ADD Referencia_Mov VARCHAR(100) NULL;
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Movimentacoes_Financeiro') AND name='UX_Mov_Referencia')
+    CREATE UNIQUE INDEX UX_Mov_Referencia ON dbo.Movimentacoes_Financeiro(Referencia_Mov) WHERE Referencia_Mov IS NOT NULL;
+GO
+
+
+--3- EVITAR DUPLICAR LANCAMENTO DE CADA VENDA/COMPRA ( Se ja existirem duplicatas, pare e corrija antes de criar indices. )
+IF EXISTS (SELECT 1 FROM dbo.Financeiro WHERE Id_VDS IS NOT NULL GROUP BY Id_VDS HAVING COUNT(*)>1)
+   THROW 51001, 'Ha mais de um Financeiro para a mesma venda. Corrija antes dos indices.', 1;
+IF EXISTS (SELECT 1 FROM dbo.Financeiro WHERE Id_CMP IS NOT NULL GROUP BY Id_CMP HAVING COUNT(*)>1)
+   THROW 51002, 'Ha mais de um Financeiro para a mesma compra. Corrija antes dos indices.', 1;
+GO
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Financeiro') AND name='UX_Fin_Venda')
+    CREATE UNIQUE INDEX UX_Fin_Venda ON dbo.Financeiro(Id_VDS) WHERE Id_VDS IS NOT NULL;
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Financeiro') AND name='UX_Fin_Compra')
+    CREATE UNIQUE INDEX UX_Fin_Compra ON dbo.Financeiro(Id_CMP) WHERE Id_CMP IS NOT NULL;
+GO
+
+
+--4- HISTORICO DE ALTERACOES (NAO CONFUNDIR COM PAGAMENTOS)
+IF OBJECT_ID('dbo.Historico_Financeiro','U') IS NULL
+BEGIN
+    CREATE TABLE dbo.Historico_Financeiro (
+        Id_Hist BIGINT IDENTITY(1,1) PRIMARY KEY,
+        Id_Fin INT NOT NULL,  -- sem FK: preserva registro mesmo apos DELETE da origem
+        Operacao VARCHAR(10) NOT NULL,
+        Valor_Anterior DECIMAL(10,2) NULL,
+        Valor_Novo DECIMAL(10,2) NULL,
+        Situacao_Anterior VARCHAR(20) NULL,
+        Situacao_Nova VARCHAR(20) NULL,
+        Categoria_Anterior VARCHAR(50) NULL,
+        Categoria_Nova VARCHAR(50) NULL,
+        Data_Alteracao DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+        Usuario_SQL SYSNAME NULL
+    );
+END;
+GO
+
+CREATE OR ALTER TRIGGER dbo.trg_HistoricoFinanceiro
+ON dbo.Financeiro
+AFTER INSERT, UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+    INSERT INTO dbo.Historico_Financeiro
+       (Id_Fin, Operacao, Valor_Anterior, Valor_Novo,
+        Situacao_Anterior, Situacao_Nova, Categoria_Anterior, Categoria_Nova, Usuario_SQL)
+    SELECT
+        COALESCE(i.Id_Fin,d.Id_Fin),
+        CASE WHEN d.Id_Fin IS NULL THEN 'INSERT'
+             WHEN i.Id_Fin IS NULL THEN 'DELETE'
+             ELSE 'UPDATE' END,
+        d.Valor_VDS, i.Valor_VDS,
+        d.Situacao_Fin, i.Situacao_Fin,
+        d.Categoria_Fin, i.Categoria_Fin,
+        ORIGINAL_LOGIN()
+    FROM inserted i
+    FULL OUTER JOIN deleted d ON i.Id_Fin=d.Id_Fin
+    WHERE i.Id_Fin IS NULL OR d.Id_Fin IS NULL
+       OR EXISTS (
+           SELECT i.Valor_VDS,i.Situacao_Fin,i.Categoria_Fin,i.Data_Quitacao,i.Data_Vencimento,i.Id_UsuFin,i.Tipo_VDS,i.Desc_VDS,i.Id_CMP,i.Id_VDS
+           EXCEPT
+           SELECT d.Valor_VDS,d.Situacao_Fin,d.Categoria_Fin,d.Data_Quitacao,d.Data_Vencimento,d.Id_UsuFin,d.Tipo_VDS,d.Desc_VDS,d.Id_CMP,d.Id_VDS
+       );
+END;
+GO
+
+
+--5- PROCEDURE DE PAGAMENTO/RECEBIMENTO
+CREATE OR ALTER PROCEDURE dbo.Proc_RegistrarMovFinanceira
+    @Id_Fin INT,
+    @Valor_Mov DECIMAL(10,2),
+    @Id_Usu INT = NULL,
+    @Referencia_Mov VARCHAR(100) -- usar referencia unica a cada pagamento
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+    BEGIN TRY
+        BEGIN TRANSACTION;
+        IF @Referencia_Mov IS NULL OR LTRIM(RTRIM(@Referencia_Mov)) = ''
+            THROW 51016, 'Informe identificador unico para este pagamento.', 1;
+        IF @Valor_Mov IS NULL OR @Valor_Mov <= 0
+            THROW 51010, 'Valor do pagamento/recebimento deve ser positivo.', 1;
+        DECLARE @Total DECIMAL(10,2), @Tipo VARCHAR(20), @Pago DECIMAL(19,2), @Situacao VARCHAR(20);
+        SELECT @Total=Valor_VDS,@Tipo=Tipo_VDS,@Situacao=Situacao_Fin
+        FROM dbo.Financeiro WITH (UPDLOCK,HOLDLOCK)
+        WHERE Id_Fin=@Id_Fin;
+        IF @Total IS NULL
+            THROW 51011, 'Lancamento financeiro inexistente.', 1;
+        IF @Situacao = 'Cancelado'
+            THROW 51012, 'Nao se pode movimentar um lancamento cancelado.', 1;
+        IF UPPER(LTRIM(RTRIM(@Tipo))) NOT IN ('RECEITA','DESPESA','ENTRADA','SAIDA')
+            THROW 51013, 'Tipo_VDS deve indicar Receita/Despesa/Entrada/Saida.', 1;
+        IF @Id_Usu IS NOT NULL AND NOT EXISTS (SELECT 1 FROM dbo.Usuarios WHERE Id_Usu=@Id_Usu)
+            THROW 51014, 'Usuario informado nao existe.', 1;
+        SELECT @Pago=COALESCE(SUM(CONVERT(DECIMAL(19,2),Valor_Mov)),0)
+        FROM dbo.Movimentacoes_Financeiro WHERE Id_Fin=@Id_Fin;
+        IF @Pago + @Valor_Mov > @Total
+            THROW 51015, 'Pagamento/recebimento ultrapassa o saldo da conta.', 1;
+        INSERT INTO dbo.Movimentacoes_Financeiro(Id_Fin,Valor_Mov,Id_Usu,Referencia_Mov)
+        VALUES (@Id_Fin,@Valor_Mov,@Id_Usu,@Referencia_Mov);
+        UPDATE dbo.Financeiro
+        SET Situacao_Fin = CASE
+                WHEN @Pago + @Valor_Mov = @Total AND UPPER(LTRIM(RTRIM(@Tipo))) IN ('DESPESA','SAIDA') THEN 'Pago'
+                WHEN @Pago + @Valor_Mov = @Total THEN 'Recebido'
+                ELSE 'Parcial' END,
+            Data_Quitacao = CASE WHEN @Pago + @Valor_Mov = @Total THEN CONVERT(DATE,GETDATE()) ELSE NULL END,
+            Id_UsuFin = COALESCE(@Id_Usu,Id_UsuFin)
+        WHERE Id_Fin=@Id_Fin;
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        THROW;
+    END CATCH
+END;
+GO
+
+--7- RELATORIOS: nunca some Vendas + Financeiro + Movimentações como se fossem receitas distintas.
+CREATE OR ALTER VIEW dbo.View_ContasFinanceiras AS
+SELECT
+    f.Id_Fin, f.Id_VDS, f.Id_CMP,
+    COALESCE(f.Categoria_Fin, CASE WHEN f.Id_VDS IS NOT NULL THEN 'Venda'
+                                  WHEN f.Id_CMP IS NOT NULL THEN 'Compra'
+                                  ELSE 'Outros' END) AS Categoria,
+    f.Tipo_VDS, f.Desc_VDS, f.Valor_VDS AS Valor_Original,
+    COALESCE(p.Valor_Pago,0) AS Valor_Realizado,
+    f.Valor_VDS-COALESCE(p.Valor_Pago,0) AS Saldo_Pendente,
+    f.Situacao_Fin, f.Data_VDS, f.Data_Vencimento, f.Data_Quitacao, f.Id_UsuFin
+FROM dbo.Financeiro f
+OUTER APPLY (
+    SELECT SUM(CONVERT(DECIMAL(19,2),m.Valor_Mov)) AS Valor_Pago
+    FROM dbo.Movimentacoes_Financeiro m WHERE m.Id_Fin=f.Id_Fin
+) p;
+GO
+
+CREATE OR ALTER VIEW dbo.View_FluxoCaixa AS
+SELECT m.Id_Mov,m.Id_Fin,m.Data_Mov,
+       CASE WHEN UPPER(LTRIM(RTRIM(f.Tipo_VDS))) IN ('RECEITA','ENTRADA')
+                 THEN 'Entrada' ELSE 'Saida' END AS Tipo_Movimento,
+       m.Valor_Mov,
+       CASE WHEN UPPER(LTRIM(RTRIM(f.Tipo_VDS))) IN ('RECEITA','ENTRADA')
+                 THEN m.Valor_Mov ELSE -m.Valor_Mov END AS Valor_Assinado,
+       m.Id_Usu
+FROM dbo.Movimentacoes_Financeiro m
+JOIN dbo.Financeiro f ON f.Id_Fin=m.Id_Fin;
+GO
+
+--8- TESTE SEGURO (execute separado e troque o ID)
+   Primeiro, rode: SELECT Id_Fin,Valor_VDS,Situacao_Fin FROM dbo.Financeiro;
+   Pegue um Id_Fin existente, com saldo em aberto e valor >= 10.
+   Depois rode, substituindo 123 pelo ID verdadeiro:
+
+BEGIN TRANSACTION;
+EXEC dbo.Proc_RegistrarMovFinanceira @Id_Fin=3,@Valor_Mov=10.00,@Id_Usu=NULL,@Referencia_Mov='TESTE-123-1';
+SELECT * FROM dbo.View_ContasFinanceiras WHERE Id_Fin=3;
+SELECT * FROM dbo.View_FluxoCaixa WHERE Id_Fin=3;
+SELECT * FROM dbo.Historico_Financeiro WHERE Id_Fin=3;
+ROLLBACK TRANSACTION;
+go
+
+select * from  Financeiro;
