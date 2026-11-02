@@ -240,7 +240,7 @@
             this.panelPersonalizado1.GradientAngle = 90F;
             this.panelPersonalizado1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panelPersonalizado1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panelPersonalizado1.Location = new System.Drawing.Point(184, 20);
+            this.panelPersonalizado1.Location = new System.Drawing.Point(295, 20);
             this.panelPersonalizado1.Margin = new System.Windows.Forms.Padding(0);
             this.panelPersonalizado1.Name = "panelPersonalizado1";
             this.panelPersonalizado1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 14);
@@ -274,6 +274,7 @@
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.Size = new System.Drawing.Size(701, 433);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataSet2
             // 
@@ -303,7 +304,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(913, 487);
+            this.ClientSize = new System.Drawing.Size(1024, 487);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPersonalizado1);
             this.Name = "frmConsulta";
