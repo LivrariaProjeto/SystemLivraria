@@ -172,5 +172,26 @@ CREATE TABLE Historico_Estoque (
     Qtd_Nova INT,
     Data_Alteracao DATETIME2 DEFAULT SYSDATETIME()
 );
+
+CREATE TABLE Movimentacoes_Financeiro (
+    Id_Mov INT IDENTITY(1,1) PRIMARY KEY,
+    Id_Fin INT NOT NULL,
+    Valor_Mov DECIMAL(10,2) NOT NULL,
+    Data_Mov DATETIME2 NOT NULL
+        DEFAULT SYSDATETIME(),
+    Id_Usu INT NULL,
+
+    CONSTRAINT FK_Mov_Fin
+        FOREIGN KEY (Id_Fin)
+        REFERENCES Financeiro(Id_Fin),
+
+    CONSTRAINT CK_Valor_Mov
+        CHECK (Valor_Mov > 0)
+);
+IF COL_LENGTH('dbo.Movimentacoes_Financeiro','Referencia_Mov') IS NULL
+    ALTER TABLE dbo.Movimentacoes_Financeiro ADD Referencia_Mov VARCHAR(100) NULL;
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Movimentacoes_Financeiro') AND name='UX_Mov_Referencia')
+    CREATE UNIQUE INDEX UX_Mov_Referencia ON dbo.Movimentacoes_Financeiro(Referencia_Mov) WHERE Referencia_Mov IS NOT NULL;
+GO
 GO
 
