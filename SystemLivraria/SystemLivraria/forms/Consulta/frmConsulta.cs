@@ -10,11 +10,21 @@ namespace SystemLivraria.forms
     public partial class frmConsulta : System.Windows.Forms.Form
     {
         private string tabela = "";
+        private int nivelUsuario;
         private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
 
+        // Construtor padrão
         public frmConsulta()
         {
             InitializeComponent();
+            nivelUsuario = 3; // Padrão
+        }
+
+        // Construtor que recebe o nível de acesso
+        public frmConsulta(int nivel)
+        {
+            InitializeComponent();
+            nivelUsuario = nivel;
         }
 
         private void frmConsulta_Load(object sender, EventArgs e)
@@ -28,19 +38,35 @@ namespace SystemLivraria.forms
             cbo_filtro.Items.Add("Data");
             cbo_filtro.SelectedIndex = 0;
 
-            // Carrega as tabelas do banco no primeiro ComboBox
+            // Carrega as tabelas no ComboBox com base estrita no nível do usuário
             try
             {
                 cbo_tabela.Items.Clear();
 
-                using (SqlConnection conn = new SqlConnection(conexao))
+                if (nivelUsuario == 1)
                 {
-                    conn.Open();
-                    DataTable schemaTables = conn.GetSchema("Tables", new string[] { null, null, null, "BASE TABLE" });
-
-                    foreach (DataRow row in schemaTables.Rows)
+                    // 1 --> funcionário --> consulta: vê só o estoque
+                    cbo_tabela.Items.Add("Estoque");
+                }
+                else if (nivelUsuario == 2)
+                {
+                    // 2 --> gerente --> consulta: estoque, vendas e compras
+                    cbo_tabela.Items.Add("Estoque");
+                    cbo_tabela.Items.Add("Vendas");
+                    cbo_tabela.Items.Add("Compras");
+                }
+                else
+                {
+                    // 3 --> chefe --> pode consultar todas as tabelas necessárias / financeiro
+                    using (SqlConnection conn = new SqlConnection(conexao))
                     {
-                        cbo_tabela.Items.Add(row["TABLE_NAME"].ToString());
+                        conn.Open();
+                        DataTable schemaTables = conn.GetSchema("Tables", new string[] { null, null, null, "BASE TABLE" });
+
+                        foreach (DataRow row in schemaTables.Rows)
+                        {
+                            cbo_tabela.Items.Add(row["TABLE_NAME"].ToString());
+                        }
                     }
                 }
 
@@ -70,7 +96,6 @@ namespace SystemLivraria.forms
                     {
                         conn.Open();
 
-                        // Lista as colunas da tabela selecionada
                         string queryCols = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tabela ORDER BY ORDINAL_POSITION";
                         using (SqlCommand cmd = new SqlCommand(queryCols, conn))
                         {
@@ -99,10 +124,7 @@ namespace SystemLivraria.forms
             CarregarTabela();
         }
 
-        private void cbo_coluna_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Aguarda o clique no botão "Consultar"
-        }
+        private void cbo_coluna_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void cbo_filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -119,10 +141,7 @@ namespace SystemLivraria.forms
             }
         }
 
-        private void txt_filtro_TextChanged(object sender, EventArgs e)
-        {
-            // Aguarda o clique no botão "Consultar"
-        }
+        private void txt_filtro_TextChanged(object sender, EventArgs e) { }
 
         private void btn_consulta_Click(object sender, EventArgs e)
         {
@@ -230,10 +249,7 @@ namespace SystemLivraria.forms
         }
 
         private void label1_Click(object sender, EventArgs e) { }
-
         private void panel1_Paint(object sender, PaintEventArgs e) { }
-
         private void panelPersonalizado3_Paint(object sender, PaintEventArgs e) { }
-
     }
 }

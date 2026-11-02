@@ -30,17 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet21 = new SystemLivraria.data.DataSet2();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSet22 = new SystemLivraria.data.DataSet2();
             this.estoqueTableAdapter1 = new SystemLivraria.data.DataSet2TableAdapters.EstoqueTableAdapter();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.estoqueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // estoqueBindingSource
+            // 
+            this.estoqueBindingSource.DataMember = "Estoque";
+            this.estoqueBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.dataSet21;
+            this.bindingSource1.Position = 0;
+            // 
+            // dataSet21
+            // 
+            this.dataSet21.DataSetName = "DataSet2";
+            this.dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataSet21.Disposed += new System.EventHandler(this.reportViewer1_Load);
             // 
             // reportViewer1
             // 
@@ -55,12 +71,6 @@
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // dataSet21
-            // 
-            this.dataSet21.DataSetName = "DataSet2";
-            this.dataSet21.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            this.dataSet21.Disposed += new System.EventHandler(this.reportViewer1_Load);
-            // 
             // dataSet22
             // 
             this.dataSet22.DataSetName = "DataSet2";
@@ -69,16 +79,6 @@
             // estoqueTableAdapter1
             // 
             this.estoqueTableAdapter1.ClearBeforeFill = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.dataSet21;
-            this.bindingSource1.Position = 0;
-            // 
-            // estoqueBindingSource
-            // 
-            this.estoqueBindingSource.DataMember = "Estoque";
-            this.estoqueBindingSource.DataSource = this.bindingSource1;
             // 
             // frmRltEstoque
             // 
@@ -89,10 +89,10 @@
             this.Name = "frmRltEstoque";
             this.Text = "frmRltEstoque";
             this.Load += new System.EventHandler(this.frmRltEstoque_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.estoqueBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

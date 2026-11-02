@@ -12,139 +12,98 @@ namespace SystemLivraria.forms
 {
     public partial class frmMDI : Form
     {
+        private int nivelUsuario;
+
         public frmMDI()
         {
             InitializeComponent();
+            nivelUsuario = 3; // Padrão caso abra direto
+            AplicarPermissoes();
+        }
+
+        public frmMDI(int nivel)
+        {
+            InitializeComponent();
+            nivelUsuario = nivel;
+            AplicarPermissoes();
+        }
+
+        private void AplicarPermissoes()
+        {
+            // Nível 1: Funcionário
+            // - Consulta: só o estoque
+            // - Cadastro: só cadastra produto, autor, editora e cliente
+            if (nivelUsuario == 1)
+            {
+                if (funcionáriosToolStripMenuItem != null) funcionáriosToolStripMenuItem.Visible = false;
+                if (fornecedoresToolStripMenuItem != null) fornecedoresToolStripMenuItem.Visible = false;
+                // Ocultar menus de relatórios ou financeiro se existirem no seu MDI
+            }
+            // Nível 2: Gerente
+            // - Consulta: estoque, vendas e compras
+            // - Cadastro: produtos, autores, editoras, clientes e funcionários
+            // - Relatório: venda, compra, estoque (sem financeiro)
+            else if (nivelUsuario == 2)
+            {
+                if (fornecedoresToolStripMenuItem != null) fornecedoresToolStripMenuItem.Visible = false;
+                // Ocultar financeiro / relatórios financeiros se houver
+            }
+            // Nível 3: Chefe (Acesso total)
+            else if (nivelUsuario == 3)
+            {
+                // Tudo visível
+            }
         }
 
         private void editoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
-            {
-                if (formAberto is frmCadEditoras)
-                {
-                    formAberto.Activate();
-                    return;
-                }
-            }
-
-            frmCadEditoras novoForm = new frmCadEditoras
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmCadEditoras>();
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
-            {
-                if (formAberto is frmCadProdutos)
-                {
-                    formAberto.Activate();
-                    return;
-                }
-            }
-
-            frmCadProdutos novoForm = new frmCadProdutos
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmCadProdutos>();
         }
 
         private void autoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
-            {
-                if (formAberto is frmCadAutores)
-                {
-                    formAberto.Activate();
-                    return;
-                }
-            }
-
-            frmCadAutores novoForm = new frmCadAutores
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmCadAutores>();
         }
 
         private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
+            // Validação extra de segurança por nível
+            if (nivelUsuario == 1 || nivelUsuario == 2)
             {
-                if (formAberto is frmCadFornecedores)
-                {
-                    formAberto.Activate();
-                    return;
-                }
+                MessageBox.Show("Acesso negado para este nível!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-
-            frmCadFornecedores novoForm = new frmCadFornecedores
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmCadFornecedores>();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
-            {
-                if (formAberto is frmCadClientes)
-                {
-                    formAberto.Activate();
-                    return;
-                }
-            }
-
-            frmCadClientes novoForm = new frmCadClientes
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmCadClientes>();
         }
 
         private void excluirProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
-            {
-                if (formAberto is frmExcluirProdutos)
-                {
-                    formAberto.Activate();
-                    return;
-                }
-            }
-
-            frmExcluirProdutos novoForm = new frmExcluirProdutos
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmExcluirProdutos>();
         }
 
         private void funcionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form formAberto in this.MdiChildren)
+            if (nivelUsuario == 1)
             {
-                if (formAberto is frmCadFuncionarios)
-                {
-                    formAberto.Activate();
-                    return;
-                }
+                MessageBox.Show("Acesso negado para funcionários!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-
-            frmCadFuncionarios novoForm = new frmCadFuncionarios
-            {
-                MdiParent = this
-            };
-            novoForm.Show();
+            AbrirFormulario<frmCadFuncionarios>();
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Passa o nível atual do usuário ao abrir a tela de consulta
             foreach (Form formAberto in this.MdiChildren)
             {
                 if (formAberto is frmConsulta)
@@ -154,14 +113,31 @@ namespace SystemLivraria.forms
                 }
             }
 
-            frmConsulta novoForm = new frmConsulta
+            frmConsulta novoForm = new frmConsulta(nivelUsuario)
             {
                 MdiParent = this
             };
             novoForm.Show();
-
         }
+
+        private void AbrirFormulario<T>() where T : Form, new()
+        {
+            foreach (Form formAberto in this.MdiChildren)
+            {
+                if (formAberto is T)
+                {
+                    formAberto.Activate();
+                    return;
+                }
+            }
+
+            T novoForm = new T
+            {
+                MdiParent = this
+            };
+            novoForm.Show();
+        }
+
+        private void frmMDI_Load(object sender, EventArgs e) { }
     }
 }
-
-

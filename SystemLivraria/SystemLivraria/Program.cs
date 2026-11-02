@@ -17,7 +17,7 @@ namespace SystemLivraria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmConsulta());
+            Application.Run(new frmSplashScreen());
         }
     }
 }
