@@ -1,5 +1,25 @@
 select * from Estoque;
 
+ALTER TABLE Financeiro
+ADD
+    Categoria_Fin VARCHAR(50) NULL,
+    Situacao_Fin VARCHAR(20) NOT NULL
+        CONSTRAINT DF_Fin_Situacao DEFAULT 'Pendente',
+    Id_UsuFin INT NULL,
+    Data_Vencimento DATE NULL,
+    Data_Quitacao DATE NULL;
+
+--Ajustar a restrição
+ALTER TABLE Financeiro
+DROP CONSTRAINT CK_Financeiro_Origem;
+GO
+
+ALTER TABLE dbo.Financeiro ADD CONSTRAINT CK_Financeiro_Origem CHECK (
+   NOT (Id_CMP IS NOT NULL AND Id_VDS IS NOT NULL)
+   AND (Id_CMP IS NOT NULL OR Id_VDS IS NOT NULL OR Categoria_Fin IS NOT NULL)
+);
+GO
+
 -- 10 gêneros literários
 INSERT INTO Categorias (Nome_Cat, Desc_Cat) VALUES
 ('Romance',             'Obras de ficção centradas em relações humanas'),
