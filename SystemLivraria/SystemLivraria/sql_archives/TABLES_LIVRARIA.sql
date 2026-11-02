@@ -193,5 +193,31 @@ IF COL_LENGTH('dbo.Movimentacoes_Financeiro','Referencia_Mov') IS NULL
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Movimentacoes_Financeiro') AND name='UX_Mov_Referencia')
     CREATE UNIQUE INDEX UX_Mov_Referencia ON dbo.Movimentacoes_Financeiro(Referencia_Mov) WHERE Referencia_Mov IS NOT NULL;
 GO
+IF EXISTS (SELECT 1 FROM dbo.Financeiro WHERE Id_VDS IS NOT NULL GROUP BY Id_VDS HAVING COUNT(*)>1)
+   THROW 51001, 'Ha mais de um Financeiro para a mesma venda. Corrija antes dos indices.', 1;
+IF EXISTS (SELECT 1 FROM dbo.Financeiro WHERE Id_CMP IS NOT NULL GROUP BY Id_CMP HAVING COUNT(*)>1)
+   THROW 51002, 'Ha mais de um Financeiro para a mesma compra. Corrija antes dos indices.', 1;
+GO
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Financeiro') AND name='UX_Fin_Venda')
+    CREATE UNIQUE INDEX UX_Fin_Venda ON dbo.Financeiro(Id_VDS) WHERE Id_VDS IS NOT NULL;
+IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE object_id=OBJECT_ID('dbo.Financeiro') AND name='UX_Fin_Compra')
+    CREATE UNIQUE INDEX UX_Fin_Compra ON dbo.Financeiro(Id_CMP) WHERE Id_CMP IS NOT NULL;
+GO
+IF OBJECT_ID('dbo.Historico_Financeiro','U') IS NULL
+BEGIN
+    CREATE TABLE dbo.Historico_Financeiro (
+        Id_Hist BIGINT IDENTITY(1,1) PRIMARY KEY,
+        Id_Fin INT NOT NULL,  -- sem FK: preserva registro mesmo apos DELETE da origem
+        Operacao VARCHAR(10) NOT NULL,
+        Valor_Anterior DECIMAL(10,2) NULL,
+        Valor_Novo DECIMAL(10,2) NULL,
+        Situacao_Anterior VARCHAR(20) NULL,
+        Situacao_Nova VARCHAR(20) NULL,
+        Categoria_Anterior VARCHAR(50) NULL,
+        Categoria_Nova VARCHAR(50) NULL,
+        Data_Alteracao DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+        Usuario_SQL SYSNAME NULL
+    );
+END;
 GO
 
