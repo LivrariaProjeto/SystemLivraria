@@ -137,3 +137,32 @@ from Itens_Vendas IV
 inner join Produtos P
 on IV.Id_Pro = P.Id_Pro
 group by P.Id_Pro, P.Nome_Pro;
+
+CREATE OR ALTER VIEW dbo.View_ContasFinanceiras AS
+SELECT
+    f.Id_Fin, f.Id_VDS, f.Id_CMP,
+    COALESCE(f.Categoria_Fin, CASE WHEN f.Id_VDS IS NOT NULL THEN 'Venda'
+                                  WHEN f.Id_CMP IS NOT NULL THEN 'Compra'
+                                  ELSE 'Outros' END) AS Categoria,
+    f.Tipo_VDS, f.Desc_VDS, f.Valor_VDS AS Valor_Original,
+    COALESCE(p.Valor_Pago,0) AS Valor_Realizado,
+    f.Valor_VDS-COALESCE(p.Valor_Pago,0) AS Saldo_Pendente,
+    f.Situacao_Fin, f.Data_VDS, f.Data_Vencimento, f.Data_Quitacao, f.Id_UsuFin
+FROM dbo.Financeiro f
+OUTER APPLY (
+    SELECT SUM(CONVERT(DECIMAL(19,2),m.Valor_Mov)) AS Valor_Pago
+    FROM dbo.Movimentacoes_Financeiro m WHERE m.Id_Fin=f.Id_Fin
+) p;
+GO
+
+CREATE OR ALTER VIEW dbo.View_FluxoCaixa AS
+SELECT m.Id_Mov,m.Id_Fin,m.Data_Mov,
+       CASE WHEN UPPER(LTRIM(RTRIM(f.Tipo_VDS))) IN ('RECEITA','ENTRADA')
+                 THEN 'Entrada' ELSE 'Saida' END AS Tipo_Movimento,
+       m.Valor_Mov,
+       CASE WHEN UPPER(LTRIM(RTRIM(f.Tipo_VDS))) IN ('RECEITA','ENTRADA')
+                 THEN m.Valor_Mov ELSE -m.Valor_Mov END AS Valor_Assinado,
+       m.Id_Usu
+FROM dbo.Movimentacoes_Financeiro m
+JOIN dbo.Financeiro f ON f.Id_Fin=m.Id_Fin;
+GO
