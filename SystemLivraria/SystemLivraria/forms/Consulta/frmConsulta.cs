@@ -48,6 +48,7 @@ namespace SystemLivraria.forms
             else if (nivelUsuario == 2)
             {
                 cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Produtos");
                 cbo_tabela.Items.Add("Vendas");
                 cbo_tabela.Items.Add("Compras");
             }
@@ -55,6 +56,7 @@ namespace SystemLivraria.forms
             {
                 // Se for chefe, adiciona as tabelas principais manualmente (evita usar GetSchema que é avançado)
                 cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Produtos");
                 cbo_tabela.Items.Add("Vendas");
                 cbo_tabela.Items.Add("Compras");
                 cbo_tabela.Items.Add("Clientes");
