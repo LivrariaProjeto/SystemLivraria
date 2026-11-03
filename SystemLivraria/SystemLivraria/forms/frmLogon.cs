@@ -50,7 +50,7 @@ namespace SystemLivraria.forms
                 if (result.Rows.Count > 0)
                 {
                     // Captura o nível de permissão (Id_Permi) do usuário logado
-                    int nivelPermissao = Convert.ToInt32(result.Rows[0]["Id_Permi"]);
+                    int nivelPermissao = Convert.ToInt32(result.Rows[0]["Id_Permi"]); //***
 
                     MessageBox.Show("Login realizado com sucesso!", "LOGIN REALIZADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -804,4 +804,54 @@ ALTER TABLE Categorias ADD CONSTRAINT UQ_Categorias_Nome UNIQUE (Nome_Cat);
 ALTER TABLE Editoras   ADD CONSTRAINT UQ_Editoras_Nome   UNIQUE (Nome_Edi);
 ALTER TABLE Autores    ADD CONSTRAINT UQ_Autores_Nome    UNIQUE (Nome_Autor);
 GO
+
+CREATE OR ALTER PROCEDURE dbo.Proc_RegistrarMovFinanceira
+    @Id_Fin INT,
+    @Valor_Mov DECIMAL(10,2),
+    @Id_Usu INT = NULL,
+    @Referencia_Mov VARCHAR(100) -- usar referencia unica a cada pagamento
+AS
+BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
+    BEGIN TRY
+        BEGIN TRANSACTION;
+        IF @Referencia_Mov IS NULL OR LTRIM(RTRIM(@Referencia_Mov)) = ''
+            THROW 51016, 'Informe identificador unico para este pagamento.', 1;
+        IF @Valor_Mov IS NULL OR @Valor_Mov <= 0
+            THROW 51010, 'Valor do pagamento/recebimento deve ser positivo.', 1;
+        DECLARE @Total DECIMAL(10,2), @Tipo VARCHAR(20), @Pago DECIMAL(19,2), @Situacao VARCHAR(20);
+        SELECT @Total=Valor_VDS,@Tipo=Tipo_VDS,@Situacao=Situacao_Fin
+        FROM dbo.Financeiro WITH (UPDLOCK,HOLDLOCK)
+        WHERE Id_Fin=@Id_Fin;
+        IF @Total IS NULL
+            THROW 51011, 'Lancamento financeiro inexistente.', 1;
+        IF @Situacao = 'Cancelado'
+            THROW 51012, 'Nao se pode movimentar um lancamento cancelado.', 1;
+        IF UPPER(LTRIM(RTRIM(@Tipo))) NOT IN ('RECEITA','DESPESA','ENTRADA','SAIDA')
+            THROW 51013, 'Tipo_VDS deve indicar Receita/Despesa/Entrada/Saida.', 1;
+        IF @Id_Usu IS NOT NULL AND NOT EXISTS (SELECT 1 FROM dbo.Usuarios WHERE Id_Usu=@Id_Usu)
+            THROW 51014, 'Usuario informado nao existe.', 1;
+        SELECT @Pago=COALESCE(SUM(CONVERT(DECIMAL(19,2),Valor_Mov)),0)
+        FROM dbo.Movimentacoes_Financeiro WHERE Id_Fin=@Id_Fin;
+        IF @Pago + @Valor_Mov > @Total
+            THROW 51015, 'Pagamento/recebimento ultrapassa o saldo da conta.', 1;
+        INSERT INTO dbo.Movimentacoes_Financeiro(Id_Fin,Valor_Mov,Id_Usu,Referencia_Mov)
+        VALUES (@Id_Fin,@Valor_Mov,@Id_Usu,@Referencia_Mov);
+        UPDATE dbo.Financeiro
+        SET Situacao_Fin = CASE
+                WHEN @Pago + @Valor_Mov = @Total AND UPPER(LTRIM(RTRIM(@Tipo))) IN ('DESPESA','SAIDA') THEN 'Pago'
+                WHEN @Pago + @Valor_Mov = @Total THEN 'Recebido'
+                ELSE 'Parcial' END,
+            Data_Quitacao = CASE WHEN @Pago + @Valor_Mov = @Total THEN CONVERT(DATE,GETDATE()) ELSE NULL END,
+            Id_UsuFin = COALESCE(@Id_Usu,Id_UsuFin)
+        WHERE Id_Fin=@Id_Fin;
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION;
+        THROW;
+    END CATCH
+END;
+GO
  

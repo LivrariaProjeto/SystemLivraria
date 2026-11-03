@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\epsm\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\consulta\\frmconsulta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmmdi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +42,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "frmConsulta.cs [Design]",
               "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Consulta\\frmConsulta.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\Consulta\\frmConsulta.cs",
@@ -54,15 +54,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frmMDI.cs [Design]",
               "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmMDI.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmMDI.cs",
               "ToolTip": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmMDI.cs [Design]",
               "RelativeToolTip": "SystemLivraria\\forms\\frmMDI.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T16:35:27.421Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-11-02T16:35:27.421Z"
             },
             {
               "$type": "Document",
@@ -74,31 +73,30 @@
               "RelativeToolTip": "SystemLivraria\\forms\\frmMDI.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAIwEgAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-02T15:50:43.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-02T15:50:43.496Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "frmLogon.cs",
               "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
               "ToolTip": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
               "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwBQAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-02T15:46:24.749Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "frmConsulta.cs",
               "DocumentMoniker": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Consulta\\frmConsulta.cs",
               "RelativeDocumentMoniker": "SystemLivraria\\forms\\Consulta\\frmConsulta.cs",
               "ToolTip": "C:\\Users\\epsm\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Consulta\\frmConsulta.cs",
               "RelativeToolTip": "SystemLivraria\\forms\\Consulta\\frmConsulta.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAuwIEAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAwwJYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-02T15:41:17.353Z",
               "EditorCaption": ""

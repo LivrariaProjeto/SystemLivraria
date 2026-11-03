@@ -7,20 +7,20 @@ using System.Windows.Forms;
 
 namespace SystemLivraria.forms
 {
-    public partial class frmConsulta : System.Windows.Forms.Form
+    public partial class frmConsulta : Form
     {
+        // Variáveis globais simples
         private string tabela = "";
-        private int nivelUsuario;
+        private int nivelUsuario = 3;
         private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
 
         // Construtor padrão
         public frmConsulta()
         {
             InitializeComponent();
-            nivelUsuario = 3; // Padrão
         }
 
-        // Construtor que recebe o nível de acesso
+        // Construtor que recebe o nível
         public frmConsulta(int nivel)
         {
             InitializeComponent();
@@ -29,108 +29,76 @@ namespace SystemLivraria.forms
 
         private void frmConsulta_Load(object sender, EventArgs e)
         {
-            // Popula os tipos de filtro no cbo_filtro
+            // Limpa e adiciona os itens do filtro manualmente
             cbo_filtro.Items.Clear();
             cbo_filtro.Items.Add("Todos");
             cbo_filtro.Items.Add("Começa com");
             cbo_filtro.Items.Add("Termina com");
             cbo_filtro.Items.Add("Igual a");
-            cbo_filtro.Items.Add("Data");
             cbo_filtro.SelectedIndex = 0;
 
-            // Carrega as tabelas no ComboBox com base estrita no nível do usuário
-            try
+            // Carrega as tabelas de forma bem direta com IF/ELSE simples
+            cbo_tabela.Items.Clear();
+
+            if (nivelUsuario == 1)
             {
-                cbo_tabela.Items.Clear();
-
-                if (nivelUsuario == 1)
-                {
-                    // 1 --> funcionário --> consulta: vê só o estoque
-                    cbo_tabela.Items.Add("Estoque");
-                }
-                else if (nivelUsuario == 2)
-                {
-                    // 2 --> gerente --> consulta: estoque, vendas e compras
-                    cbo_tabela.Items.Add("Estoque");
-                    cbo_tabela.Items.Add("Vendas");
-                    cbo_tabela.Items.Add("Compras");
-                }
-                else
-                {
-                    // 3 --> chefe --> pode consultar todas as tabelas necessárias / financeiro
-                    using (SqlConnection conn = new SqlConnection(conexao))
-                    {
-                        conn.Open();
-                        DataTable schemaTables = conn.GetSchema("Tables", new string[] { null, null, null, "BASE TABLE" });
-
-                        foreach (DataRow row in schemaTables.Rows)
-                        {
-                            cbo_tabela.Items.Add(row["TABLE_NAME"].ToString());
-                        }
-                    }
-                }
-
-                if (cbo_tabela.Items.Count > 0)
-                {
-                    cbo_tabela.SelectedIndex = 0;
-                }
+                cbo_tabela.Items.Add("Estoque");
             }
-            catch (Exception ex)
+            else if (nivelUsuario == 2)
             {
-                MessageBox.Show("Erro ao listar tabelas: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Vendas");
+                cbo_tabela.Items.Add("Compras");
+            }
+            else
+            {
+                // Se for chefe, adiciona as tabelas principais manualmente (evita usar GetSchema que é avançado)
+                cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Vendas");
+                cbo_tabela.Items.Add("Compras");
+                cbo_tabela.Items.Add("Clientes");
+                cbo_tabela.Items.Add("Funcionarios");
+            }
+
+            if (cbo_tabela.Items.Count > 0)
+            {
+                cbo_tabela.SelectedIndex = 0;
             }
         }
 
+
+
+
+
         private void cbo_tabela_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbo_tabela.SelectedItem == null) return;
+
+            tabela = cbo_tabela.SelectedItem.ToString();
             cbo_coluna.Items.Clear();
 
-            if (cbo_tabela.SelectedItem == null) return;
-            tabela = cbo_tabela.SelectedItem.ToString();
+            // Adicionando colunas genéricas comuns em vez de buscar no INFORMATION_SCHEMA
+            cbo_coluna.Items.Add("ID");
+            cbo_coluna.Items.Add("Nome");
+            cbo_coluna.Items.Add("Descricao");
 
-            if (!string.IsNullOrEmpty(tabela))
+            if (cbo_coluna.Items.Count > 0)
             {
-                try
-                {
-                    using (SqlConnection conn = new SqlConnection(conexao))
-                    {
-                        conn.Open();
-
-                        string queryCols = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tabela ORDER BY ORDINAL_POSITION";
-                        using (SqlCommand cmd = new SqlCommand(queryCols, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@tabela", tabela);
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                while (reader.Read())
-                                {
-                                    cbo_coluna.Items.Add(reader["COLUMN_NAME"].ToString());
-                                }
-                            }
-                        }
-                    }
-
-                    if (cbo_coluna.Items.Count > 0)
-                    {
-                        cbo_coluna.SelectedIndex = 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao carregar as colunas da tabela: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                cbo_coluna.SelectedIndex = 0;
             }
 
             CarregarTabela();
         }
 
-        private void cbo_coluna_SelectedIndexChanged(object sender, EventArgs e) { }
+
+
 
         private void cbo_filtro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbo_filtro.SelectedItem?.ToString() == "Todos")
+            // Se escolher "Todos", desativa a caixa de texto do filtro
+            if (cbo_filtro.Text == "Todos")
             {
-                txt_filtro.Clear();
+                txt_filtro.Text = "";
                 txt_filtro.Enabled = false;
                 CarregarTabela();
             }
@@ -141,106 +109,74 @@ namespace SystemLivraria.forms
             }
         }
 
-        private void txt_filtro_TextChanged(object sender, EventArgs e) { }
+
 
         private void btn_consulta_Click(object sender, EventArgs e)
         {
             CarregarTabela();
         }
 
+
+
         private void btn_limpar_Click(object sender, EventArgs e)
         {
-            txt_filtro.Clear();
-
-            if (cbo_filtro.Items.Count > 0)
-                cbo_filtro.SelectedIndex = 0;
-
-            if (cbo_coluna.Items.Count > 0)
-                cbo_coluna.SelectedIndex = 0;
-
+            txt_filtro.Text = "";
+            if (cbo_filtro.Items.Count > 0) cbo_filtro.SelectedIndex = 0;
+            if (cbo_coluna.Items.Count > 0) cbo_coluna.SelectedIndex = 0;
             CarregarTabela();
         }
 
+
+
+
+
         private void CarregarTabela()
         {
-            if (string.IsNullOrEmpty(tabela)) return;
+            if (tabela == "") return;
 
-            string coluna = cbo_coluna.SelectedItem?.ToString();
-            string tipoFiltro = cbo_filtro.SelectedItem?.ToString() ?? "Todos";
-            string termo = txt_filtro.Text.Trim();
+            string coluna = "";
+            if (cbo_coluna.SelectedItem != null)
+            {
+                coluna = cbo_coluna.SelectedItem.ToString();
+            }
 
-            string sql = $"SELECT * FROM [{tabela}]";
+            string filtro = cbo_filtro.Text;
+            string textoFiltro = txt_filtro.Text.Trim();
+
+            // Montagem básica da string SQL
+            string sql = "SELECT * FROM " + tabela;
+
+            // Usando IFs normais em vez de switch/case avançado
+            if (filtro != "Todos" && textoFiltro != "" && coluna != "")
+            {
+                if (filtro == "Começa com")
+                {
+                    sql = "SELECT * FROM " + tabela + " WHERE " + coluna + " LIKE '" + textoFiltro + "%'";
+                }
+                else if (filtro == "Termina com")
+                {
+                    sql = "SELECT * FROM " + tabela + " WHERE " + coluna + " LIKE '%" + textoFiltro + "'";
+                }
+                else if (filtro == "Igual a")
+                {
+                    sql = "SELECT * FROM " + tabela + " WHERE " + coluna + " = '" + textoFiltro + "'";
+                }
+            }
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(conexao))
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
+                // Conexão e preenchimento da tabela de forma bem tradicional
+                SqlConnection conn = new SqlConnection(conexao);
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
 
-                    if (tipoFiltro != "Todos" && !string.IsNullOrEmpty(termo) && !string.IsNullOrEmpty(coluna))
-                    {
-                        switch (tipoFiltro)
-                        {
-                            case "Começa com":
-                                sql += $" WHERE [{coluna}] LIKE @termo + '%'";
-                                cmd.Parameters.AddWithValue("@termo", termo);
-                                break;
-
-                            case "Termina com":
-                                sql += $" WHERE [{coluna}] LIKE '%' + @termo";
-                                cmd.Parameters.AddWithValue("@termo", termo);
-                                break;
-
-                            case "Igual a":
-                                sql += $" WHERE [{coluna}] = @termo";
-                                cmd.Parameters.AddWithValue("@termo", termo);
-                                break;
-
-                            case "Data":
-                                if (DateTime.TryParse(termo, out DateTime dataValida))
-                                {
-                                    sql += $" WHERE CAST([{coluna}] AS DATE) = @termo";
-                                    cmd.Parameters.AddWithValue("@termo", dataValida.Date);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Introduza uma data válida (exemplo: dd/mm/aaaa).", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    return;
-                                }
-                                break;
-                        }
-                    }
-
-                    cmd.CommandText = sql;
-
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                    }
-                }
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar a tabela: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
             }
-        }
-
-        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            if (e.Index < 0) return;
-
-            e.DrawBackground();
-
-            string text = cbo_tabela.Items[e.Index].ToString();
-            using (Brush brush = new SolidBrush(e.ForeColor))
-            {
-                e.Graphics.DrawString(text, e.Font, brush, e.Bounds);
-            }
-
-            e.DrawFocusRectangle();
         }
 
         private void btn_Consultar_Click(object sender, EventArgs e)
@@ -248,13 +184,13 @@ namespace SystemLivraria.forms
             CarregarTabela();
         }
 
+        // Métodos vazios mantidos apenas para não quebrar os eventos do Visual Studio
+        private void cbo_coluna_SelectedIndexChanged(object sender, EventArgs e) { }
+        private void txt_filtro_TextChanged(object sender, EventArgs e) { }
+        private void comboBox1_DrawItem(object sender, DrawItemEventArgs e) { }
         private void label1_Click(object sender, EventArgs e) { }
         private void panel1_Paint(object sender, PaintEventArgs e) { }
         private void panelPersonalizado3_Paint(object sender, PaintEventArgs e) { }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }
