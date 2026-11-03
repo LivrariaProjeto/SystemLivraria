@@ -48,8 +48,8 @@
             this.btn_cadProdutos = new System.Windows.Forms.Button();
             this.btn_cadastro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnl_tudo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.pnl_relatoriosSubmenu.SuspendLayout();
             this.pnl_cadastroSubmenu.SuspendLayout();
@@ -354,6 +354,15 @@
             this.panel2.Size = new System.Drawing.Size(300, 125);
             this.panel2.TabIndex = 0;
             // 
+            // pnl_tudo
+            // 
+            this.pnl_tudo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_tudo.Location = new System.Drawing.Point(300, 0);
+            this.pnl_tudo.Name = "pnl_tudo";
+            this.pnl_tudo.Size = new System.Drawing.Size(1604, 1041);
+            this.pnl_tudo.TabIndex = 1;
+            this.pnl_tudo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_tudo_Paint);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -363,14 +372,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // pnl_tudo
-            // 
-            this.pnl_tudo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_tudo.Location = new System.Drawing.Point(300, 0);
-            this.pnl_tudo.Name = "pnl_tudo";
-            this.pnl_tudo.Size = new System.Drawing.Size(1604, 1041);
-            this.pnl_tudo.TabIndex = 1;
             // 
             // frmDashboard
             // 

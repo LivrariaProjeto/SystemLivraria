@@ -89,6 +89,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_250064DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_250064DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_250064DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_250064DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_250064DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_250064DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="forms\Cadastro\frmCadAutores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +182,12 @@
     <Compile Include="forms\Relatorios\frmRltEstoque.Designer.cs">
       <DependentUpon>frmRltEstoque.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Relatorios\frmRltMovEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Relatorios\frmRltMovEstoque.Designer.cs">
+      <DependentUpon>frmRltMovEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\Cadastro\frmCadAutores.resx">
@@ -208,7 +229,12 @@
     <EmbeddedResource Include="forms\Relatorios\frmRltEstoque.resx">
       <DependentUpon>frmRltEstoque.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Relatorios\frmRltMovEstoque.resx">
+      <DependentUpon>frmRltMovEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Relatorios\ReportEntradas.rdlc" />
     <EmbeddedResource Include="forms\Relatorios\ReportEstoque.rdlc" />
+    <EmbeddedResource Include="forms\Relatorios\ReportMovEstoque.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -232,6 +258,39 @@
     </None>
     <None Include="data\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="db_250064DataSet.xsc">
+      <DependentUpon>db_250064DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_250064DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_250064DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_250064DataSet.xss">
+      <DependentUpon>db_250064DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_250064DataSet1.xsc">
+      <DependentUpon>db_250064DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_250064DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_250064DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_250064DataSet1.xss">
+      <DependentUpon>db_250064DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_250064DataSet2.xsc">
+      <DependentUpon>db_250064DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="db_250064DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_250064DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_250064DataSet2.xss">
+      <DependentUpon>db_250064DataSet2.xsd</DependentUpon>
     </None>
     <None Include="forms\.gitkeep" />
     <None Include="packages.config" />

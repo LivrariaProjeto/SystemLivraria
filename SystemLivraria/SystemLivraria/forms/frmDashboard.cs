@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SystemLivraria.forms.Relatorios;
 
 namespace SystemLivraria.forms
 {
@@ -200,6 +201,7 @@ namespace SystemLivraria.forms
 
         private void btn_rltMovimentoEstoque_Click(object sender, EventArgs e)
         {
+            AbrirFormulario<frmRltMovEstoque>();
             hideSubmenu();
         }
 
@@ -256,6 +258,11 @@ namespace SystemLivraria.forms
         }
 
         private void frmDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_tudo_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -22,6 +22,8 @@ namespace SystemLivraria.forms.Relatorios
 
         private void frmRltEstoque_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'db_250064DataSet.Estoque'. Você pode movê-la ou removê-la conforme necessário.
+            this.estoqueTableAdapter.Fill(this.db_250064DataSet.Estoque);
             try
             {
                 // 1. Instancia o DataSet e o TableAdapter correspondentes
