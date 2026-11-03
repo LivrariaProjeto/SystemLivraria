@@ -175,14 +175,74 @@ FROM dbo.Movimentacoes_Financeiro m
 JOIN dbo.Financeiro f ON f.Id_Fin=m.Id_Fin;
 GO
 
-CREATE VIEW vw_Historico_Estoque AS
+CREATE OR ALTER VIEW dbo.View_EstoqueAtual AS
 SELECT
-    Id_Historico,
-    Id_Est,
-    Id_Pro,
-    Tipo_Operacao,
-    Qtd_Anterior,
-    Qtd_Nova,
-    Data_Alteracao
-FROM Historico_Estoque;
+    P.Id_Pro,
+    P.Nome_Pro,
+    P.ISBN_Pro,
+    P.Id_Cat,
+    C.Nome_Cat,
+    A.Nome_Autor,
+    ED.Nome_Edi,
+    S.QTD_Est,
+    S.Est_Min,
+    S.Est_Max,
+    P.Preco_Pro,
+    S.QTD_Est * P.Preco_Pro AS Valor_Estoque,
+    CASE
+        WHEN S.QTD_Est <= 0                          THEN 'Sem Estoque'
+        WHEN S.QTD_Est <= S.Est_Min                  THEN 'Estoque Baixo'
+        WHEN S.Est_Max > 0 AND S.QTD_Est > S.Est_Max THEN 'Estoque Alto'
+        ELSE 'Normal'
+    END AS Status_Est
+FROM (
+    SELECT
+        P2.Id_Pro,
+        SUM(COALESCE(E.QTD_Est, 0)) AS QTD_Est,
+        MAX(COALESCE(E.Est_Min, 0)) AS Est_Min,
+        MAX(COALESCE(E.Est_Max, 0)) AS Est_Max
+    FROM dbo.Produtos P2
+    LEFT JOIN dbo.Estoque E ON E.Id_Pro = P2.Id_Pro
+    GROUP BY P2.Id_Pro
+) S
+INNER JOIN dbo.Produtos   P  ON P.Id_Pro  = S.Id_Pro
+LEFT  JOIN dbo.Categorias C  ON C.Id_Cat   = P.Id_Cat
+LEFT  JOIN dbo.Autores    A  ON A.Id_Autor = P.Id_Autor
+LEFT  JOIN dbo.Editoras   ED ON ED.Id_Edi  = P.Id_Edi;
+GO
+
+CREATE OR ALTER VIEW dbo.View_MovimentacaoEstoque AS
+SELECT
+    C.Data_CMP                       AS Data_Mov,
+    'Entrada'                        AS Tipo_Mov,
+    'Compra'                         AS Origem,
+    C.Id_CMP                         AS Id_Documento,
+    P.Id_Pro,
+    P.Nome_Pro,
+    IC.QTD_Item                      AS Quantidade,
+    IC.QTD_Item                      AS Quantidade_Assinada,
+    IC.Preco_Unitario                AS Preco_Unit,
+    IC.QTD_Item * IC.Preco_Unitario  AS Valor_Total,
+    F.Nome_Forne                     AS Parceiro
+FROM dbo.Itens_CMP IC
+INNER JOIN dbo.Compras      C ON C.Id_CMP   = IC.Id_CMP
+INNER JOIN dbo.Produtos     P ON P.Id_Pro   = IC.Id_Pro
+INNER JOIN dbo.Fornecedores F ON F.Id_Forne = C.Id_Forne
+UNION ALL
+SELECT
+    V.Data_VDS,
+    'Saida',
+    'Venda',
+    V.Id_VDS,
+    P.Id_Pro,
+    P.Nome_Pro,
+    IV.QTD_Item,
+    -IV.QTD_Item,
+    IV.Preco_Uni,
+    IV.QTD_Item * IV.Preco_Uni,
+    CL.Nome_Cli
+FROM dbo.Itens_Vendas IV
+INNER JOIN dbo.Vendas   V  ON V.Id_VDS  = IV.Id_VDS
+INNER JOIN dbo.Produtos P  ON P.Id_Pro  = IV.Id_Pro
+INNER JOIN dbo.Cliente  CL ON CL.Id_Cli = V.Id_Cli;
 GO
