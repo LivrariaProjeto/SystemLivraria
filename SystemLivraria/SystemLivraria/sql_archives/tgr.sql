@@ -7,14 +7,14 @@ begin
 
 	update Vendas
 	set Valor_Total = (
-		select isnull(sum(iv.QTD_Item * iv.Preco_Unitario), 0)
-		from Itens_Vendas iv
-		where iv.Id_Vendas = Vendas.Id_Vendas
+		select isnull(sum(iv.QTD_Item * iv.Preco_Uni), 0)
+		from Itens_VDS iv
+		where iv.Id_VDS = Vendas.Id_VDS
 	)
-	where Vendas.Id_Vendas in (
-		select Id_Vendas from inserted
+	where Vendas.Id_VDS in (
+		select Id_VDS from inserted
 		union
-		select Id_Vendas from deleted
+		select Id_VDS from deleted
 	);
 end;
 go
