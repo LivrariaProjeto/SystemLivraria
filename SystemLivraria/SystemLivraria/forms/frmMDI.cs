@@ -139,5 +139,10 @@ namespace SystemLivraria.forms
         }
 
         private void frmMDI_Load(object sender, EventArgs e) { }
+
+        private void estoqueToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

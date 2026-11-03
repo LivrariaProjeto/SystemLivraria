@@ -73,6 +73,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\ButtonPersonalizado.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="classes\ClasseEstoque.cs" />
     <Compile Include="classes\PanelPersonalizado.cs">
       <SubType>Component</SubType>

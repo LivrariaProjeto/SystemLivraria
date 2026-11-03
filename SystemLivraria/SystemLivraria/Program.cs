@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SystemLivraria.forms.Relatorios;
 
 namespace SystemLivraria
 {
@@ -17,7 +18,7 @@ namespace SystemLivraria
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSplashScreen());
+            Application.Run(new frmRltEstoque());
         }
     }
 }
