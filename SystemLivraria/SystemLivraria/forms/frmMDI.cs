@@ -144,5 +144,10 @@ namespace SystemLivraria.forms
         {
             
         }
+
+        private void cadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
