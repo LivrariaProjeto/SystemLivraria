@@ -1,0 +1,221 @@
+INSERT INTO Cliente
+(Nome_Cli, Tel_Cli, CPF_Cli, Email_Cli, Endereco_Cli)
+VALUES
+('Joao Silva', '(11) 99999-1111', '111.111.111-11', 'joao@email.com', 'Rua das Flores, 100'),
+('Maria Oliveira', '(11) 99999-2222', '222.222.222-22', 'maria@email.com', 'Rua Central, 250'),
+('Pedro Santos', '(11) 99999-3333', '333.333.333-33', 'pedro@email.com', 'Av. Brasil, 500'),
+('Ana Costa', '(11) 99999-4444', '444.444.444-44', 'ana@email.com', 'Rua das Palmeiras, 80'),
+('Lucas Ferreira', '(11) 99999-5555', '555.555.555-55', 'lucas@email.com', 'Av. Paulista, 120');
+go
+
+INSERT INTO Compras
+(Id_Forne, Valor_CMP, Data_CMP)
+VALUES
+(14, 1500.00, '2026-01-10'),
+(15, 2300.50, '2026-01-15'),
+(16, 1800.00, '2026-02-05'),
+(14, 3200.75, '2026-02-12'),
+(15, 950.00, '2026-03-01');
+go
+
+INSERT INTO Vendas
+(Id_Cli, Data_VDS, Valor_Total)
+VALUES
+(3, '2026-03-05', 150.00),
+(4, '2026-03-06', 250.50),
+(5, '2026-03-07', 300.00),
+(6, '2026-03-08', 450.75),
+(7, '2026-03-09', 500.00);
+go
+
+SELECT * FROM Historico_Estoque;
+
+
+ALTER TABLE financeiro
+ADD saldo int;
+GO
+
+insert into Historico_Estoque(nome_Pro_Mov)
+values
+('Orgulho e Preconceito'),
+('O Jardim Secreto'),
+('')
+go
+
+create trigger atualiza_saldo_fin
+on Movimentacoes_Financeiro
+after insert, update
+as
+begin
+set nocount on;
+
+	update Financeiro
+	set saldo = (
+		select isnull(su, 0)
+		from saldo s
+		where i.Id_VDS = Vendas.Id_VDS
+	)
+	where Vendas.Id_VDS in (
+		select Id_VDS from inserted
+		union
+		select Id_VDS from deleted
+	);
+end;
+go
+
+
+
+SELECT * FROM Financeiro
+
+alter table 
+
+INSERT INTO Funcionarios
+(Nome_Funci, CPF_Funci, Cargo_Funci, Tel_Funci, DataAdmissao_Funci, Email_Funci)
+VALUES
+('Carlos Mendes', '123.456.789-01', 'Gerente', '(11) 98888-1111', '2023-01-10', 'carlos@livraria.com'),
+
+('Fernanda Lima', '234.567.890-12', 'Vendedor', '(11) 98888-2222', '2023-03-15', 'fernanda@livraria.com'),
+
+('Ricardo Alves', '345.678.901-23', 'Estoquista', '(11) 98888-3333', '2023-06-20', 'ricardo@livraria.com'),
+
+('Juliana Souza', '456.789.012-34', 'Caixa', '(11) 98888-4444', '2024-02-05', 'juliana@livraria.com'),
+
+('Marcos Oliveira', '567.890.123-45', 'Atendente', '(11) 98888-5555', '2024-05-12', 'marcos@livraria.com');
+
+INSERT INTO Usuarios
+(Id_Funci, Id_Permi, Login_usu, Senha_usu, Ativo_usu, Perfil_usu)
+VALUES
+(4, 2, 'gerente', '123', 1, 'gerente'),
+(5, 3, 'funcionario', '123', 1, 'Funcionário');
+go
+
+INSERT INTO Historico_Estoque
+(Id_Est, Id_Pro, Tipo_Operacao, Qtd_Anterior, Qtd_Nova, Nome_Pro_Mov)
+VALUES
+(2, 69, 'ENTRADA', 10, 20,'Orgulho e Preconceito'),
+(3, 70, 'SAIDA', 20, 10, 'O Jardim Secreto'),
+(4, 71, 'ENTRADA', 10, 20, 'O Chamado de Cthulhu'),
+(5, 72, 'SAIDA', 20,10 , 'A Empregada'),
+(6, 73, 'AJUSTE', 10, 20, 'O Senhor dos Anéis: A Sociedade do Anel');
+GO
+
+INSERT INTO Movimentacoes_Financeiro
+(Id_Fin, Valor_Mov, Data_Mov, Id_Usu, Referencia_Mov)
+VALUES
+(3, 150.00, SYSDATETIME(), 1, 'MOV-001'),
+(3, 250.50, SYSDATETIME(), 2, 'MOV-002'),
+(3, 300.00, SYSDATETIME(), 3, 'MOV-003'),
+(3, 450.75, SYSDATETIME(), 1, 'MOV-004'),
+(3, 500.00, SYSDATETIME(), 2, 'MOV-005');
+GO
+
+INSERT INTO Historico_Financeiro
+(
+    Id_Fin,
+    Operacao,
+    Valor_Anterior,
+    Valor_Novo,
+    Situacao_Anterior,
+    Situacao_Nova,
+    Categoria_Anterior,
+    Categoria_Nova,
+    Usuario_SQL
+)
+VALUES
+(1, 'UPDATE', 100.00, 150.00, 'PENDENTE', 'PAGO',
+ 'VENDA', 'VENDA', SYSTEM_USER),
+
+(2, 'UPDATE', 200.00, 250.50, 'PENDENTE', 'PAGO',
+ 'COMPRA', 'COMPRA', SYSTEM_USER),
+
+(3, 'INSERT', NULL, 300.00, NULL, 'PENDENTE',
+ NULL, 'VENDA', SYSTEM_USER),
+
+(4, 'UPDATE', 400.00, 450.75, 'PENDENTE', 'ATRASADO',
+ 'COMPRA', 'COMPRA', SYSTEM_USER),
+
+(5, 'DELETE', 500.00, NULL, 'PAGO', NULL,
+ 'VENDA', NULL, SYSTEM_USER);
+ GO
+
+ SELECT * FROM Historico_Estoque;
+
+SELECT * FROM Movimentacoes_Financeiro;
+
+SELECT * FROM Historico_Financeiro;
+go
+
+
+select * from Estoque
+
+CREATE OR ALTER VIEW dbo.View_EstoqueAtual AS
+SELECT
+    P.Id_Pro,
+    P.Nome_Pro,
+    P.ISBN_Pro,
+    P.Id_Cat,
+    C.Nome_Cat,
+    A.Nome_Autor,
+    ED.Nome_Edi,
+    S.QTD_Est,
+    S.Est_Min,
+    S.Est_Max,
+    P.Preco_Pro,
+    S.QTD_Est * P.Preco_Pro AS Valor_Estoque,
+    CASE
+        WHEN S.QTD_Est <= 0                          THEN 'Sem Estoque'
+        WHEN S.QTD_Est <= S.Est_Min                  THEN 'Estoque Baixo'
+        WHEN S.Est_Max > 0 AND S.QTD_Est > S.Est_Max THEN 'Estoque Alto'
+        ELSE 'Normal'
+    END AS Status_Est
+FROM (
+    SELECT
+        P2.Id_Pro,
+        SUM(COALESCE(E.QTD_Est, 0)) AS QTD_Est,
+        MAX(COALESCE(E.Est_Min, 0)) AS Est_Min,
+        MAX(COALESCE(E.Est_Max, 0)) AS Est_Max
+    FROM dbo.Produtos P2
+    LEFT JOIN dbo.Estoque E ON E.Id_Pro = P2.Id_Pro
+    GROUP BY P2.Id_Pro
+) S
+INNER JOIN dbo.Produtos   P  ON P.Id_Pro  = S.Id_Pro
+LEFT  JOIN dbo.Categorias C  ON C.Id_Cat   = P.Id_Cat
+LEFT  JOIN dbo.Autores    A  ON A.Id_Autor = P.Id_Autor
+LEFT  JOIN dbo.Editoras   ED ON ED.Id_Edi  = P.Id_Edi;
+GO
+
+CREATE OR ALTER VIEW dbo.View_MovimentacaoEstoque AS
+SELECT
+    C.Data_CMP                       AS Data_Mov,
+    'Entrada'                        AS Tipo_Mov,
+    'Compra'                         AS Origem,
+    C.Id_CMP                         AS Id_Documento,
+    P.Id_Pro,
+    P.Nome_Pro,
+    IC.QTD_Item                      AS Quantidade,
+    IC.QTD_Item                      AS Quantidade_Assinada,
+    IC.Preco_Unitario                AS Preco_Unit,
+    IC.QTD_Item * IC.Preco_Unitario  AS Valor_Total,
+    F.Nome_Forne                     AS Parceiro
+FROM dbo.Itens_CMP IC
+INNER JOIN dbo.Compras      C ON C.Id_CMP   = IC.Id_CMP
+INNER JOIN dbo.Produtos     P ON P.Id_Pro   = IC.Id_Pro
+INNER JOIN dbo.Fornecedores F ON F.Id_Forne = C.Id_Forne
+UNION ALL
+SELECT
+    V.Data_VDS,
+    'Saida',
+    'Venda',
+    V.Id_VDS,
+    P.Id_Pro,
+    P.Nome_Pro,
+    IV.QTD_Item,
+    -IV.QTD_Item,
+    IV.Preco_Uni,
+    IV.QTD_Item * IV.Preco_Uni,
+    CL.Nome_Cli
+FROM dbo.Itens_Vendas IV
+INNER JOIN dbo.Vendas   V  ON V.Id_VDS  = IV.Id_VDS
+INNER JOIN dbo.Produtos P  ON P.Id_Pro  = IV.Id_Pro
+INNER JOIN dbo.Cliente  CL ON CL.Id_Cli = V.Id_Cli;
+GO
