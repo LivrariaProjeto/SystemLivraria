@@ -40,7 +40,7 @@ namespace SystemLivraria.forms
             // Carrega as tabelas de forma bem direta com IF/ELSE simples
             cbo_tabela.Items.Clear();
 
-            if (nivelUsuario == 1)
+            if (nivelUsuario == 3)
             {
                 cbo_tabela.Items.Add("Estoque");
                 cbo_tabela.Items.Add("Produtos");

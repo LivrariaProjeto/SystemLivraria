@@ -1,6 +1,6 @@
 ﻿namespace SystemLivraria.forms
 {
-    partial class frmExcluirProdutos
+    partial class frmExcluir
     {
         /// <summary>
         /// Required designer variable.

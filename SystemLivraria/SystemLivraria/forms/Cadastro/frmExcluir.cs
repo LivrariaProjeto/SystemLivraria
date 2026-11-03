@@ -6,28 +6,55 @@ using System.Windows.Forms;
 
 namespace SystemLivraria.forms
 {
-    public partial class frmExcluirProdutos : Form
+    public partial class frmExcluir : Form
     {
         // Conexão lida a partir do App.config
         private string conexao = ConfigurationManager.ConnectionStrings["SystemLivraria.Properties.Settings.db_250064ConnectionString"].ConnectionString;
-
+        private int nivelUsuario = 3;
         private DataTable tabelaDados;
 
-        public frmExcluirProdutos()
+        public frmExcluir(int nivel)
         {
             InitializeComponent();
+            this.nivelUsuario = nivel;
         }
+
+        public frmExcluir()
+        {
+            InitializeComponent();
+            this.nivelUsuario = 3;
+        }
+
+        
 
         private void frmExcluirProdutos_Load(object sender, EventArgs e)
         {
+            if (nivelUsuario == 3)
+            {
+                MessageBox.Show("Você não tem permissão para acessar esta tela.", "Acesso negado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.BeginInvoke(new Action(() => this.Close()));
+                return;
+            }
+            
+            else if (nivelUsuario == 2)
+            {
+                cbTabelas.Items.Clear();
+                cbTabelas.Items.Add(new ItemTabela("Produtos", "Produtos", "Id_Pro", "Nome_Pro", "sp_ExcluirPro"));
+                cbTabelas.Items.Add(new ItemTabela("Cliente", "Cliente", "Id_Cli", "Nome_Cli", ""));
+            }
             // Preenche o ComboBox (Dropdown) com as tabelas, definindo a tabela, a chave primária e o nome da coluna correspondente
-            cbTabelas.Items.Clear();
-            cbTabelas.Items.Add(new ItemTabela("Produtos", "Produtos", "Id_Pro", "Nome_Pro", "sp_ExcluirPro"));
-            cbTabelas.Items.Add(new ItemTabela("Cliente", "Cliente", "Id_Cli", "Nome_Cli", ""));
-            cbTabelas.Items.Add(new ItemTabela("Estoque", "Estoque", "Id_Est", "Nome_Pro", ""));
-            cbTabelas.Items.Add(new ItemTabela("Fornecedores", "Fornecedores", "Id_Forne", "Nome_Forne", ""));
-            cbTabelas.Items.Add(new ItemTabela("Funcionários", "Funcionarios", "Id_Funci", "Nome_Funci", ""));
-            cbTabelas.Items.Add(new ItemTabela("Usuários", "Usuarios", "Id_Usu", "Login_usu", ""));
+            else
+            {
+                cbTabelas.Items.Clear();
+                cbTabelas.Items.Add(new ItemTabela("Produtos", "Produtos", "Id_Pro", "Nome_Pro", "sp_ExcluirPro"));
+                cbTabelas.Items.Add(new ItemTabela("Cliente", "Cliente", "Id_Cli", "Nome_Cli", ""));
+                cbTabelas.Items.Add(new ItemTabela("Estoque", "Estoque", "Id_Est", "Nome_Pro", ""));
+                cbTabelas.Items.Add(new ItemTabela("Fornecedores", "Fornecedores", "Id_Forne", "Nome_Forne", ""));
+                cbTabelas.Items.Add(new ItemTabela("Funcionários", "Funcionarios", "Id_Funci", "Nome_Funci", ""));
+                cbTabelas.Items.Add(new ItemTabela("Usuários", "Usuarios", "Id_Usu", "Login_usu", ""));
+            }
+            
 
             // Seleciona "Produtos" por padrão ao abrir a tela
             cbTabelas.SelectedIndex = 0;
