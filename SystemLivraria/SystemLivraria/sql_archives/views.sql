@@ -174,3 +174,15 @@ SELECT m.Id_Mov,m.Id_Fin,m.Data_Mov,
 FROM dbo.Movimentacoes_Financeiro m
 JOIN dbo.Financeiro f ON f.Id_Fin=m.Id_Fin;
 GO
+
+CREATE VIEW vw_Historico_Estoque AS
+SELECT
+    Id_Historico,
+    Id_Est,
+    Id_Pro,
+    Tipo_Operacao,
+    Qtd_Anterior,
+    Qtd_Nova,
+    Data_Alteracao
+FROM Historico_Estoque;
+GO
