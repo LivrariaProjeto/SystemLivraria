@@ -30,6 +30,7 @@
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.lbl_total = new System.Windows.Forms.Label();
+            this.cbTabelas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -37,11 +38,11 @@
             // 
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo.Location = new System.Drawing.Point(24, 20);
+            this.lbl_titulo.Location = new System.Drawing.Point(24, 18);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(210, 23);
+            this.lbl_titulo.Size = new System.Drawing.Size(181, 28);
             this.lbl_titulo.TabIndex = 0;
-            this.lbl_titulo.Text = "Excluir Produtos";
+            this.lbl_titulo.Text = "Excluir Produto";
             // 
             // lbl_busca
             // 
@@ -49,7 +50,7 @@
             this.lbl_busca.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_busca.Location = new System.Drawing.Point(25, 62);
             this.lbl_busca.Name = "lbl_busca";
-            this.lbl_busca.Size = new System.Drawing.Size(62, 18);
+            this.lbl_busca.Size = new System.Drawing.Size(71, 23);
             this.lbl_busca.TabIndex = 1;
             this.lbl_busca.Text = "Buscar";
             // 
@@ -58,18 +59,18 @@
             this.txt_busca.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_busca.Location = new System.Drawing.Point(95, 58);
             this.txt_busca.Name = "txt_busca";
-            this.txt_busca.Size = new System.Drawing.Size(360, 27);
+            this.txt_busca.Size = new System.Drawing.Size(360, 32);
             this.txt_busca.TabIndex = 2;
             this.txt_busca.TextChanged += new System.EventHandler(this.txt_busca_TextChanged);
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -78,20 +79,10 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(913, 360);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // lbl_total
-            // 
-            this.lbl_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_total.Location = new System.Drawing.Point(25, 490);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(86, 17);
-            this.lbl_total.TabIndex = 4;
-            this.lbl_total.Text = "0 produto(s)";
             // 
             // btn_excluir
             // 
@@ -121,11 +112,33 @@
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
+            // lbl_total
+            // 
+            this.lbl_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Location = new System.Drawing.Point(25, 490);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Size = new System.Drawing.Size(111, 21);
+            this.lbl_total.TabIndex = 4;
+            this.lbl_total.Text = "0 produto(s)";
+            // 
+            // cbTabelas
+            // 
+            this.cbTabelas.FormattingEnabled = true;
+            this.cbTabelas.Location = new System.Drawing.Point(461, 62);
+            this.cbTabelas.Name = "cbTabelas";
+            this.cbTabelas.Size = new System.Drawing.Size(360, 24);
+            this.cbTabelas.TabIndex = 7;
+            this.cbTabelas.Text = "Selecionar tabela";
+            this.cbTabelas.SelectedIndexChanged += new System.EventHandler(this.cbTabelas_SelectedIndexChanged_1);
+            // 
             // frmExcluirProdutos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(969, 548);
+            this.Controls.Add(this.cbTabelas);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.lbl_total);
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Label lbl_total;
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_cancelar;
+        private System.Windows.Forms.ComboBox cbTabelas;
     }
 }

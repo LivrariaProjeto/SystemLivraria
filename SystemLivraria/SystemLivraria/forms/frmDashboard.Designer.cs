@@ -37,7 +37,7 @@
             this.btn_rltMovimentoEstoque = new System.Windows.Forms.Button();
             this.btn_rltEstoqueAtual = new System.Windows.Forms.Button();
             this.btn_relatorios = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_Consulta = new System.Windows.Forms.Button();
             this.pnl_cadastroSubmenu = new System.Windows.Forms.Panel();
             this.btn_cadFuncionarios = new System.Windows.Forms.Button();
@@ -49,6 +49,7 @@
             this.btn_cadastro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_tudo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnl_relatoriosSubmenu.SuspendLayout();
             this.pnl_cadastroSubmenu.SuspendLayout();
@@ -62,7 +63,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panel1.Controls.Add(this.pnl_relatoriosSubmenu);
             this.panel1.Controls.Add(this.btn_relatorios);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_excluir);
             this.panel1.Controls.Add(this.btn_Consulta);
             this.panel1.Controls.Add(this.pnl_cadastroSubmenu);
             this.panel1.Controls.Add(this.btn_cadastro);
@@ -184,21 +185,21 @@
             this.btn_relatorios.UseVisualStyleBackColor = true;
             this.btn_relatorios.Click += new System.EventHandler(this.btn_relatorios_Click);
             // 
-            // button1
+            // btn_excluir
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 570);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(300, 55);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "EXCLUIR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_excluir.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_excluir.FlatAppearance.BorderSize = 0;
+            this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_excluir.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.Location = new System.Drawing.Point(0, 570);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btn_excluir.Size = new System.Drawing.Size(300, 55);
+            this.btn_excluir.TabIndex = 4;
+            this.btn_excluir.Text = "EXCLUIR";
+            this.btn_excluir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
             // btn_Consulta
             // 
@@ -363,14 +364,24 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pnl_tudo
+            // 
+            this.pnl_tudo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_tudo.Location = new System.Drawing.Point(300, 0);
+            this.pnl_tudo.Name = "pnl_tudo";
+            this.pnl_tudo.Size = new System.Drawing.Size(1604, 1041);
+            this.pnl_tudo.TabIndex = 1;
+            // 
             // frmDashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.pnl_tudo);
             this.Controls.Add(this.panel1);
             this.Name = "frmDashboard";
             this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.pnl_relatoriosSubmenu.ResumeLayout(false);
             this.pnl_cadastroSubmenu.ResumeLayout(false);
@@ -394,7 +405,7 @@
         private System.Windows.Forms.Button btn_Consulta;
         private System.Windows.Forms.Button btn_cadFuncionarios;
         private System.Windows.Forms.Button btn_relatorios;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Panel pnl_relatoriosSubmenu;
         private System.Windows.Forms.Button btn_rltFluxoFinanceira;
         private System.Windows.Forms.Button btn_rltSaidaFinanceira;
@@ -402,5 +413,6 @@
         private System.Windows.Forms.Button btn_rltMovimentoEstoque;
         private System.Windows.Forms.Button btn_rltEstoqueAtual;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel pnl_tudo;
     }
 }

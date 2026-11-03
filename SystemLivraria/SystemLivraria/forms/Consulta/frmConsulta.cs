@@ -43,10 +43,12 @@ namespace SystemLivraria.forms
             if (nivelUsuario == 1)
             {
                 cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Produtos");
             }
             else if (nivelUsuario == 2)
             {
                 cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Produtos");
                 cbo_tabela.Items.Add("Vendas");
                 cbo_tabela.Items.Add("Compras");
             }
@@ -54,9 +56,10 @@ namespace SystemLivraria.forms
             {
                 // Se for chefe, adiciona as tabelas principais manualmente (evita usar GetSchema que é avançado)
                 cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Produtos");
                 cbo_tabela.Items.Add("Vendas");
                 cbo_tabela.Items.Add("Compras");
-                cbo_tabela.Items.Add("Clientes");
+                cbo_tabela.Items.Add("Cliente");
                 cbo_tabela.Items.Add("Funcionarios");
             }
 
@@ -77,10 +80,47 @@ namespace SystemLivraria.forms
             tabela = cbo_tabela.SelectedItem.ToString();
             cbo_coluna.Items.Clear();
 
-            // Adicionando colunas genéricas comuns em vez de buscar no INFORMATION_SCHEMA
-            cbo_coluna.Items.Add("ID");
-            cbo_coluna.Items.Add("Nome");
-            cbo_coluna.Items.Add("Descricao");
+            if (cbo_tabela.SelectedItem == "Estoque")
+            {
+                // Adicionando colunas genéricas comuns em vez de buscar no INFORMATION_SCHEMA
+                cbo_coluna.Items.Add("Id_Est");
+                cbo_coluna.Items.Add("Nome_Pro");
+                cbo_coluna.Items.Add("QTD_Est");
+            }
+            if (cbo_tabela.SelectedItem == "Produtos")
+            {
+                cbo_coluna.Items.Add("Id_Pro");
+                cbo_coluna.Items.Add("Nome_Pro");
+                cbo_coluna.Items.Add("Preco_Pro");
+            }
+            if (cbo_tabela.SelectedItem == "Vendas")
+            {
+                cbo_coluna.Items.Add("Id_VDS");
+                cbo_coluna.Items.Add("Id_Cli");
+                cbo_coluna.Items.Add("Valor_Total");
+            }
+            if (cbo_tabela.SelectedItem == "Compras")
+            {
+                cbo_coluna.Items.Add("Id_CMP");
+                cbo_coluna.Items.Add("Id_Forne");
+                cbo_coluna.Items.Add("Valor_CMP");
+            }
+            if (cbo_tabela.SelectedItem == "Cliente")
+            {
+                cbo_coluna.Items.Add("Id_Cli");
+                cbo_coluna.Items.Add("Nome_Cli");
+                cbo_coluna.Items.Add("Tel_CLi");
+                cbo_coluna.Items.Add("CPF_CLi");
+            }
+            if (cbo_tabela.SelectedItem == "Funcionarios")
+            {
+                cbo_coluna.Items.Add("Id_Funci");
+                cbo_coluna.Items.Add("Nome_Funci");
+                cbo_coluna.Items.Add("Cargo_Funci");
+                cbo_coluna.Items.Add("CPF_Funci");
+                cbo_coluna.Items.Add("Tel_Funci");
+
+            }
 
             if (cbo_coluna.Items.Count > 0)
             {
