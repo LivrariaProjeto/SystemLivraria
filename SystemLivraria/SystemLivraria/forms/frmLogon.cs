@@ -117,5 +117,10 @@ namespace SystemLivraria.forms
         {
 
         }
+
+        private void panelPersonalizado2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

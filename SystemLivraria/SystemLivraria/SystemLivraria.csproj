@@ -137,6 +137,12 @@
     <Compile Include="forms\Consulta\frmConsulta.Designer.cs">
       <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDashboard.Designer.cs">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmLogon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Consulta\frmConsulta.resx">
       <DependentUpon>frmConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDashboard.resx">
+      <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLogon.resx">
       <DependentUpon>frmLogon.cs</DependentUpon>
