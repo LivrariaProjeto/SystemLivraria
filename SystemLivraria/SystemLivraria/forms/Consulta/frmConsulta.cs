@@ -43,6 +43,7 @@ namespace SystemLivraria.forms
             if (nivelUsuario == 1)
             {
                 cbo_tabela.Items.Add("Estoque");
+                cbo_tabela.Items.Add("Produtos");
             }
             else if (nivelUsuario == 2)
             {
@@ -77,10 +78,19 @@ namespace SystemLivraria.forms
             tabela = cbo_tabela.SelectedItem.ToString();
             cbo_coluna.Items.Clear();
 
-            // Adicionando colunas genéricas comuns em vez de buscar no INFORMATION_SCHEMA
-            cbo_coluna.Items.Add("ID");
-            cbo_coluna.Items.Add("Nome");
-            cbo_coluna.Items.Add("Descricao");
+            if (cbo_tabela.SelectedItem == "Estoque")
+            {
+                // Adicionando colunas genéricas comuns em vez de buscar no INFORMATION_SCHEMA
+                cbo_coluna.Items.Add("Id_Est");
+                cbo_coluna.Items.Add("Nome_Pro");
+                cbo_coluna.Items.Add("QTD_Est");
+            }
+            if (cbo_tabela.SelectedItem == "Produtos")
+            {
+                cbo_coluna.Items.Add("Id_Pro");
+                cbo_coluna.Items.Add("Nome_Pro");
+                cbo_coluna.Items.Add("Preco_Pro");
+            }
 
             if (cbo_coluna.Items.Count > 0)
             {
