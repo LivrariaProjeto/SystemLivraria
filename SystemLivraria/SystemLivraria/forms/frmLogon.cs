@@ -102,7 +102,7 @@ namespace SystemLivraria.forms
                     MessageBox.Show("Login realizado com sucesso!", "LOGIN REALIZADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     // Abre o MDI passando o nível
-                    frmMDI FormPrincipal = new frmMDI(nivelPermissao);
+                    frmDashboard FormPrincipal = new frmDashboard(nivelPermissao);
                     this.Hide();
                     FormPrincipal.Show();
                 }
