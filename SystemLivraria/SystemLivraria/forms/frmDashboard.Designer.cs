@@ -48,8 +48,8 @@
             this.btn_cadProdutos = new System.Windows.Forms.Button();
             this.btn_cadastro = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pnl_tudo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnl_tudo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.pnl_relatoriosSubmenu.SuspendLayout();
             this.pnl_cadastroSubmenu.SuspendLayout();
@@ -95,6 +95,7 @@
             this.btn_rltFluxoFinanceira.FlatAppearance.BorderSize = 0;
             this.btn_rltFluxoFinanceira.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rltFluxoFinanceira.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rltFluxoFinanceira.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_rltFluxoFinanceira.Location = new System.Drawing.Point(0, 220);
             this.btn_rltFluxoFinanceira.Name = "btn_rltFluxoFinanceira";
             this.btn_rltFluxoFinanceira.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -111,6 +112,7 @@
             this.btn_rltSaidaFinanceira.FlatAppearance.BorderSize = 0;
             this.btn_rltSaidaFinanceira.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rltSaidaFinanceira.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rltSaidaFinanceira.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_rltSaidaFinanceira.Location = new System.Drawing.Point(0, 165);
             this.btn_rltSaidaFinanceira.Name = "btn_rltSaidaFinanceira";
             this.btn_rltSaidaFinanceira.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -127,6 +129,7 @@
             this.btn_rltEntradaFinanceira.FlatAppearance.BorderSize = 0;
             this.btn_rltEntradaFinanceira.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rltEntradaFinanceira.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rltEntradaFinanceira.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_rltEntradaFinanceira.Location = new System.Drawing.Point(0, 110);
             this.btn_rltEntradaFinanceira.Name = "btn_rltEntradaFinanceira";
             this.btn_rltEntradaFinanceira.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -143,6 +146,7 @@
             this.btn_rltMovimentoEstoque.FlatAppearance.BorderSize = 0;
             this.btn_rltMovimentoEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rltMovimentoEstoque.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rltMovimentoEstoque.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_rltMovimentoEstoque.Location = new System.Drawing.Point(0, 55);
             this.btn_rltMovimentoEstoque.Name = "btn_rltMovimentoEstoque";
             this.btn_rltMovimentoEstoque.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -159,6 +163,7 @@
             this.btn_rltEstoqueAtual.FlatAppearance.BorderSize = 0;
             this.btn_rltEstoqueAtual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rltEstoqueAtual.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rltEstoqueAtual.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_rltEstoqueAtual.Location = new System.Drawing.Point(0, 0);
             this.btn_rltEstoqueAtual.Name = "btn_rltEstoqueAtual";
             this.btn_rltEstoqueAtual.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -175,6 +180,7 @@
             this.btn_relatorios.FlatAppearance.BorderSize = 0;
             this.btn_relatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_relatorios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_relatorios.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_relatorios.Location = new System.Drawing.Point(0, 625);
             this.btn_relatorios.Name = "btn_relatorios";
             this.btn_relatorios.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -191,6 +197,7 @@
             this.btn_excluir.FlatAppearance.BorderSize = 0;
             this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_excluir.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excluir.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_excluir.Location = new System.Drawing.Point(0, 570);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -207,6 +214,7 @@
             this.btn_Consulta.FlatAppearance.BorderSize = 0;
             this.btn_Consulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Consulta.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Consulta.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_Consulta.Location = new System.Drawing.Point(0, 515);
             this.btn_Consulta.Name = "btn_Consulta";
             this.btn_Consulta.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -239,6 +247,7 @@
             this.btn_cadFuncionarios.FlatAppearance.BorderSize = 0;
             this.btn_cadFuncionarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadFuncionarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadFuncionarios.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadFuncionarios.Location = new System.Drawing.Point(0, 275);
             this.btn_cadFuncionarios.Name = "btn_cadFuncionarios";
             this.btn_cadFuncionarios.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -255,6 +264,7 @@
             this.btn_cadClientes.FlatAppearance.BorderSize = 0;
             this.btn_cadClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadClientes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadClientes.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadClientes.Location = new System.Drawing.Point(0, 220);
             this.btn_cadClientes.Name = "btn_cadClientes";
             this.btn_cadClientes.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -271,6 +281,7 @@
             this.btn_cadFornecedores.FlatAppearance.BorderSize = 0;
             this.btn_cadFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadFornecedores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadFornecedores.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadFornecedores.Location = new System.Drawing.Point(0, 165);
             this.btn_cadFornecedores.Name = "btn_cadFornecedores";
             this.btn_cadFornecedores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -287,6 +298,7 @@
             this.btn_cadEditoras.FlatAppearance.BorderSize = 0;
             this.btn_cadEditoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadEditoras.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadEditoras.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadEditoras.Location = new System.Drawing.Point(0, 110);
             this.btn_cadEditoras.Name = "btn_cadEditoras";
             this.btn_cadEditoras.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -303,6 +315,7 @@
             this.btn_cadAutores.FlatAppearance.BorderSize = 0;
             this.btn_cadAutores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadAutores.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadAutores.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadAutores.Location = new System.Drawing.Point(0, 55);
             this.btn_cadAutores.Name = "btn_cadAutores";
             this.btn_cadAutores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -319,6 +332,7 @@
             this.btn_cadProdutos.FlatAppearance.BorderSize = 0;
             this.btn_cadProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadProdutos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadProdutos.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadProdutos.Location = new System.Drawing.Point(0, 0);
             this.btn_cadProdutos.Name = "btn_cadProdutos";
             this.btn_cadProdutos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
@@ -335,6 +349,7 @@
             this.btn_cadastro.FlatAppearance.BorderSize = 0;
             this.btn_cadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cadastro.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cadastro.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_cadastro.Location = new System.Drawing.Point(0, 125);
             this.btn_cadastro.Name = "btn_cadastro";
             this.btn_cadastro.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
@@ -354,15 +369,6 @@
             this.panel2.Size = new System.Drawing.Size(300, 125);
             this.panel2.TabIndex = 0;
             // 
-            // pnl_tudo
-            // 
-            this.pnl_tudo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_tudo.Location = new System.Drawing.Point(300, 0);
-            this.pnl_tudo.Name = "pnl_tudo";
-            this.pnl_tudo.Size = new System.Drawing.Size(1604, 1041);
-            this.pnl_tudo.TabIndex = 1;
-            this.pnl_tudo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_tudo_Paint);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -372,6 +378,15 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // pnl_tudo
+            // 
+            this.pnl_tudo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_tudo.Location = new System.Drawing.Point(300, 0);
+            this.pnl_tudo.Name = "pnl_tudo";
+            this.pnl_tudo.Size = new System.Drawing.Size(1604, 1041);
+            this.pnl_tudo.TabIndex = 1;
+            this.pnl_tudo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_tudo_Paint);
             // 
             // frmDashboard
             // 
