@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFuncionarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.btnAdicionar_Funcionarios = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -69,6 +69,12 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelPersonalizado7 = new SystemLivraria.classes.PanelPersonalizado();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txt_telefone = new System.Windows.Forms.TextBox();
+            this.lbl_telefone = new System.Windows.Forms.Label();
+            this.funcionariosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.FuncionariosTableAdapter();
             this.idFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,12 +82,6 @@
             this.telFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAdmissaoFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelPersonalizado7 = new SystemLivraria.classes.PanelPersonalizado();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_telefone = new System.Windows.Forms.TextBox();
-            this.lbl_telefone = new System.Windows.Forms.Label();
-            this.funcionariosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.FuncionariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -243,9 +243,9 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(168, 18);
             this.lbl_nomeprod.TabIndex = 6;
-            this.lbl_nomeprod.Text = "Nome";
+            this.lbl_nomeprod.Text = "Nome do Funcionário";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
             // 
             // lbl_cpf
@@ -486,14 +486,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFunciDataGridViewTextBoxColumn,
@@ -517,66 +517,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(921, 288);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idFunciDataGridViewTextBoxColumn
-            // 
-            this.idFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idFunciDataGridViewTextBoxColumn.DataPropertyName = "Id_Funci";
-            this.idFunciDataGridViewTextBoxColumn.FillWeight = 80F;
-            this.idFunciDataGridViewTextBoxColumn.HeaderText = "Id_Funci";
-            this.idFunciDataGridViewTextBoxColumn.Name = "idFunciDataGridViewTextBoxColumn";
-            this.idFunciDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeFunciDataGridViewTextBoxColumn
-            // 
-            this.nomeFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeFunciDataGridViewTextBoxColumn.DataPropertyName = "Nome_Funci";
-            this.nomeFunciDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.nomeFunciDataGridViewTextBoxColumn.HeaderText = "Nome_Funci";
-            this.nomeFunciDataGridViewTextBoxColumn.Name = "nomeFunciDataGridViewTextBoxColumn";
-            this.nomeFunciDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cPFFunciDataGridViewTextBoxColumn
-            // 
-            this.cPFFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cPFFunciDataGridViewTextBoxColumn.DataPropertyName = "CPF_Funci";
-            this.cPFFunciDataGridViewTextBoxColumn.HeaderText = "CPF_Funci";
-            this.cPFFunciDataGridViewTextBoxColumn.Name = "cPFFunciDataGridViewTextBoxColumn";
-            this.cPFFunciDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cargoFunciDataGridViewTextBoxColumn
-            // 
-            this.cargoFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cargoFunciDataGridViewTextBoxColumn.DataPropertyName = "Cargo_Funci";
-            this.cargoFunciDataGridViewTextBoxColumn.HeaderText = "Cargo_Funci";
-            this.cargoFunciDataGridViewTextBoxColumn.Name = "cargoFunciDataGridViewTextBoxColumn";
-            this.cargoFunciDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telFunciDataGridViewTextBoxColumn
-            // 
-            this.telFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.telFunciDataGridViewTextBoxColumn.DataPropertyName = "Tel_Funci";
-            this.telFunciDataGridViewTextBoxColumn.HeaderText = "Tel_Funci";
-            this.telFunciDataGridViewTextBoxColumn.Name = "telFunciDataGridViewTextBoxColumn";
-            this.telFunciDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataAdmissaoFunciDataGridViewTextBoxColumn
-            // 
-            this.dataAdmissaoFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataAdmissaoFunciDataGridViewTextBoxColumn.DataPropertyName = "DataAdmissao_Funci";
-            this.dataAdmissaoFunciDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.dataAdmissaoFunciDataGridViewTextBoxColumn.HeaderText = "DataAdmissao_Funci";
-            this.dataAdmissaoFunciDataGridViewTextBoxColumn.Name = "dataAdmissaoFunciDataGridViewTextBoxColumn";
-            this.dataAdmissaoFunciDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailFunciDataGridViewTextBoxColumn
-            // 
-            this.emailFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailFunciDataGridViewTextBoxColumn.DataPropertyName = "Email_Funci";
-            this.emailFunciDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.emailFunciDataGridViewTextBoxColumn.HeaderText = "Email_Funci";
-            this.emailFunciDataGridViewTextBoxColumn.Name = "emailFunciDataGridViewTextBoxColumn";
-            this.emailFunciDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // funcionariosBindingSource
             // 
@@ -631,6 +571,66 @@
             // 
             this.funcionariosTableAdapter.ClearBeforeFill = true;
             // 
+            // idFunciDataGridViewTextBoxColumn
+            // 
+            this.idFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idFunciDataGridViewTextBoxColumn.DataPropertyName = "Id_Funci";
+            this.idFunciDataGridViewTextBoxColumn.FillWeight = 80F;
+            this.idFunciDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idFunciDataGridViewTextBoxColumn.Name = "idFunciDataGridViewTextBoxColumn";
+            this.idFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeFunciDataGridViewTextBoxColumn
+            // 
+            this.nomeFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeFunciDataGridViewTextBoxColumn.DataPropertyName = "Nome_Funci";
+            this.nomeFunciDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.nomeFunciDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nomeFunciDataGridViewTextBoxColumn.Name = "nomeFunciDataGridViewTextBoxColumn";
+            this.nomeFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cPFFunciDataGridViewTextBoxColumn
+            // 
+            this.cPFFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cPFFunciDataGridViewTextBoxColumn.DataPropertyName = "CPF_Funci";
+            this.cPFFunciDataGridViewTextBoxColumn.HeaderText = "CPF";
+            this.cPFFunciDataGridViewTextBoxColumn.Name = "cPFFunciDataGridViewTextBoxColumn";
+            this.cPFFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cargoFunciDataGridViewTextBoxColumn
+            // 
+            this.cargoFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cargoFunciDataGridViewTextBoxColumn.DataPropertyName = "Cargo_Funci";
+            this.cargoFunciDataGridViewTextBoxColumn.HeaderText = "CARGO";
+            this.cargoFunciDataGridViewTextBoxColumn.Name = "cargoFunciDataGridViewTextBoxColumn";
+            this.cargoFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telFunciDataGridViewTextBoxColumn
+            // 
+            this.telFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telFunciDataGridViewTextBoxColumn.DataPropertyName = "Tel_Funci";
+            this.telFunciDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
+            this.telFunciDataGridViewTextBoxColumn.Name = "telFunciDataGridViewTextBoxColumn";
+            this.telFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataAdmissaoFunciDataGridViewTextBoxColumn
+            // 
+            this.dataAdmissaoFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataAdmissaoFunciDataGridViewTextBoxColumn.DataPropertyName = "DataAdmissao_Funci";
+            this.dataAdmissaoFunciDataGridViewTextBoxColumn.FillWeight = 180F;
+            this.dataAdmissaoFunciDataGridViewTextBoxColumn.HeaderText = "DATA DE ADMISSÃO";
+            this.dataAdmissaoFunciDataGridViewTextBoxColumn.Name = "dataAdmissaoFunciDataGridViewTextBoxColumn";
+            this.dataAdmissaoFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailFunciDataGridViewTextBoxColumn
+            // 
+            this.emailFunciDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emailFunciDataGridViewTextBoxColumn.DataPropertyName = "Email_Funci";
+            this.emailFunciDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.emailFunciDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.emailFunciDataGridViewTextBoxColumn.Name = "emailFunciDataGridViewTextBoxColumn";
+            this.emailFunciDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmCadFuncionarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -653,7 +653,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmCadFuncionarios";
             this.Padding = new System.Windows.Forms.Padding(20);
-            this.Text = "Cadastro de Produtos";
+            this.Text = "Cadastro de Funcionários";
             this.Load += new System.EventHandler(this.frmCadFuncionarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);

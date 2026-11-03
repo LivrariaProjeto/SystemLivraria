@@ -73,17 +73,7 @@ namespace SystemLivraria.forms
 
         }
 
-        private void lbl_esqueceu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            lbl_esqueceu.LinkVisited = true;
-
-            
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-            {
-                FileName = "https://youtu.be/vabnZ9-ex7o",
-                UseShellExecute = true
-            });
-        }
+       
 
         private void label2_Click(object sender, EventArgs e)
         {

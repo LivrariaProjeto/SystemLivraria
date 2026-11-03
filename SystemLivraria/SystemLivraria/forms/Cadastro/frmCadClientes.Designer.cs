@@ -239,9 +239,9 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(134, 18);
             this.lbl_nomeprod.TabIndex = 6;
-            this.lbl_nomeprod.Text = "Nome";
+            this.lbl_nomeprod.Text = "Nome do Cliente";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
             // 
             // lbl_telefone
@@ -526,7 +526,7 @@
             this.idCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idCliDataGridViewTextBoxColumn.DataPropertyName = "Id_Cli";
             this.idCliDataGridViewTextBoxColumn.FillWeight = 80F;
-            this.idCliDataGridViewTextBoxColumn.HeaderText = "Id_Cli";
+            this.idCliDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idCliDataGridViewTextBoxColumn.Name = "idCliDataGridViewTextBoxColumn";
             this.idCliDataGridViewTextBoxColumn.ReadOnly = true;
@@ -536,7 +536,7 @@
             this.nomeCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomeCliDataGridViewTextBoxColumn.DataPropertyName = "Nome_Cli";
             this.nomeCliDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.nomeCliDataGridViewTextBoxColumn.HeaderText = "Nome_Cli";
+            this.nomeCliDataGridViewTextBoxColumn.HeaderText = "NOME";
             this.nomeCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeCliDataGridViewTextBoxColumn.Name = "nomeCliDataGridViewTextBoxColumn";
             this.nomeCliDataGridViewTextBoxColumn.ReadOnly = true;
@@ -545,7 +545,7 @@
             // 
             this.telCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telCliDataGridViewTextBoxColumn.DataPropertyName = "Tel_Cli";
-            this.telCliDataGridViewTextBoxColumn.HeaderText = "Tel_Cli";
+            this.telCliDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
             this.telCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telCliDataGridViewTextBoxColumn.Name = "telCliDataGridViewTextBoxColumn";
             this.telCliDataGridViewTextBoxColumn.ReadOnly = true;
@@ -554,7 +554,7 @@
             // 
             this.cPFCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cPFCliDataGridViewTextBoxColumn.DataPropertyName = "CPF_Cli";
-            this.cPFCliDataGridViewTextBoxColumn.HeaderText = "CPF_Cli";
+            this.cPFCliDataGridViewTextBoxColumn.HeaderText = "CPF";
             this.cPFCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cPFCliDataGridViewTextBoxColumn.Name = "cPFCliDataGridViewTextBoxColumn";
             this.cPFCliDataGridViewTextBoxColumn.ReadOnly = true;
@@ -564,7 +564,7 @@
             this.emailCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.emailCliDataGridViewTextBoxColumn.DataPropertyName = "Email_Cli";
             this.emailCliDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.emailCliDataGridViewTextBoxColumn.HeaderText = "Email_Cli";
+            this.emailCliDataGridViewTextBoxColumn.HeaderText = "EMAIL";
             this.emailCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailCliDataGridViewTextBoxColumn.Name = "emailCliDataGridViewTextBoxColumn";
             this.emailCliDataGridViewTextBoxColumn.ReadOnly = true;
@@ -574,7 +574,7 @@
             this.enderecoCliDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.enderecoCliDataGridViewTextBoxColumn.DataPropertyName = "Endereco_Cli";
             this.enderecoCliDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.enderecoCliDataGridViewTextBoxColumn.HeaderText = "Endereco_Cli";
+            this.enderecoCliDataGridViewTextBoxColumn.HeaderText = "ENDEREÇO";
             this.enderecoCliDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.enderecoCliDataGridViewTextBoxColumn.Name = "enderecoCliDataGridViewTextBoxColumn";
             this.enderecoCliDataGridViewTextBoxColumn.ReadOnly = true;
@@ -662,15 +662,15 @@
         private System.Windows.Forms.TextBox txt_endereco;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private data.DataSet2TableAdapters.ClienteTableAdapter clienteTableAdapter;
+        private System.Windows.Forms.Label lbl_cpf;
+        private System.Windows.Forms.TextBox txt_cpf;
+        private System.Windows.Forms.Panel panel4;
+        private classes.PanelPersonalizado panelPersonalizado5;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeCliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telCliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPFCliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailCliDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn enderecoCliDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label lbl_cpf;
-        private System.Windows.Forms.TextBox txt_cpf;
-        private System.Windows.Forms.Panel panel4;
-        private classes.PanelPersonalizado panelPersonalizado5;
     }
 }

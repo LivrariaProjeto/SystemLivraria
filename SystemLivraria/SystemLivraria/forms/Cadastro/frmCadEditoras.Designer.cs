@@ -65,15 +65,15 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.editorasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.EditorasTableAdapter();
+            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.CategoriasTableAdapter();
             this.idEdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeEdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailEdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.siteEdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefoneEdiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.editorasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.EditorasTableAdapter();
-            this.categoriasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.CategoriasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -235,9 +235,9 @@
             this.lbl_nomeedit.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeedit.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeedit.Name = "lbl_nomeedit";
-            this.lbl_nomeedit.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeedit.Size = new System.Drawing.Size(132, 18);
             this.lbl_nomeedit.TabIndex = 6;
-            this.lbl_nomeedit.Text = "Nome";
+            this.lbl_nomeedit.Text = "Nome da Editora";
             this.lbl_nomeedit.Click += new System.EventHandler(this.lbl__Click);
             // 
             // lbl_emailedit
@@ -462,55 +462,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(921, 288);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idEdiDataGridViewTextBoxColumn
-            // 
-            this.idEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idEdiDataGridViewTextBoxColumn.DataPropertyName = "Id_Edi";
-            this.idEdiDataGridViewTextBoxColumn.FillWeight = 80F;
-            this.idEdiDataGridViewTextBoxColumn.HeaderText = "Id_Edi";
-            this.idEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idEdiDataGridViewTextBoxColumn.Name = "idEdiDataGridViewTextBoxColumn";
-            this.idEdiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeEdiDataGridViewTextBoxColumn
-            // 
-            this.nomeEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeEdiDataGridViewTextBoxColumn.DataPropertyName = "Nome_Edi";
-            this.nomeEdiDataGridViewTextBoxColumn.FillWeight = 200F;
-            this.nomeEdiDataGridViewTextBoxColumn.HeaderText = "Nome_Edi";
-            this.nomeEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeEdiDataGridViewTextBoxColumn.Name = "nomeEdiDataGridViewTextBoxColumn";
-            this.nomeEdiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailEdiDataGridViewTextBoxColumn
-            // 
-            this.emailEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.emailEdiDataGridViewTextBoxColumn.DataPropertyName = "Email_Edi";
-            this.emailEdiDataGridViewTextBoxColumn.FillWeight = 200F;
-            this.emailEdiDataGridViewTextBoxColumn.HeaderText = "Email_Edi";
-            this.emailEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailEdiDataGridViewTextBoxColumn.Name = "emailEdiDataGridViewTextBoxColumn";
-            this.emailEdiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // siteEdiDataGridViewTextBoxColumn
-            // 
-            this.siteEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.siteEdiDataGridViewTextBoxColumn.DataPropertyName = "Site_Edi";
-            this.siteEdiDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.siteEdiDataGridViewTextBoxColumn.HeaderText = "Site_Edi";
-            this.siteEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.siteEdiDataGridViewTextBoxColumn.Name = "siteEdiDataGridViewTextBoxColumn";
-            this.siteEdiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefoneEdiDataGridViewTextBoxColumn
-            // 
-            this.telefoneEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.telefoneEdiDataGridViewTextBoxColumn.DataPropertyName = "Telefone_Edi";
-            this.telefoneEdiDataGridViewTextBoxColumn.HeaderText = "Telefone_Edi";
-            this.telefoneEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.telefoneEdiDataGridViewTextBoxColumn.Name = "telefoneEdiDataGridViewTextBoxColumn";
-            this.telefoneEdiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // editorasBindingSource
             // 
             this.editorasBindingSource.DataMember = "Editoras";
@@ -528,6 +479,55 @@
             // categoriasTableAdapter
             // 
             this.categoriasTableAdapter.ClearBeforeFill = true;
+            // 
+            // idEdiDataGridViewTextBoxColumn
+            // 
+            this.idEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idEdiDataGridViewTextBoxColumn.DataPropertyName = "Id_Edi";
+            this.idEdiDataGridViewTextBoxColumn.FillWeight = 80F;
+            this.idEdiDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idEdiDataGridViewTextBoxColumn.Name = "idEdiDataGridViewTextBoxColumn";
+            this.idEdiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeEdiDataGridViewTextBoxColumn
+            // 
+            this.nomeEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeEdiDataGridViewTextBoxColumn.DataPropertyName = "Nome_Edi";
+            this.nomeEdiDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.nomeEdiDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nomeEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeEdiDataGridViewTextBoxColumn.Name = "nomeEdiDataGridViewTextBoxColumn";
+            this.nomeEdiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailEdiDataGridViewTextBoxColumn
+            // 
+            this.emailEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.emailEdiDataGridViewTextBoxColumn.DataPropertyName = "Email_Edi";
+            this.emailEdiDataGridViewTextBoxColumn.FillWeight = 200F;
+            this.emailEdiDataGridViewTextBoxColumn.HeaderText = "EMAIL";
+            this.emailEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailEdiDataGridViewTextBoxColumn.Name = "emailEdiDataGridViewTextBoxColumn";
+            this.emailEdiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // siteEdiDataGridViewTextBoxColumn
+            // 
+            this.siteEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.siteEdiDataGridViewTextBoxColumn.DataPropertyName = "Site_Edi";
+            this.siteEdiDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.siteEdiDataGridViewTextBoxColumn.HeaderText = "SITE";
+            this.siteEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.siteEdiDataGridViewTextBoxColumn.Name = "siteEdiDataGridViewTextBoxColumn";
+            this.siteEdiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefoneEdiDataGridViewTextBoxColumn
+            // 
+            this.telefoneEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telefoneEdiDataGridViewTextBoxColumn.DataPropertyName = "Telefone_Edi";
+            this.telefoneEdiDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
+            this.telefoneEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.telefoneEdiDataGridViewTextBoxColumn.Name = "telefoneEdiDataGridViewTextBoxColumn";
+            this.telefoneEdiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmCadEditoras
             // 

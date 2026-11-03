@@ -69,14 +69,14 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fornecedoresTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.FornecedoresTableAdapter();
             this.idForneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeForneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.enderecoForneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNPJForneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telForneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailForneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fornecedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fornecedoresTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.FornecedoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -239,9 +239,9 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(167, 18);
             this.lbl_nomeprod.TabIndex = 6;
-            this.lbl_nomeprod.Text = "Nome";
+            this.lbl_nomeprod.Text = "Nome do Fornecedor";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
             // 
             // lbl_endereco
@@ -512,12 +512,21 @@
             this.dataGridView1.Size = new System.Drawing.Size(921, 288);
             this.dataGridView1.TabIndex = 0;
             // 
+            // fornecedoresBindingSource
+            // 
+            this.fornecedoresBindingSource.DataMember = "Fornecedores";
+            this.fornecedoresBindingSource.DataSource = this.dataSet2;
+            // 
+            // fornecedoresTableAdapter
+            // 
+            this.fornecedoresTableAdapter.ClearBeforeFill = true;
+            // 
             // idForneDataGridViewTextBoxColumn
             // 
             this.idForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idForneDataGridViewTextBoxColumn.DataPropertyName = "Id_Forne";
             this.idForneDataGridViewTextBoxColumn.FillWeight = 80F;
-            this.idForneDataGridViewTextBoxColumn.HeaderText = "Id_Forne";
+            this.idForneDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idForneDataGridViewTextBoxColumn.Name = "idForneDataGridViewTextBoxColumn";
             this.idForneDataGridViewTextBoxColumn.ReadOnly = true;
@@ -527,7 +536,7 @@
             this.nomeForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomeForneDataGridViewTextBoxColumn.DataPropertyName = "Nome_Forne";
             this.nomeForneDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.nomeForneDataGridViewTextBoxColumn.HeaderText = "Nome_Forne";
+            this.nomeForneDataGridViewTextBoxColumn.HeaderText = "NOME";
             this.nomeForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nomeForneDataGridViewTextBoxColumn.Name = "nomeForneDataGridViewTextBoxColumn";
             this.nomeForneDataGridViewTextBoxColumn.ReadOnly = true;
@@ -537,7 +546,7 @@
             this.enderecoForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.enderecoForneDataGridViewTextBoxColumn.DataPropertyName = "Endereco_Forne";
             this.enderecoForneDataGridViewTextBoxColumn.FillWeight = 200F;
-            this.enderecoForneDataGridViewTextBoxColumn.HeaderText = "Endereco_Forne";
+            this.enderecoForneDataGridViewTextBoxColumn.HeaderText = "ENDEREÇO";
             this.enderecoForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.enderecoForneDataGridViewTextBoxColumn.Name = "enderecoForneDataGridViewTextBoxColumn";
             this.enderecoForneDataGridViewTextBoxColumn.ReadOnly = true;
@@ -546,7 +555,7 @@
             // 
             this.cNPJForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.cNPJForneDataGridViewTextBoxColumn.DataPropertyName = "CNPJ_Forne";
-            this.cNPJForneDataGridViewTextBoxColumn.HeaderText = "CNPJ_Forne";
+            this.cNPJForneDataGridViewTextBoxColumn.HeaderText = "CNPJ";
             this.cNPJForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.cNPJForneDataGridViewTextBoxColumn.Name = "cNPJForneDataGridViewTextBoxColumn";
             this.cNPJForneDataGridViewTextBoxColumn.ReadOnly = true;
@@ -555,7 +564,7 @@
             // 
             this.telForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.telForneDataGridViewTextBoxColumn.DataPropertyName = "Tel_Forne";
-            this.telForneDataGridViewTextBoxColumn.HeaderText = "Tel_Forne";
+            this.telForneDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
             this.telForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.telForneDataGridViewTextBoxColumn.Name = "telForneDataGridViewTextBoxColumn";
             this.telForneDataGridViewTextBoxColumn.ReadOnly = true;
@@ -565,19 +574,10 @@
             this.emailForneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.emailForneDataGridViewTextBoxColumn.DataPropertyName = "Email_Forne";
             this.emailForneDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.emailForneDataGridViewTextBoxColumn.HeaderText = "Email_Forne";
+            this.emailForneDataGridViewTextBoxColumn.HeaderText = "EMAIL";
             this.emailForneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailForneDataGridViewTextBoxColumn.Name = "emailForneDataGridViewTextBoxColumn";
             this.emailForneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fornecedoresBindingSource
-            // 
-            this.fornecedoresBindingSource.DataMember = "Fornecedores";
-            this.fornecedoresBindingSource.DataSource = this.dataSet2;
-            // 
-            // fornecedoresTableAdapter
-            // 
-            this.fornecedoresTableAdapter.ClearBeforeFill = true;
             // 
             // frmCadFornecedores
             // 

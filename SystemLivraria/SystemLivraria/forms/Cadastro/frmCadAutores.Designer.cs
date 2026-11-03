@@ -105,7 +105,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(929, 33);
+            this.bindingNavigator1.Size = new System.Drawing.Size(929, 31);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -115,14 +115,14 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
@@ -132,7 +132,7 @@
             this.btnExcluir_Autor.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir_Autor.Image")));
             this.btnExcluir_Autor.Name = "btnExcluir_Autor";
             this.btnExcluir_Autor.RightToLeftAutoMirrorImage = true;
-            this.btnExcluir_Autor.Size = new System.Drawing.Size(34, 28);
+            this.btnExcluir_Autor.Size = new System.Drawing.Size(28, 28);
             this.btnExcluir_Autor.Text = "Excluir";
             this.btnExcluir_Autor.Click += new System.EventHandler(this.btnExcluir_Autor_Click);
             // 
@@ -142,7 +142,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
             // 
             // bindingNavigatorMovePreviousItem
@@ -151,13 +151,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -172,7 +172,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -180,7 +180,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
             // 
             // bindingNavigatorMoveLastItem
@@ -189,13 +189,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // btnSalvar_Autor
             // 
@@ -203,7 +203,7 @@
             this.btnSalvar_Autor.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar_Autor.Image")));
             this.btnSalvar_Autor.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnSalvar_Autor.Name = "btnSalvar_Autor";
-            this.btnSalvar_Autor.Size = new System.Drawing.Size(34, 28);
+            this.btnSalvar_Autor.Size = new System.Drawing.Size(28, 28);
             this.btnSalvar_Autor.Text = "toolStripButton1";
             // 
             // dataSet2
@@ -226,9 +226,9 @@
             this.lbl_nomeautor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeautor.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeautor.Name = "lbl_nomeautor";
-            this.lbl_nomeautor.Size = new System.Drawing.Size(81, 27);
+            this.lbl_nomeautor.Size = new System.Drawing.Size(120, 18);
             this.lbl_nomeautor.TabIndex = 6;
-            this.lbl_nomeautor.Text = "Nome";
+            this.lbl_nomeautor.Text = "Nome do Autor";
             this.lbl_nomeautor.Click += new System.EventHandler(this.lbl__Click);
             // 
             // lbl_paisautor
@@ -237,9 +237,9 @@
             this.lbl_paisautor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_paisautor.Location = new System.Drawing.Point(521, 73);
             this.lbl_paisautor.Name = "lbl_paisautor";
-            this.lbl_paisautor.Size = new System.Drawing.Size(56, 27);
+            this.lbl_paisautor.Size = new System.Drawing.Size(103, 18);
             this.lbl_paisautor.TabIndex = 7;
-            this.lbl_paisautor.Text = "País";
+            this.lbl_paisautor.Text = "País do Autor";
             this.lbl_paisautor.Click += new System.EventHandler(this.label1_Click);
             // 
             // autoresBindingSource
@@ -296,7 +296,7 @@
             this.txt_pais.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_pais.Location = new System.Drawing.Point(15, 5);
             this.txt_pais.Name = "txt_pais";
-            this.txt_pais.Size = new System.Drawing.Size(421, 30);
+            this.txt_pais.Size = new System.Drawing.Size(421, 20);
             this.txt_pais.TabIndex = 0;
             this.txt_pais.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
@@ -331,7 +331,7 @@
             this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nome.Location = new System.Drawing.Point(15, 5);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(431, 30);
+            this.txt_nome.Size = new System.Drawing.Size(431, 20);
             this.txt_nome.TabIndex = 0;
             // 
             // panelPersonalizado1
@@ -391,7 +391,7 @@
             // 
             this.idAutorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "Id_Autor";
-            this.idAutorDataGridViewTextBoxColumn.HeaderText = "Id_Autor";
+            this.idAutorDataGridViewTextBoxColumn.HeaderText = "ID";
             this.idAutorDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
             this.idAutorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -401,7 +401,7 @@
             this.nomeAutorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomeAutorDataGridViewTextBoxColumn.DataPropertyName = "Nome_Autor";
             this.nomeAutorDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.nomeAutorDataGridViewTextBoxColumn.HeaderText = "Nome_Autor";
+            this.nomeAutorDataGridViewTextBoxColumn.HeaderText = "NOME";
             this.nomeAutorDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.nomeAutorDataGridViewTextBoxColumn.Name = "nomeAutorDataGridViewTextBoxColumn";
             this.nomeAutorDataGridViewTextBoxColumn.ReadOnly = true;
@@ -411,7 +411,7 @@
             this.paisAutorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.paisAutorDataGridViewTextBoxColumn.DataPropertyName = "Pais_Autor";
             this.paisAutorDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.paisAutorDataGridViewTextBoxColumn.HeaderText = "Pais_Autor";
+            this.paisAutorDataGridViewTextBoxColumn.HeaderText = "PAÍS";
             this.paisAutorDataGridViewTextBoxColumn.MinimumWidth = 8;
             this.paisAutorDataGridViewTextBoxColumn.Name = "paisAutorDataGridViewTextBoxColumn";
             this.paisAutorDataGridViewTextBoxColumn.ReadOnly = true;

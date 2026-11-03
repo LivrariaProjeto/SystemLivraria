@@ -69,6 +69,10 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelPersonalizado7 = new SystemLivraria.classes.PanelPersonalizado();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txt_isbn = new System.Windows.Forms.TextBox();
+            this.lbl_isbnprod = new System.Windows.Forms.Label();
             this.idProDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idAutorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,10 +80,6 @@
             this.nomeProDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoProDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iSBNProDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelPersonalizado7 = new SystemLivraria.classes.PanelPersonalizado();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_isbn = new System.Windows.Forms.TextBox();
-            this.lbl_isbnprod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
@@ -241,9 +241,9 @@
             this.lbl_nomeprod.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_nomeprod.Location = new System.Drawing.Point(38, 73);
             this.lbl_nomeprod.Name = "lbl_nomeprod";
-            this.lbl_nomeprod.Size = new System.Drawing.Size(53, 18);
+            this.lbl_nomeprod.Size = new System.Drawing.Size(137, 18);
             this.lbl_nomeprod.TabIndex = 6;
-            this.lbl_nomeprod.Text = "Nome";
+            this.lbl_nomeprod.Text = "Nome do Produto";
             this.lbl_nomeprod.Click += new System.EventHandler(this.lbl__Click);
             // 
             // lbl_autorprod
@@ -518,72 +518,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(921, 288);
             this.dataGridView1.TabIndex = 0;
             // 
-            // idProDataGridViewTextBoxColumn
-            // 
-            this.idProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idProDataGridViewTextBoxColumn.DataPropertyName = "Id_Pro";
-            this.idProDataGridViewTextBoxColumn.HeaderText = "Id_Pro";
-            this.idProDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idProDataGridViewTextBoxColumn.Name = "idProDataGridViewTextBoxColumn";
-            this.idProDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idAutorDataGridViewTextBoxColumn
-            // 
-            this.idAutorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "Id_Autor";
-            this.idAutorDataGridViewTextBoxColumn.HeaderText = "Id_Autor";
-            this.idAutorDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
-            this.idAutorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idCatDataGridViewTextBoxColumn
-            // 
-            this.idCatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idCatDataGridViewTextBoxColumn.DataPropertyName = "Id_Cat";
-            this.idCatDataGridViewTextBoxColumn.HeaderText = "Id_Cat";
-            this.idCatDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idCatDataGridViewTextBoxColumn.Name = "idCatDataGridViewTextBoxColumn";
-            this.idCatDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idEdiDataGridViewTextBoxColumn
-            // 
-            this.idEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idEdiDataGridViewTextBoxColumn.DataPropertyName = "Id_Edi";
-            this.idEdiDataGridViewTextBoxColumn.HeaderText = "Id_Edi";
-            this.idEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idEdiDataGridViewTextBoxColumn.Name = "idEdiDataGridViewTextBoxColumn";
-            this.idEdiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeProDataGridViewTextBoxColumn
-            // 
-            this.nomeProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomeProDataGridViewTextBoxColumn.DataPropertyName = "Nome_Pro";
-            this.nomeProDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.nomeProDataGridViewTextBoxColumn.HeaderText = "Nome_Pro";
-            this.nomeProDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeProDataGridViewTextBoxColumn.Name = "nomeProDataGridViewTextBoxColumn";
-            this.nomeProDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // precoProDataGridViewTextBoxColumn
-            // 
-            this.precoProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.precoProDataGridViewTextBoxColumn.DataPropertyName = "Preco_Pro";
-            this.precoProDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.precoProDataGridViewTextBoxColumn.HeaderText = "Preco_Pro";
-            this.precoProDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.precoProDataGridViewTextBoxColumn.Name = "precoProDataGridViewTextBoxColumn";
-            this.precoProDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iSBNProDataGridViewTextBoxColumn
-            // 
-            this.iSBNProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.iSBNProDataGridViewTextBoxColumn.DataPropertyName = "ISBN_Pro";
-            this.iSBNProDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.iSBNProDataGridViewTextBoxColumn.HeaderText = "ISBN_Pro";
-            this.iSBNProDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iSBNProDataGridViewTextBoxColumn.Name = "iSBNProDataGridViewTextBoxColumn";
-            this.iSBNProDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // panelPersonalizado7
             // 
             this.panelPersonalizado7.BackColor = System.Drawing.Color.Transparent;
@@ -628,6 +562,70 @@
             this.lbl_isbnprod.TabIndex = 16;
             this.lbl_isbnprod.Text = "ISBN";
             // 
+            // idProDataGridViewTextBoxColumn
+            // 
+            this.idProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idProDataGridViewTextBoxColumn.DataPropertyName = "Id_Pro";
+            this.idProDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idProDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idProDataGridViewTextBoxColumn.Name = "idProDataGridViewTextBoxColumn";
+            this.idProDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idAutorDataGridViewTextBoxColumn
+            // 
+            this.idAutorDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idAutorDataGridViewTextBoxColumn.DataPropertyName = "Id_Autor";
+            this.idAutorDataGridViewTextBoxColumn.HeaderText = "AUTOR";
+            this.idAutorDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idAutorDataGridViewTextBoxColumn.Name = "idAutorDataGridViewTextBoxColumn";
+            this.idAutorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idCatDataGridViewTextBoxColumn
+            // 
+            this.idCatDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCatDataGridViewTextBoxColumn.DataPropertyName = "Id_Cat";
+            this.idCatDataGridViewTextBoxColumn.HeaderText = "CATEGORIA";
+            this.idCatDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idCatDataGridViewTextBoxColumn.Name = "idCatDataGridViewTextBoxColumn";
+            this.idCatDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idEdiDataGridViewTextBoxColumn
+            // 
+            this.idEdiDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idEdiDataGridViewTextBoxColumn.DataPropertyName = "Id_Edi";
+            this.idEdiDataGridViewTextBoxColumn.HeaderText = "EDITORA";
+            this.idEdiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idEdiDataGridViewTextBoxColumn.Name = "idEdiDataGridViewTextBoxColumn";
+            this.idEdiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeProDataGridViewTextBoxColumn
+            // 
+            this.nomeProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeProDataGridViewTextBoxColumn.DataPropertyName = "Nome_Pro";
+            this.nomeProDataGridViewTextBoxColumn.FillWeight = 150F;
+            this.nomeProDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nomeProDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nomeProDataGridViewTextBoxColumn.Name = "nomeProDataGridViewTextBoxColumn";
+            this.nomeProDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // precoProDataGridViewTextBoxColumn
+            // 
+            this.precoProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.precoProDataGridViewTextBoxColumn.DataPropertyName = "Preco_Pro";
+            this.precoProDataGridViewTextBoxColumn.HeaderText = "PREÇO";
+            this.precoProDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.precoProDataGridViewTextBoxColumn.Name = "precoProDataGridViewTextBoxColumn";
+            this.precoProDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iSBNProDataGridViewTextBoxColumn
+            // 
+            this.iSBNProDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.iSBNProDataGridViewTextBoxColumn.DataPropertyName = "ISBN_Pro";
+            this.iSBNProDataGridViewTextBoxColumn.HeaderText = "ISBN";
+            this.iSBNProDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iSBNProDataGridViewTextBoxColumn.Name = "iSBNProDataGridViewTextBoxColumn";
+            this.iSBNProDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmCadProdutos
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -660,7 +658,6 @@
             this.panelPersonalizado6.ResumeLayout(false);
             this.panelPersonalizado6.PerformLayout();
             this.panelPersonalizado5.ResumeLayout(false);
-            this.panelPersonalizado5.PerformLayout();
             this.panelPersonalizado4.ResumeLayout(false);
             this.panelPersonalizado4.PerformLayout();
             this.panelPersonalizado3.ResumeLayout(false);
@@ -696,13 +693,6 @@
         private data.DataSet2 dataSet2;
         private System.Windows.Forms.BindingSource produtosBindingSource;
         private data.DataSet2TableAdapters.ProdutosTableAdapter produtosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCatDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEdiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precoProDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNProDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lbl_nomeprod;
         private System.Windows.Forms.Label lbl_autorprod;
         private System.Windows.Forms.Label lbl_editoraprod;
@@ -727,5 +717,12 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txt_isbn;
         private System.Windows.Forms.Label lbl_isbnprod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAutorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCatDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEdiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeProDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoProDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iSBNProDataGridViewTextBoxColumn;
     }
 }
