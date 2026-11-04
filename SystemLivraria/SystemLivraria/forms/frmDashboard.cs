@@ -16,6 +16,8 @@ namespace SystemLivraria.forms
 
         private int nivelUsuario;
 
+        
+
         // Construtor padrão (caso abra direto, assume nível 3)
         public frmDashboard()
         {
@@ -194,32 +196,83 @@ namespace SystemLivraria.forms
         private void btn_rltEstoqueAtual_Click(object sender, EventArgs e)
         {
             AbrirFormulario<frmRltEstoque>();
-
             hideSubmenu();
         }
 
         private void btn_rltMovimentoEstoque_Click(object sender, EventArgs e)
         {
-            AbrirFormulario<frmRltMovEstoque>();
+            AbrirRelatorioComplementar(
+                TipoRelatorioComplementar.MovimentoEstoque);
+
             hideSubmenu();
         }
 
         private void btn_rltEntradaFinanceira_Click(object sender, EventArgs e)
         {
-            //nao tem ainda
+            AbrirRelatorioComplementar(
+                TipoRelatorioComplementar.EntradaFinanceira);
+
             hideSubmenu();
         }
 
         private void btn_rltSaidaFinanceira_Click(object sender, EventArgs e)
         {
-            //nao tem ainda
+            AbrirRelatorioComplementar(
+                TipoRelatorioComplementar.SaidaFinanceira);
+
             hideSubmenu();
         }
 
         private void btn_rltFluxoFinanceira_Click(object sender, EventArgs e)
         {
-            //nao tem ainda
+            AbrirRelatorioComplementar(
+                TipoRelatorioComplementar.FluxoFinanceiro);
+
             hideSubmenu();
+        }
+
+        private void AbrirRelatorioComplementar(TipoRelatorioComplementar tipo)
+        {
+            bool financeiro =
+                tipo != TipoRelatorioComplementar.MovimentoEstoque;
+
+            if ((financeiro && nivelUsuario != 1) ||
+                (!financeiro && nivelUsuario != 1 && nivelUsuario != 2))
+            {
+                MessageBox.Show(
+                    "Você não tem permissão para este relatório.");
+
+                return;
+            }
+
+            foreach (Form aberta in Application.OpenForms)
+            {
+                var relatorio = aberta as frmRelatoriosComplementares;
+
+                if (relatorio != null &&
+                    !relatorio.IsDisposed &&
+                    relatorio.Tipo == tipo)
+                {
+                    JanelaRelatorios.Ajustar(relatorio, pnl_tudo);
+
+                    relatorio.Activate();
+                    relatorio.BringToFront();
+                    return;
+                }
+            }
+
+            var novo = new frmRelatoriosComplementares(tipo);
+
+            novo.TopLevel = false;
+            novo.FormBorderStyle = FormBorderStyle.Sizable;
+
+            pnl_tudo.Controls.Add(novo);
+
+            // Define tamanho, posição e cabeçalho antes de mostrar.
+            JanelaRelatorios.Ajustar(novo, pnl_tudo);
+
+            novo.Show();
+            novo.BringToFront();
         }
 
         //CONSULTA

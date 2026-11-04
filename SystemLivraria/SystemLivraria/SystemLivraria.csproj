@@ -175,7 +175,10 @@
     <Compile Include="forms\frmSplashScreen.Designer.cs">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Relatorios\ApoioRelatoriosSeparados.cs" />
+    <Compile Include="forms\Relatorios\frmRelatoriosComplementares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Relatorios\EstiloRelatorios.cs" />
     <Compile Include="forms\Relatorios\frmRltEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
