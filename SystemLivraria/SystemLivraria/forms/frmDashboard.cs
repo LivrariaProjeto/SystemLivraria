@@ -13,6 +13,7 @@ namespace SystemLivraria.forms
 {
     public partial class frmDashboard : Form
     {
+
         private int nivelUsuario;
 
         // Construtor padrão (caso abra direto, assume nível 3)

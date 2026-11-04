@@ -1,15 +1,12 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SystemLivraria.data;
-using SystemLivraria.data.DataSet2TableAdapters;
+
+using DadosRelatorio = SystemLivraria.data.DataSet2;
+using AdaptadorEstoque =
+    SystemLivraria.data.DataSet2TableAdapters.EstoqueTableAdapter;
+using AdaptadorProdutos =
+    SystemLivraria.data.DataSet2TableAdapters.ProdutosTableAdapter;
 
 namespace SystemLivraria.forms.Relatorios
 {
@@ -22,37 +19,57 @@ namespace SystemLivraria.forms.Relatorios
 
         private void frmRltEstoque_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'db_250064DataSet.Estoque'. Você pode movê-la ou removê-la conforme necessário.
-            this.estoqueTableAdapter.Fill(this.db_250064DataSet.Estoque);
             try
             {
-                // 1. Instancia o DataSet e o TableAdapter correspondentes
-                // (Certifica-te de usar os nomes exatos das tuas classes geradas pelo XSD)
-                DataSet2 datasetLocal = new DataSet2();
-                DataSet2TableAdapters.estoqueTableAdapter adaptadorEstoque = new DataSet2TableAdapters.estoqueTableAdapter();
+                var dados = new DadosRelatorio();
 
-                // 2. Preenche os dados do banco na tabela do DataSet
-                adaptadorEstoque.Fill(datasetLocal.Estoque);
+                using (var adaptador = new AdaptadorEstoque())
+                {
+                    adaptador.Fill(dados.Estoque);
+                }
 
-                // 3. Configura a fonte de dados do ReportViewer
-                // O nome "DataSetEstoque" deve corresponder ao nome do conjunto de dados definido no seu arquivo .rdlc
-                ReportDataSource rds = new ReportDataSource("DataSetEstoque", (object)datasetLocal.Estoque);
+                using (var adaptador = new AdaptadorProdutos())
+                {
+                    adaptador.Fill(dados.Produtos);
+                }
+
+                reportViewer1.ProcessingMode = ProcessingMode.Local;
+
+                reportViewer1.LocalReport.ReportEmbeddedResource =
+                    "SystemLivraria.forms.Relatorios.ReportEstoque.rdlc";
 
                 reportViewer1.LocalReport.DataSources.Clear();
-                reportViewer1.LocalReport.DataSources.Add(rds);
 
-                // 4. Atualiza e renderiza o relatório
-                this.reportViewer1.RefreshReport();
+                reportViewer1.LocalReport.DataSources.Add(
+                    new ReportDataSource(
+                        "DataEstoque",
+                        (object)dados.Estoque
+                    )
+                );
+
+                reportViewer1.LocalReport.DataSources.Add(
+                    new ReportDataSource(
+                        "DataProdutos",
+                        (object)dados.Produtos
+                    )
+                );
+
+                reportViewer1.RefreshReport();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erro ao carregar o relatório: " + ex.Message);
+                MessageBox.Show(
+                    "Erro ao carregar o relatório: " +
+                    ex.GetBaseException().Message,
+                    "Relatório de estoque",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
-           
         }
     }
 }

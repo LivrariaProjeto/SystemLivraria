@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="data\RelatoriosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="db_250064DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,6 +175,7 @@
     <Compile Include="forms\frmSplashScreen.Designer.cs">
       <DependentUpon>frmSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Relatorios\ApoioRelatoriosSeparados.cs" />
     <Compile Include="forms\Relatorios\frmRltEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,18 @@
     </None>
     <None Include="data\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="data\RelatoriosDataSet.xsc">
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="data\RelatoriosDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RelatoriosDataSet.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>SystemLivraria.data</CustomToolNamespace>
+    </None>
+    <None Include="data\RelatoriosDataSet.xss">
+      <DependentUpon>RelatoriosDataSet.xsd</DependentUpon>
     </None>
     <None Include="db_250064DataSet.xsc">
       <DependentUpon>db_250064DataSet.xsd</DependentUpon>
