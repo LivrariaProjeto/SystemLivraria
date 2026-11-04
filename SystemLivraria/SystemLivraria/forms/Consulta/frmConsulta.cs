@@ -232,5 +232,18 @@ namespace SystemLivraria.forms
         private void panel1_Paint(object sender, PaintEventArgs e) { }
         private void panelPersonalizado3_Paint(object sender, PaintEventArgs e) { }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
+
+        private void btrn_consulta_Click(object sender, EventArgs e)
+        {
+            CarregarTabela();
+        }
+
+        private void btn_limpar_Click_1(object sender, EventArgs e)
+        {
+            txt_filtro.Text = "";
+            if (cbo_filtro.Items.Count > 0) cbo_filtro.SelectedIndex = 0;
+            if (cbo_coluna.Items.Count > 0) cbo_coluna.SelectedIndex = 0;
+            CarregarTabela();
+        }
     }
 }

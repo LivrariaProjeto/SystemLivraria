@@ -29,21 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadFuncionarios));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.btnAdicionar_Funcionarios = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.btnDelete_Funcionarios = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnSalvar_Funcionarios = new System.Windows.Forms.ToolStripButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataSet2 = new SystemLivraria.data.DataSet2();
             this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.produtosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.ProdutosTableAdapter();
@@ -69,12 +55,6 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panelPersonalizado7 = new SystemLivraria.classes.PanelPersonalizado();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_telefone = new System.Windows.Forms.TextBox();
-            this.lbl_telefone = new System.Windows.Forms.Label();
-            this.funcionariosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.FuncionariosTableAdapter();
             this.idFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,8 +62,16 @@
             this.telFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataAdmissaoFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailFunciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
+            this.funcionariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelPersonalizado7 = new SystemLivraria.classes.PanelPersonalizado();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txt_telefone = new System.Windows.Forms.TextBox();
+            this.lbl_telefone = new System.Windows.Forms.Label();
+            this.funcionariosTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.FuncionariosTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_adicionar = new SystemLivraria.classes.ButtonPersonalizado();
+            this.btn_limpar = new SystemLivraria.classes.ButtonPersonalizado();
+            this.btn_salvar = new SystemLivraria.classes.ButtonPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
             this.panelPersonalizado6.SuspendLayout();
@@ -96,132 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.funcionariosBindingSource)).BeginInit();
             this.panelPersonalizado7.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = this.btnAdicionar_Funcionarios;
-            this.bindingNavigator1.BackColor = System.Drawing.Color.Silver;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.btnDelete_Funcionarios;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.btnAdicionar_Funcionarios,
-            this.btnDelete_Funcionarios,
-            this.btnSalvar_Funcionarios});
-            this.bindingNavigator1.Location = new System.Drawing.Point(20, 20);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(929, 25);
-            this.bindingNavigator1.TabIndex = 0;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // btnAdicionar_Funcionarios
-            // 
-            this.btnAdicionar_Funcionarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnAdicionar_Funcionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar_Funcionarios.Image")));
-            this.btnAdicionar_Funcionarios.Name = "btnAdicionar_Funcionarios";
-            this.btnAdicionar_Funcionarios.RightToLeftAutoMirrorImage = true;
-            this.btnAdicionar_Funcionarios.Size = new System.Drawing.Size(23, 22);
-            this.btnAdicionar_Funcionarios.Text = "Adicionar novo";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
-            // btnDelete_Funcionarios
-            // 
-            this.btnDelete_Funcionarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDelete_Funcionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete_Funcionarios.Image")));
-            this.btnDelete_Funcionarios.Name = "btnDelete_Funcionarios";
-            this.btnDelete_Funcionarios.RightToLeftAutoMirrorImage = true;
-            this.btnDelete_Funcionarios.Size = new System.Drawing.Size(23, 22);
-            this.btnDelete_Funcionarios.Text = "Excluir";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // btnSalvar_Funcionarios
-            // 
-            this.btnSalvar_Funcionarios.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnSalvar_Funcionarios.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar_Funcionarios.Image")));
-            this.btnSalvar_Funcionarios.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnSalvar_Funcionarios.Name = "btnSalvar_Funcionarios";
-            this.btnSalvar_Funcionarios.Size = new System.Drawing.Size(23, 22);
-            this.btnSalvar_Funcionarios.Text = "toolStripButton1";
-            this.btnSalvar_Funcionarios.Click += new System.EventHandler(this.btnSalvar_Funcionarios_Click);
             // 
             // dataSet2
             // 
@@ -470,11 +332,11 @@
             this.panelPersonalizado1.GradientAngle = 90F;
             this.panelPersonalizado1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
             this.panelPersonalizado1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panelPersonalizado1.Location = new System.Drawing.Point(20, 222);
+            this.panelPersonalizado1.Location = new System.Drawing.Point(20, 286);
             this.panelPersonalizado1.Margin = new System.Windows.Forms.Padding(0);
             this.panelPersonalizado1.Name = "panelPersonalizado1";
             this.panelPersonalizado1.Padding = new System.Windows.Forms.Padding(4, 0, 4, 15);
-            this.panelPersonalizado1.Size = new System.Drawing.Size(929, 303);
+            this.panelPersonalizado1.Size = new System.Drawing.Size(929, 239);
             this.panelPersonalizado1.TabIndex = 1;
             // 
             // dataGridView1
@@ -486,14 +348,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idFunciDataGridViewTextBoxColumn,
@@ -515,61 +377,8 @@
             this.dataGridView1.RowHeadersWidth = 25;
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(921, 288);
+            this.dataGridView1.Size = new System.Drawing.Size(921, 224);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // funcionariosBindingSource
-            // 
-            this.funcionariosBindingSource.DataMember = "Funcionarios";
-            this.funcionariosBindingSource.DataSource = this.dataSet2;
-            // 
-            // panelPersonalizado7
-            // 
-            this.panelPersonalizado7.BackColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado7.BorderRadius = 30;
-            this.panelPersonalizado7.Controls.Add(this.panel6);
-            this.panelPersonalizado7.Controls.Add(this.txt_telefone);
-            this.panelPersonalizado7.ForeColor = System.Drawing.Color.Black;
-            this.panelPersonalizado7.GradientAngle = 90F;
-            this.panelPersonalizado7.GradientBottomColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado7.GradientTopColor = System.Drawing.Color.Transparent;
-            this.panelPersonalizado7.Location = new System.Drawing.Point(751, 94);
-            this.panelPersonalizado7.Name = "panelPersonalizado7";
-            this.panelPersonalizado7.Size = new System.Drawing.Size(198, 31);
-            this.panelPersonalizado7.TabIndex = 15;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 28);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(198, 3);
-            this.panel6.TabIndex = 1;
-            // 
-            // txt_telefone
-            // 
-            this.txt_telefone.BackColor = System.Drawing.Color.Silver;
-            this.txt_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefone.Location = new System.Drawing.Point(15, 5);
-            this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(179, 20);
-            this.txt_telefone.TabIndex = 0;
-            // 
-            // lbl_telefone
-            // 
-            this.lbl_telefone.AutoSize = true;
-            this.lbl_telefone.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_telefone.Location = new System.Drawing.Point(763, 73);
-            this.lbl_telefone.Name = "lbl_telefone";
-            this.lbl_telefone.Size = new System.Drawing.Size(71, 18);
-            this.lbl_telefone.TabIndex = 16;
-            this.lbl_telefone.Text = "Telefone";
-            // 
-            // funcionariosTableAdapter
-            // 
-            this.funcionariosTableAdapter.ClearBeforeFill = true;
             // 
             // idFunciDataGridViewTextBoxColumn
             // 
@@ -631,11 +440,141 @@
             this.emailFunciDataGridViewTextBoxColumn.Name = "emailFunciDataGridViewTextBoxColumn";
             this.emailFunciDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // funcionariosBindingSource
+            // 
+            this.funcionariosBindingSource.DataMember = "Funcionarios";
+            this.funcionariosBindingSource.DataSource = this.dataSet2;
+            // 
+            // panelPersonalizado7
+            // 
+            this.panelPersonalizado7.BackColor = System.Drawing.Color.Transparent;
+            this.panelPersonalizado7.BorderRadius = 30;
+            this.panelPersonalizado7.Controls.Add(this.panel6);
+            this.panelPersonalizado7.Controls.Add(this.txt_telefone);
+            this.panelPersonalizado7.ForeColor = System.Drawing.Color.Black;
+            this.panelPersonalizado7.GradientAngle = 90F;
+            this.panelPersonalizado7.GradientBottomColor = System.Drawing.Color.Transparent;
+            this.panelPersonalizado7.GradientTopColor = System.Drawing.Color.Transparent;
+            this.panelPersonalizado7.Location = new System.Drawing.Point(751, 94);
+            this.panelPersonalizado7.Name = "panelPersonalizado7";
+            this.panelPersonalizado7.Size = new System.Drawing.Size(198, 31);
+            this.panelPersonalizado7.TabIndex = 15;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 28);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(198, 3);
+            this.panel6.TabIndex = 1;
+            // 
+            // txt_telefone
+            // 
+            this.txt_telefone.BackColor = System.Drawing.Color.Silver;
+            this.txt_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_telefone.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefone.Location = new System.Drawing.Point(15, 5);
+            this.txt_telefone.Name = "txt_telefone";
+            this.txt_telefone.Size = new System.Drawing.Size(179, 20);
+            this.txt_telefone.TabIndex = 0;
+            // 
+            // lbl_telefone
+            // 
+            this.lbl_telefone.AutoSize = true;
+            this.lbl_telefone.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_telefone.Location = new System.Drawing.Point(763, 73);
+            this.lbl_telefone.Name = "lbl_telefone";
+            this.lbl_telefone.Size = new System.Drawing.Size(71, 18);
+            this.lbl_telefone.TabIndex = 16;
+            this.lbl_telefone.Text = "Telefone";
+            // 
+            // funcionariosTableAdapter
+            // 
+            this.funcionariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(24, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(349, 32);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Cadastro de Funcionários";
+            // 
+            // btn_adicionar
+            // 
+            this.btn_adicionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_adicionar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_adicionar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_adicionar.BorderRadius = 40;
+            this.btn_adicionar.BorderSize = 0;
+            this.btn_adicionar.FlatAppearance.BorderSize = 0;
+            this.btn_adicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_adicionar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_adicionar.ForeColor = System.Drawing.Color.White;
+            this.btn_adicionar.ImageIndex = 1;
+            this.btn_adicionar.Location = new System.Drawing.Point(30, 227);
+            this.btn_adicionar.Name = "btn_adicionar";
+            this.btn_adicionar.Size = new System.Drawing.Size(177, 40);
+            this.btn_adicionar.TabIndex = 23;
+            this.btn_adicionar.Text = "ADICIONAR";
+            this.btn_adicionar.TextColor = System.Drawing.Color.White;
+            this.btn_adicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_adicionar.UseVisualStyleBackColor = false;
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_limpar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_limpar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_limpar.BorderRadius = 40;
+            this.btn_limpar.BorderSize = 0;
+            this.btn_limpar.FlatAppearance.BorderSize = 0;
+            this.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpar.ForeColor = System.Drawing.Color.White;
+            this.btn_limpar.ImageIndex = 1;
+            this.btn_limpar.Location = new System.Drawing.Point(454, 227);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(177, 40);
+            this.btn_limpar.TabIndex = 22;
+            this.btn_limpar.Text = "LIMPAR";
+            this.btn_limpar.TextColor = System.Drawing.Color.White;
+            this.btn_limpar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_limpar.UseVisualStyleBackColor = false;
+            // 
+            // btn_salvar
+            // 
+            this.btn_salvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_salvar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_salvar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_salvar.BorderRadius = 40;
+            this.btn_salvar.BorderSize = 0;
+            this.btn_salvar.FlatAppearance.BorderSize = 0;
+            this.btn_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salvar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salvar.ForeColor = System.Drawing.Color.White;
+            this.btn_salvar.ImageIndex = 1;
+            this.btn_salvar.Location = new System.Drawing.Point(242, 227);
+            this.btn_salvar.Name = "btn_salvar";
+            this.btn_salvar.Size = new System.Drawing.Size(177, 40);
+            this.btn_salvar.TabIndex = 21;
+            this.btn_salvar.Text = "SALVAR";
+            this.btn_salvar.TextColor = System.Drawing.Color.White;
+            this.btn_salvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_salvar.UseVisualStyleBackColor = false;
+            // 
             // frmCadFuncionarios
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(969, 548);
+            this.Controls.Add(this.btn_adicionar);
+            this.Controls.Add(this.btn_limpar);
+            this.Controls.Add(this.btn_salvar);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_telefone);
             this.Controls.Add(this.panelPersonalizado7);
             this.Controls.Add(this.panelPersonalizado6);
@@ -649,15 +588,11 @@
             this.Controls.Add(this.lbl_cpf);
             this.Controls.Add(this.lbl_nomeprod);
             this.Controls.Add(this.panelPersonalizado1);
-            this.Controls.Add(this.bindingNavigator1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmCadFuncionarios";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Cadastro de Funcionários";
             this.Load += new System.EventHandler(this.frmCadFuncionarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
             this.panelPersonalizado6.ResumeLayout(false);
@@ -681,20 +616,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton btnAdicionar_Funcionarios;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton btnDelete_Funcionarios;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton btnSalvar_Funcionarios;
         private classes.PanelPersonalizado panelPersonalizado1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private data.DataSet2 dataSet2;
@@ -733,5 +654,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telFunciDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataAdmissaoFunciDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailFunciDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
+        private classes.ButtonPersonalizado btn_adicionar;
+        private classes.ButtonPersonalizado btn_limpar;
+        private classes.ButtonPersonalizado btn_salvar;
     }
 }

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_Limpar = new System.Windows.Forms.Button();
-            this.btn_Consultar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txt_filtro = new System.Windows.Forms.TextBox();
             this.cbo_filtro = new System.Windows.Forms.ComboBox();
@@ -44,28 +42,30 @@
             this.cbo_tabela = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_buscar = new System.Windows.Forms.Label();
-            this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataSet2 = new SystemLivraria.data.DataSet2();
             this.vendasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vendasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.VendasTableAdapter();
             this.editorasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.editorasTableAdapter = new SystemLivraria.data.DataSet2TableAdapters.EditorasTableAdapter();
+            this.btn_limpar = new SystemLivraria.classes.ButtonPersonalizado();
+            this.btrn_consultar = new SystemLivraria.classes.ButtonPersonalizado();
+            this.panelPersonalizado1 = new SystemLivraria.classes.PanelPersonalizado();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panelPersonalizado1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).BeginInit();
+            this.panelPersonalizado1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_Limpar);
-            this.panel1.Controls.Add(this.btn_Consultar);
+            this.panel1.Controls.Add(this.btn_limpar);
+            this.panel1.Controls.Add(this.btrn_consultar);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.lbl_filtrar);
             this.panel1.Controls.Add(this.panel3);
@@ -78,26 +78,6 @@
             this.panel1.Size = new System.Drawing.Size(255, 445);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btn_Limpar
-            // 
-            this.btn_Limpar.Location = new System.Drawing.Point(138, 332);
-            this.btn_Limpar.Name = "btn_Limpar";
-            this.btn_Limpar.Size = new System.Drawing.Size(99, 49);
-            this.btn_Limpar.TabIndex = 9;
-            this.btn_Limpar.Text = "Limpar";
-            this.btn_Limpar.UseVisualStyleBackColor = true;
-            this.btn_Limpar.Click += new System.EventHandler(this.btn_limpar_Click);
-            // 
-            // btn_Consultar
-            // 
-            this.btn_Consultar.Location = new System.Drawing.Point(21, 332);
-            this.btn_Consultar.Name = "btn_Consultar";
-            this.btn_Consultar.Size = new System.Drawing.Size(102, 49);
-            this.btn_Consultar.TabIndex = 8;
-            this.btn_Consultar.Text = "Consultar";
-            this.btn_Consultar.UseVisualStyleBackColor = true;
-            this.btn_Consultar.Click += new System.EventHandler(this.btn_consulta_Click);
             // 
             // panel4
             // 
@@ -230,6 +210,69 @@
             this.lbl_buscar.Text = "Buscar em";
             this.lbl_buscar.Click += new System.EventHandler(this.label1_Click);
             // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "DataSet2";
+            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vendasBindingSource
+            // 
+            this.vendasBindingSource.DataMember = "Vendas";
+            this.vendasBindingSource.DataSource = this.dataSet2;
+            // 
+            // vendasTableAdapter
+            // 
+            this.vendasTableAdapter.ClearBeforeFill = true;
+            // 
+            // editorasBindingSource
+            // 
+            this.editorasBindingSource.DataMember = "Editoras";
+            this.editorasBindingSource.DataSource = this.dataSet2;
+            // 
+            // editorasTableAdapter
+            // 
+            this.editorasTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_limpar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btn_limpar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btn_limpar.BorderRadius = 40;
+            this.btn_limpar.BorderSize = 0;
+            this.btn_limpar.FlatAppearance.BorderSize = 0;
+            this.btn_limpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpar.ForeColor = System.Drawing.Color.White;
+            this.btn_limpar.Location = new System.Drawing.Point(139, 332);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(102, 49);
+            this.btn_limpar.TabIndex = 11;
+            this.btn_limpar.Text = "Limpar";
+            this.btn_limpar.TextColor = System.Drawing.Color.White;
+            this.btn_limpar.UseVisualStyleBackColor = false;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click_1);
+            // 
+            // btrn_consultar
+            // 
+            this.btrn_consultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btrn_consultar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(50)))), ((int)(((byte)(86)))));
+            this.btrn_consultar.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btrn_consultar.BorderRadius = 40;
+            this.btrn_consultar.BorderSize = 0;
+            this.btrn_consultar.FlatAppearance.BorderSize = 0;
+            this.btrn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btrn_consultar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btrn_consultar.ForeColor = System.Drawing.Color.White;
+            this.btrn_consultar.Location = new System.Drawing.Point(14, 332);
+            this.btrn_consultar.Name = "btrn_consultar";
+            this.btrn_consultar.Size = new System.Drawing.Size(102, 49);
+            this.btrn_consultar.TabIndex = 10;
+            this.btrn_consultar.Text = "Consultar";
+            this.btrn_consultar.TextColor = System.Drawing.Color.White;
+            this.btrn_consultar.UseVisualStyleBackColor = false;
+            this.btrn_consultar.Click += new System.EventHandler(this.btrn_consulta_Click);
+            // 
             // panelPersonalizado1
             // 
             this.panelPersonalizado1.BackColor = System.Drawing.Color.Turquoise;
@@ -276,29 +319,6 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // dataSet2
-            // 
-            this.dataSet2.DataSetName = "DataSet2";
-            this.dataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vendasBindingSource
-            // 
-            this.vendasBindingSource.DataMember = "Vendas";
-            this.vendasBindingSource.DataSource = this.dataSet2;
-            // 
-            // vendasTableAdapter
-            // 
-            this.vendasTableAdapter.ClearBeforeFill = true;
-            // 
-            // editorasBindingSource
-            // 
-            this.editorasBindingSource.DataMember = "Editoras";
-            this.editorasBindingSource.DataSource = this.dataSet2;
-            // 
-            // editorasTableAdapter
-            // 
-            this.editorasTableAdapter.ClearBeforeFill = true;
-            // 
             // frmConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,11 +337,11 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panelPersonalizado1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.editorasBindingSource)).EndInit();
+            this.panelPersonalizado1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,7 +367,7 @@
         private data.DataSet2TableAdapters.VendasTableAdapter vendasTableAdapter;
         private System.Windows.Forms.BindingSource editorasBindingSource;
         private data.DataSet2TableAdapters.EditorasTableAdapter editorasTableAdapter;
-        private System.Windows.Forms.Button btn_Limpar;
-        private System.Windows.Forms.Button btn_Consultar;
+        private classes.ButtonPersonalizado btrn_consultar;
+        private classes.ButtonPersonalizado btn_limpar;
     }
 }
