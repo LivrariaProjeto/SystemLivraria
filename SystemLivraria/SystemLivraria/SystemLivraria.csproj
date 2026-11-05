@@ -77,6 +77,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="classes\ClasseEstoque.cs" />
+    <Compile Include="classes\ComercialService.cs" />
     <Compile Include="classes\PanelPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,6 +116,9 @@
     <Compile Include="forms\Cadastro\frmCadAutores.Designer.cs">
       <DependentUpon>frmCadAutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Cadastro\frmCadCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Cadastro\frmCadEditoras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +149,17 @@
     <Compile Include="forms\Cadastro\frmCadProdutos.Designer.cs">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Cadastro\frmCadVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="forms\Cadastro\frmExcluir.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Cadastro\frmExcluir.Designer.cs">
       <DependentUpon>frmExcluir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmOperacaoComercial.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Consulta\frmConsulta.cs">
       <SubType>Form</SubType>

@@ -3,28 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\relatorios\\frmrltestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\relatorios\\frmrltestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\cadastro\\frmoperacaocomercial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\cadastro\\frmoperacaocomercial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\relatorios\\frmrltestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\relatorios\\frmrltestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\classes\\panelpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\classes\\panelpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\dataset2tableadapters\\estoquetableadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\dataset2tableadapters\\estoquetableadapter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\classes\\panelpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\classes\\panelpersonalizado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\cadastro\\frmcadcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\cadastro\\frmcadcompras.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\cadastro\\frmcadvendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\cadastro\\frmcadvendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\cadastro\\frmexcluir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\cadastro\\frmexcluir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\classes\\comercialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\classes\\comercialservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,78 +62,123 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "estoqueTableAdapter.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\DataSet2TableAdapters\\estoqueTableAdapter.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\DataSet2TableAdapters\\estoqueTableAdapter.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\DataSet2TableAdapters\\estoqueTableAdapter.cs",
-              "RelativeToolTip": "SystemLivraria\\DataSet2TableAdapters\\estoqueTableAdapter.cs",
+              "DocumentIndex": 7,
+              "Title": "frmExcluir.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmExcluir.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Cadastro\\frmExcluir.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmExcluir.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\Cadastro\\frmExcluir.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-04T19:27:29.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-05T18:10:34.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmCadCompras.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmCadCompras.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Cadastro\\frmCadCompras.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmCadCompras.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\Cadastro\\frmCadCompras.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T18:10:17.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmCadVendas.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmCadVendas.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Cadastro\\frmCadVendas.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmCadVendas.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\Cadastro\\frmCadVendas.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-05T18:09:48.15Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PanelPersonalizado.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\PanelPersonalizado.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\classes\\PanelPersonalizado.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\PanelPersonalizado.cs",
-              "RelativeToolTip": "SystemLivraria\\classes\\PanelPersonalizado.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\App.config",
+              "RelativeDocumentMoniker": "SystemLivraria\\App.config",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\App.config",
+              "RelativeToolTip": "SystemLivraria\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-11-05T10:55:13.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmOperacaoComercial.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmOperacaoComercial.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Cadastro\\frmOperacaoComercial.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmOperacaoComercial.cs*",
+              "RelativeToolTip": "SystemLivraria\\forms\\Cadastro\\frmOperacaoComercial.cs*",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAmwKQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-04T19:27:04.477Z",
+              "WhenOpened": "2026-11-05T18:08:10.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PanelPersonalizado.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\PanelPersonalizado.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\classes\\PanelPersonalizado.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\PanelPersonalizado.cs [Design]",
-              "RelativeToolTip": "SystemLivraria\\classes\\PanelPersonalizado.cs [Design]",
+              "Title": "frmDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmDashboard.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\frmDashboard.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAcwNsBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-04T19:27:00.654Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-11-05T18:13:10.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmRltEstoque.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs",
-              "RelativeToolTip": "SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "frmLogon.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAIwHYAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-04T19:19:54.265Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-11-05T18:21:57.842Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmRltEstoque.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs [Design]",
-              "RelativeToolTip": "SystemLivraria\\forms\\Relatorios\\frmRltEstoque.cs [Design]",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\Program.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\Program.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\Program.cs",
+              "RelativeToolTip": "SystemLivraria\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-04T19:19:50.723Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-11-05T10:58:47.568Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmDashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmDashboard.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs [Design]",
-              "RelativeToolTip": "SystemLivraria\\forms\\frmDashboard.cs [Design]",
+              "DocumentIndex": 8,
+              "Title": "ComercialService.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\ComercialService.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\classes\\ComercialService.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\ComercialService.cs",
+              "RelativeToolTip": "SystemLivraria\\classes\\ComercialService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQCAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-04T15:14:27.006Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-11-05T18:07:03.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "SystemLivraria\\Properties\\Settings.settings",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\Properties\\Settings.settings",
+              "RelativeToolTip": "SystemLivraria\\Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2026-11-05T10:55:53.981Z"
             }
           ]
         }

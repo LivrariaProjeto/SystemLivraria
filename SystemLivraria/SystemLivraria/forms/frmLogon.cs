@@ -35,35 +35,7 @@ namespace SystemLivraria.forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario = textBox1.Text;
-            string senha = textBox2.Text;
-
-            UsuariosTableAdapter tableAdap = new UsuariosTableAdapter();
-
-            if (usuario == "" || senha == "")
-            {
-                MessageBox.Show("Preencha todos os campos!");
-            }
-            else
-            {
-                DataTable result = tableAdap.GetDataBy(usuario, senha);
-                if (result.Rows.Count > 0)
-                {
-                    // Captura o nível de permissão (Id_Permi) do usuário logado
-                    int nivelPermissao = Convert.ToInt32(result.Rows[0]["Id_Permi"]); //***
-
-                    MessageBox.Show("Login realizado com sucesso!", "LOGIN REALIZADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Abre o MDI passando o nível
-                    frmDashboard FormPrincipal = new frmDashboard(nivelPermissao);
-                    this.Hide();
-                    FormPrincipal.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Senha ou Login incorretos!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
-            }
+            Autenticar();
 
         }
             
@@ -82,34 +54,67 @@ namespace SystemLivraria.forms
 
         private void LOGIN_Click(object sender, EventArgs e)
         {
-            string usuario = textBox1.Text;
-            string senha = textBox2.Text;
+            Autenticar();
+        }
 
-            UsuariosTableAdapter tableAdap = new UsuariosTableAdapter();
+        private void Autenticar()
+        {
+            if (!LOGIN.Enabled)
+                return;
 
-            if (usuario == "" || senha == "")
+            if (string.IsNullOrWhiteSpace(textBox1.Text) ||
+                string.IsNullOrEmpty(textBox2.Text))
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Preencha login e senha.");
+                return;
             }
-            else
+
+            LOGIN.Enabled = false;
+
+            try
             {
-                DataTable result = tableAdap.GetDataBy(usuario, senha);
-                if (result.Rows.Count > 0)
+                using (var adapter = new UsuariosTableAdapter())
                 {
-                    // Captura o nível de permissão (Id_Permi) do usuário logado
-                    int nivelPermissao = Convert.ToInt32(result.Rows[0]["Id_Permi"]);
+                    DataTable resultado = adapter.GetDataBy(
+                        textBox1.Text.Trim(), textBox2.Text);
 
-                    MessageBox.Show("Login realizado com sucesso!", "LOGIN REALIZADO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (resultado.Rows.Count != 1 ||
+                        !Convert.ToBoolean(resultado.Rows[0]["Ativo_usu"]))
+                    {
+                        MessageBox.Show(
+                            "Login ou senha incorretos, ou usuário inativo.");
+                        return;
+                    }
 
-                    // Abre o MDI passando o nível
-                    frmDashboard FormPrincipal = new frmDashboard(nivelPermissao);
-                    this.Hide();
-                    FormPrincipal.Show();
+                    DataRow usuario = resultado.Rows[0];
+                    int nivel = Convert.ToInt32(usuario["Id_Permi"]);
+
+                    if (nivel < 1 || nivel > 3)
+                    {
+                        MessageBox.Show(
+                            "Permissão de usuário não reconhecida.");
+                        return;
+                    }
+
+                    var principal = new frmDashboard(
+                        nivel,
+                        Convert.ToInt32(usuario["Id_Usu"]));
+
+                    principal.FormClosed += delegate { Close(); };
+
+                    principal.Show();
+                    Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Senha ou Login incorretos!", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Não foi possível entrar: " + ex.Message);
+            }
+            finally
+            {
+                if (!IsDisposed)
+                    LOGIN.Enabled = true;
             }
         }
 
