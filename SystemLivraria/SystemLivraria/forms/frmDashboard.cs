@@ -39,16 +39,86 @@ namespace SystemLivraria.forms
         {
             idUsuarioLogado = idUsuario;
 
-            // Vendas e compras: chefe e gerente.
             if (idUsuarioLogado > 0 &&
                 (nivelUsuario == 1 || nivelUsuario == 2))
             {
                 AdicionarMenuComercial("Cadastrar venda", true);
                 AdicionarMenuComercial("Cadastrar compra", false);
 
-                // Espaço para os dois novos botões.
                 pnl_cadastroSubmenu.Height += 110;
             }
+
+            if (idUsuarioLogado > 0 && nivelUsuario == 1)
+            {
+                AdicionarMenuUsuarios();
+            }
+        }
+
+        private void AdicionarMenuUsuarios()
+        {
+            var botao = new Button
+            {
+                Text = "Gerenciar usuários",
+                Dock = DockStyle.Top,
+                Height = 55,
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = SystemColors.Control,
+                Font = btn_cadClientes.Font,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Padding = new Padding(35, 0, 0, 0)
+            };
+
+            botao.FlatAppearance.BorderSize = 0;
+
+            botao.Click += delegate
+            {
+                AbrirCadastroUsuarios();
+            };
+
+            pnl_cadastroSubmenu.Controls.Add(botao);
+            pnl_cadastroSubmenu.Controls.SetChildIndex(botao, 0);
+            pnl_cadastroSubmenu.Height += 55;
+        }
+
+        private void AbrirCadastroUsuarios()
+        {
+            if (idUsuarioLogado <= 0 || nivelUsuario != 1)
+            {
+                MessageBox.Show(
+                    "Somente o Administrador pode gerenciar usuários.");
+
+                return;
+            }
+
+            foreach (Control controle in pnl_tudo.Controls)
+            {
+                var aberta = controle as frmCadUsuarios;
+
+                if (aberta != null && !aberta.IsDisposed)
+                {
+                    aberta.BringToFront();
+                    aberta.Focus();
+
+                    hideSubmenu();
+                    return;
+                }
+            }
+
+            var nova = new frmCadUsuarios(idUsuarioLogado)
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.Sizable,
+                StartPosition = FormStartPosition.Manual,
+                Location = new Point(10, 10)
+            };
+
+            pnl_tudo.AutoScroll = true;
+            pnl_tudo.Controls.Add(nova);
+
+            nova.Show();
+            nova.BringToFront();
+
+            hideSubmenu();
         }
 
         private void customizeDesign()

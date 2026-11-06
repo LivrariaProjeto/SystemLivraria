@@ -81,6 +81,7 @@
     <Compile Include="classes\PanelPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="classes\UsuariosService.cs" />
     <Compile Include="DataSet2TableAdapters\estoqueTableAdapter.cs" />
     <Compile Include="data\DataSet2.cs">
       <DependentUpon>DataSet2.xsd</DependentUpon>
@@ -148,6 +149,9 @@
     </Compile>
     <Compile Include="forms\Cadastro\frmCadProdutos.Designer.cs">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Cadastro\frmCadUsuarios.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\Cadastro\frmCadVendas.cs">
       <SubType>Form</SubType>

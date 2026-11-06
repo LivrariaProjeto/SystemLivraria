@@ -52,7 +52,6 @@ namespace SystemLivraria.forms
                 cbTabelas.Items.Add(new ItemTabela("Estoque", "Estoque", "Id_Est", "Nome_Pro", ""));
                 cbTabelas.Items.Add(new ItemTabela("Fornecedores", "Fornecedores", "Id_Forne", "Nome_Forne", ""));
                 cbTabelas.Items.Add(new ItemTabela("Funcionários", "Funcionarios", "Id_Funci", "Nome_Funci", ""));
-                cbTabelas.Items.Add(new ItemTabela("Usuários", "Usuarios", "Id_Usu", "Login_usu", ""));
             }
             
 
@@ -152,6 +151,14 @@ namespace SystemLivraria.forms
             }
 
             ItemTabela itemSelecionado = (ItemTabela)cbTabelas.SelectedItem;
+
+            if (itemSelecionado.TabelaBanco == "Usuarios")
+            {
+                MessageBox.Show(
+                    "Use Gerenciar usuários para desativar uma conta.");
+
+                return;
+            }
 
             int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Código"].Value);
             string nome = dataGridView1.Columns.Contains("Nome") ? Convert.ToString(dataGridView1.CurrentRow.Cells["Nome"].Value) : id.ToString();

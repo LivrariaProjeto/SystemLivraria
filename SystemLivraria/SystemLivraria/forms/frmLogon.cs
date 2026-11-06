@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SystemLivraria.data.DataSet2TableAdapters;
+using SystemLivraria.classes;
 
 namespace SystemLivraria.forms
 {
@@ -70,41 +71,32 @@ namespace SystemLivraria.forms
             }
 
             LOGIN.Enabled = false;
+            UseWaitCursor = true;
 
             try
             {
-                using (var adapter = new UsuariosTableAdapter())
+                var sessao = UsuariosService.Autenticar(
+                    textBox1.Text,
+                    textBox2.Text);
+
+                if (sessao == null)
                 {
-                    DataTable resultado = adapter.GetDataBy(
-                        textBox1.Text.Trim(), textBox2.Text);
+                    MessageBox.Show(
+                        "Login ou senha incorretos, " +
+                        "ou usuário sem acesso ativo.");
 
-                    if (resultado.Rows.Count != 1 ||
-                        !Convert.ToBoolean(resultado.Rows[0]["Ativo_usu"]))
-                    {
-                        MessageBox.Show(
-                            "Login ou senha incorretos, ou usuário inativo.");
-                        return;
-                    }
-
-                    DataRow usuario = resultado.Rows[0];
-                    int nivel = Convert.ToInt32(usuario["Id_Permi"]);
-
-                    if (nivel < 1 || nivel > 3)
-                    {
-                        MessageBox.Show(
-                            "Permissão de usuário não reconhecida.");
-                        return;
-                    }
-
-                    var principal = new frmDashboard(
-                        nivel,
-                        Convert.ToInt32(usuario["Id_Usu"]));
-
-                    principal.FormClosed += delegate { Close(); };
-
-                    principal.Show();
-                    Hide();
+                    return;
                 }
+
+                var principal = new frmDashboard(
+                    sessao.Nivel,
+                    sessao.IdUsuario);
+
+                principal.FormClosed += delegate { Close(); };
+
+                principal.Show();
+                textBox2.Clear();
+                Hide();
             }
             catch (Exception ex)
             {
@@ -113,6 +105,8 @@ namespace SystemLivraria.forms
             }
             finally
             {
+                UseWaitCursor = false;
+
                 if (!IsDisposed)
                     LOGIN.Enabled = true;
             }
