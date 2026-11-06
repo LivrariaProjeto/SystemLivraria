@@ -37,6 +37,8 @@ namespace SystemLivraria.forms
 
             // Formatação do telefone ao sair do campo
             this.txt_telefone.Leave += txt_telefone_Leave;
+
+
         }
 
         private void frmCadEditoras_Load(object sender, EventArgs e)

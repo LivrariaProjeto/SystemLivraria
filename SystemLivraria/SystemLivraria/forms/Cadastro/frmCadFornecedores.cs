@@ -163,8 +163,7 @@ namespace SystemLivraria.forms
             }
         }
 
-       
-            private void btn_adicionar_Click(object sender, EventArgs e)
+        private void btn_adicionar_Click(object sender, EventArgs e)
         {
             if (btn_adicionar.Tag is bool habilitado && !habilitado) return;
 
@@ -215,11 +214,63 @@ namespace SystemLivraria.forms
                 MessageBox.Show("Erro ao cadastrar fornecedor:\n\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
 
+        // CORREÇÃO: Implementação completa do botão Salvar (Update)
         private void btn_salvar_Click(object sender, EventArgs e)
         {
+            if (btn_salvar.Tag is bool habilitado && !habilitado) return;
+            if (idFornecedorSelecionado == null) return;
 
+            if (string.IsNullOrWhiteSpace(txt_nome.Text) || string.IsNullOrWhiteSpace(txt_cnpj.Text) || string.IsNullOrWhiteSpace(txt_telefone.Text))
+            {
+                MessageBox.Show("Preencha os campos obrigatórios para atualizar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Valida o CNPJ antes de atualizar
+            if (!ValidarCnpj(txt_cnpj.Text))
+            {
+                MessageBox.Show("O CNPJ informado é inválido!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_cnpj.Focus();
+                return;
+            }
+
+            string telefoneFormatado = FormatarTelefone(txt_telefone.Text);
+            string cnpjFormatado = FormatarCnpj(txt_cnpj.Text);
+
+            string sql = @"UPDATE Fornecedores SET 
+                            Nome_Forne = @Nome, 
+                            Endereco_Forne = @Endereco, 
+                            CNPJ_Forne = @CNPJ, 
+                            Tel_Forne = @Telefone, 
+                            Email_Forne = @Email 
+                           WHERE Id_Forne = @Id";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(conexao))
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Nome", txt_nome.Text);
+                    cmd.Parameters.AddWithValue("@Endereco", txt_endereco.Text);
+                    cmd.Parameters.AddWithValue("@CNPJ", cnpjFormatado);
+                    cmd.Parameters.AddWithValue("@Telefone", telefoneFormatado);
+                    cmd.Parameters.AddWithValue("@Email", txt_email.Text);
+                    cmd.Parameters.AddWithValue("@Id", idFornecedorSelecionado.Value);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Fornecedor atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    EstadoInicial();
+                    CarregarTabela();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar fornecedor:\n\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
