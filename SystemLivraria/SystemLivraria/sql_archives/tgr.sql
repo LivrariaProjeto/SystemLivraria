@@ -1,25 +1,4 @@
-create trigger trg_AtualizarValorTotal
-on Itens_Vendas
-after insert, update, delete
-as
-begin
-	set nocount on;
-
-	update Vendas
-	set Valor_Total = (
-		select isnull(sum(iv.QTD_Item * iv.Preco_Uni), 0)
-		from Itens_VDS iv
-		where iv.Id_VDS = Vendas.Id_VDS
-	)
-	where Vendas.Id_VDS in (
-		select Id_VDS from inserted
-		union
-		select Id_VDS from deleted
-	);
-end;
-go
-
-CREATE TRIGGER trg_HistoricoEstoque
+CREATE OR ALTER TRIGGER trg_HistoricoEstoque
 ON Estoque
 AFTER UPDATE
 AS

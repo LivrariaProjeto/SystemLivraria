@@ -1,61 +1,144 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using SystemLivraria.forms.Cadastro;
 using SystemLivraria.forms.Relatorios;
 
 namespace SystemLivraria.forms
 {
     public partial class frmDashboard : Form
     {
-
         private int nivelUsuario;
+        private int idUsuarioLogado;
 
-        
-
-        // Construtor padrão (caso abra direto, assume nível 3)
+        // Construtor padrão, utilizado também pelo Designer.
         public frmDashboard()
         {
             InitializeComponent();
+
             nivelUsuario = 3;
+
             AplicarPermissoes();
             customizeDesign();
         }
 
-        // Construtor recebendo o nível do usuário
+        // Mantido para compatibilidade com chamadas existentes.
         public frmDashboard(int nivel)
         {
             InitializeComponent();
+
             nivelUsuario = nivel;
+
             AplicarPermissoes();
             customizeDesign();
+        }
+
+        // Construtor utilizado pelo login:
+        // recebe o nível e o ID do usuário autenticado.
+        public frmDashboard(int nivel, int idUsuario) : this(nivel)
+        {
+            idUsuarioLogado = idUsuario;
+
+            if (idUsuarioLogado > 0 &&
+                (nivelUsuario == 1 || nivelUsuario == 2))
+            {
+                AdicionarMenuComercial("Cadastrar venda", true);
+                AdicionarMenuComercial("Cadastrar compra", false);
+
+                pnl_cadastroSubmenu.Height += 110;
+            }
+
+            if (idUsuarioLogado > 0 && nivelUsuario == 1)
+            {
+                AdicionarMenuUsuarios();
+            }
+        }
+
+        private void AdicionarMenuUsuarios()
+        {
+            var botao = new Button
+            {
+                Text = "Gerenciar usuários",
+                Dock = DockStyle.Top,
+                Height = 55,
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = SystemColors.Control,
+                Font = btn_cadClientes.Font,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Padding = new Padding(35, 0, 0, 0)
+            };
+
+            botao.FlatAppearance.BorderSize = 0;
+
+            botao.Click += delegate
+            {
+                AbrirCadastroUsuarios();
+            };
+
+            pnl_cadastroSubmenu.Controls.Add(botao);
+            pnl_cadastroSubmenu.Controls.SetChildIndex(botao, 0);
+            pnl_cadastroSubmenu.Height += 55;
+        }
+
+        private void AbrirCadastroUsuarios()
+        {
+            if (idUsuarioLogado <= 0 || nivelUsuario != 1)
+            {
+                MessageBox.Show(
+                    "Somente o Administrador pode gerenciar usuários.");
+
+                return;
+            }
+
+            foreach (Control controle in pnl_tudo.Controls)
+            {
+                var aberta = controle as frmCadUsuarios;
+
+                if (aberta != null && !aberta.IsDisposed)
+                {
+                    aberta.BringToFront();
+                    aberta.Focus();
+
+                    hideSubmenu();
+                    return;
+                }
+            }
+
+            var nova = new frmCadUsuarios(idUsuarioLogado)
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.Sizable,
+                StartPosition = FormStartPosition.Manual,
+                Location = new Point(10, 10)
+            };
+
+            pnl_tudo.AutoScroll = true;
+            pnl_tudo.Controls.Add(nova);
+
+            nova.Show();
+            nova.BringToFront();
+
+            hideSubmenu();
         }
 
         private void customizeDesign()
         {
             pnl_cadastroSubmenu.Visible = false;
             pnl_relatoriosSubmenu.Visible = false;
-            //..
         }
 
         private void hideSubmenu()
         {
-            if (pnl_relatoriosSubmenu.Visible == true)
+            if (pnl_relatoriosSubmenu.Visible)
                 pnl_relatoriosSubmenu.Visible = false;
 
-            // Correção lógica para fechar o de cadastro se estiver aberto
-            if (pnl_cadastroSubmenu.Visible == true)
+            if (pnl_cadastroSubmenu.Visible)
                 pnl_cadastroSubmenu.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
         {
-            if (subMenu.Visible == false)
+            if (!subMenu.Visible)
             {
                 hideSubmenu();
                 subMenu.Visible = true;
@@ -68,44 +151,120 @@ namespace SystemLivraria.forms
 
         private void AplicarPermissoes()
         {
-            // Nível 1: Funcionário
-            // - Consulta: só o estoque
-            // - Cadastro: só cadastra produto, autor, editora e cliente
+            // Nível 3: Funcionário.
             if (nivelUsuario == 3)
             {
-                if (btn_cadFuncionarios != null) btn_cadFuncionarios.Visible = false;
-                if (btn_cadFornecedores != null) btn_cadFornecedores.Visible = false;
+                if (btn_cadFuncionarios != null)
+                    btn_cadFuncionarios.Visible = false;
 
-                // Ocultar menus de relatórios ou financeiro se existirem no dashboard
-                if (pnl_relatoriosSubmenu != null) pnl_relatoriosSubmenu.Visible = false;
-                if (btn_relatorios != null) btn_relatorios.Visible = false;
-                if (btn_excluir != null) btn_excluir.Visible = false;
+                if (btn_cadFornecedores != null)
+                    btn_cadFornecedores.Visible = false;
+
+                if (pnl_relatoriosSubmenu != null)
+                    pnl_relatoriosSubmenu.Visible = false;
+
+                if (btn_relatorios != null)
+                    btn_relatorios.Visible = false;
+
+                if (btn_excluir != null)
+                    btn_excluir.Visible = false;
             }
-            // Nível 2: Gerente
-            // - Consulta: estoque, vendas e compras
-            // - Cadastro: produtos, autores, editoras, clientes e funcionários
-            // - Relatório: venda, compra, estoque (sem financeiro)
+            // Nível 2: Gerente.
             else if (nivelUsuario == 2)
             {
-                if (btn_cadFornecedores != null) btn_cadFornecedores.Visible = false;
+                if (btn_cadFornecedores != null)
+                    btn_cadFornecedores.Visible = false;
 
-                // Ocultar botões financeiros nos relatórios, se houver
-                if (btn_rltEntradaFinanceira != null) btn_rltEntradaFinanceira.Visible = false;
-                if (btn_rltSaidaFinanceira != null) btn_rltSaidaFinanceira.Visible = false;
-                if (btn_rltFluxoFinanceira != null) btn_rltFluxoFinanceira.Visible = false;
+                if (btn_rltEntradaFinanceira != null)
+                    btn_rltEntradaFinanceira.Visible = false;
+
+                if (btn_rltSaidaFinanceira != null)
+                    btn_rltSaidaFinanceira.Visible = false;
+
+                if (btn_rltFluxoFinanceira != null)
+                    btn_rltFluxoFinanceira.Visible = false;
             }
-            // Nível 3: Chefe (Acesso total)
+            // Nível 1: Chefe, com acesso total.
             else if (nivelUsuario == 1)
             {
-                // Tudo visível
+                // Mantém os controles visíveis.
             }
         }
 
-        // Método genérico para abrir os formulários evitando duplicação
-        // Método genérico atualizado para abrir múltiplos formulários dentro do painel sem sobrepô-los totalmente
+        // Cria os botões de Vendas e Compras no submenu existente.
+        private void AdicionarMenuComercial(string texto, bool venda)
+        {
+            var botao = new Button
+            {
+                Text = texto,
+                Dock = DockStyle.Top,
+                Height = 55,
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = SystemColors.Control,
+                Font = btn_cadClientes.Font,
+                TextAlign = ContentAlignment.MiddleLeft,
+                Padding = new Padding(35, 0, 0, 0)
+            };
+
+            botao.FlatAppearance.BorderSize = 0;
+
+            botao.Click += delegate
+            {
+                AbrirComercial(venda);
+            };
+
+            pnl_cadastroSubmenu.Controls.Add(botao);
+            pnl_cadastroSubmenu.Controls.SetChildIndex(botao, 0);
+        }
+
+        // Abre Vendas ou Compras, passando o usuário autenticado.
+        private void AbrirComercial(bool venda)
+        {
+            if (idUsuarioLogado <= 0 ||
+                (nivelUsuario != 1 && nivelUsuario != 2))
+            {
+                MessageBox.Show("Acesso negado para este usuário.");
+                return;
+            }
+
+            // Evita abrir a mesma tela comercial duas vezes.
+            foreach (Control controle in pnl_tudo.Controls)
+            {
+                var aberta = controle as frmOperacaoComercial;
+
+                if (aberta != null &&
+                    !aberta.IsDisposed &&
+                    aberta.EhVenda == venda)
+                {
+                    aberta.BringToFront();
+                    aberta.Focus();
+
+                    hideSubmenu();
+                    return;
+                }
+            }
+
+            Form nova = venda
+                ? (Form)new frmCadVendas(idUsuarioLogado)
+                : new frmCadCompras(idUsuarioLogado);
+
+            nova.TopLevel = false;
+            nova.FormBorderStyle = FormBorderStyle.Sizable;
+            nova.StartPosition = FormStartPosition.Manual;
+            nova.Location = new Point(10, 10);
+
+            pnl_tudo.AutoScroll = true;
+            pnl_tudo.Controls.Add(nova);
+
+            nova.Show();
+            nova.BringToFront();
+
+            hideSubmenu();
+        }
+
+        // Abertura dos demais formulários.
         private void AbrirFormulario<T>() where T : Form, new()
         {
-            // Verifica se o formulário já está aberto
             foreach (Form formAberto in Application.OpenForms)
             {
                 if (formAberto is T && !formAberto.IsDisposed)
@@ -116,23 +275,21 @@ namespace SystemLivraria.forms
                 }
             }
 
-            // Cria uma nova instância
             T novoForm = new T();
 
-            // Configura o formulário
             novoForm.TopLevel = false;
             novoForm.FormBorderStyle = FormBorderStyle.Sizable;
             novoForm.StartPosition = FormStartPosition.Manual;
             novoForm.Location = new Point(10, 10);
 
-            // Adiciona ao painel
             pnl_tudo.Controls.Add(novoForm);
 
-            // Exibe
             novoForm.Show();
             novoForm.BringToFront();
         }
-        //CADASTRO
+
+        // CADASTROS
+
         private void btn_cadastro_Click(object sender, EventArgs e)
         {
             showSubMenu(pnl_cadastroSubmenu);
@@ -158,13 +315,18 @@ namespace SystemLivraria.forms
 
         private void btn_cadFornecedores_Click(object sender, EventArgs e)
         {
-            // Validação extra de segurança por nível
             if (nivelUsuario == 3 || nivelUsuario == 2)
             {
-                MessageBox.Show("Acesso negado para este nível!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Acesso negado para este nível!",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
                 hideSubmenu();
                 return;
             }
+
             AbrirFormulario<frmCadFornecedores>();
             hideSubmenu();
         }
@@ -179,15 +341,22 @@ namespace SystemLivraria.forms
         {
             if (nivelUsuario == 3)
             {
-                MessageBox.Show("Acesso negado para funcionários!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Acesso negado para funcionários!",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+
                 hideSubmenu();
                 return;
             }
+
             AbrirFormulario<frmCadFuncionarios>();
             hideSubmenu();
         }
 
-        //RELATORIOS
+        // RELATÓRIOS
+
         private void btn_relatorios_Click(object sender, EventArgs e)
         {
             showSubMenu(pnl_relatoriosSubmenu);
@@ -199,7 +368,8 @@ namespace SystemLivraria.forms
             hideSubmenu();
         }
 
-        private void btn_rltMovimentoEstoque_Click(object sender, EventArgs e)
+        private void btn_rltMovimentoEstoque_Click(
+            object sender, EventArgs e)
         {
             AbrirRelatorioComplementar(
                 TipoRelatorioComplementar.MovimentoEstoque);
@@ -207,7 +377,8 @@ namespace SystemLivraria.forms
             hideSubmenu();
         }
 
-        private void btn_rltEntradaFinanceira_Click(object sender, EventArgs e)
+        private void btn_rltEntradaFinanceira_Click(
+            object sender, EventArgs e)
         {
             AbrirRelatorioComplementar(
                 TipoRelatorioComplementar.EntradaFinanceira);
@@ -215,7 +386,8 @@ namespace SystemLivraria.forms
             hideSubmenu();
         }
 
-        private void btn_rltSaidaFinanceira_Click(object sender, EventArgs e)
+        private void btn_rltSaidaFinanceira_Click(
+            object sender, EventArgs e)
         {
             AbrirRelatorioComplementar(
                 TipoRelatorioComplementar.SaidaFinanceira);
@@ -223,7 +395,8 @@ namespace SystemLivraria.forms
             hideSubmenu();
         }
 
-        private void btn_rltFluxoFinanceira_Click(object sender, EventArgs e)
+        private void btn_rltFluxoFinanceira_Click(
+            object sender, EventArgs e)
         {
             AbrirRelatorioComplementar(
                 TipoRelatorioComplementar.FluxoFinanceiro);
@@ -231,13 +404,16 @@ namespace SystemLivraria.forms
             hideSubmenu();
         }
 
-        private void AbrirRelatorioComplementar(TipoRelatorioComplementar tipo)
+        private void AbrirRelatorioComplementar(
+            TipoRelatorioComplementar tipo)
         {
             bool financeiro =
                 tipo != TipoRelatorioComplementar.MovimentoEstoque;
 
             if ((financeiro && nivelUsuario != 1) ||
-                (!financeiro && nivelUsuario != 1 && nivelUsuario != 2))
+                (!financeiro &&
+                 nivelUsuario != 1 &&
+                 nivelUsuario != 2))
             {
                 MessageBox.Show(
                     "Você não tem permissão para este relatório.");
@@ -247,7 +423,8 @@ namespace SystemLivraria.forms
 
             foreach (Form aberta in Application.OpenForms)
             {
-                var relatorio = aberta as frmRelatoriosComplementares;
+                var relatorio =
+                    aberta as frmRelatoriosComplementares;
 
                 if (relatorio != null &&
                     !relatorio.IsDisposed &&
@@ -268,44 +445,49 @@ namespace SystemLivraria.forms
 
             pnl_tudo.Controls.Add(novo);
 
-            // Define tamanho, posição e cabeçalho antes de mostrar.
             JanelaRelatorios.Ajustar(novo, pnl_tudo);
 
             novo.Show();
             novo.BringToFront();
         }
 
-        //CONSULTA
+        // CONSULTA
+
         private void btn_Consulta_Click(object sender, EventArgs e)
         {
-            // Verifica se já está aberto
             foreach (Form formAberto in Application.OpenForms)
             {
                 if (formAberto is frmConsulta)
                 {
                     formAberto.Activate();
                     formAberto.BringToFront();
+
                     hideSubmenu();
                     return;
                 }
             }
 
-            // Cria o form de consulta passando o nível
             frmConsulta novoForm = new frmConsulta(nivelUsuario);
+
             novoForm.TopLevel = false;
             novoForm.FormBorderStyle = FormBorderStyle.Sizable;
 
             int deslocamento = pnl_tudo.Controls.Count * 20;
-            novoForm.Location = new Point(10 + deslocamento, 10 + deslocamento);
+
+            novoForm.Location = new Point(
+                10 + deslocamento,
+                10 + deslocamento);
 
             pnl_tudo.Controls.Add(novoForm);
+
             novoForm.Show();
-            novoForm.BringToFront(); // Traz para a frente de todos
+            novoForm.BringToFront();
 
             hideSubmenu();
         }
 
-        //EXCLUIR
+        // EXCLUSÃO
+
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
             if (nivelUsuario == 3)
@@ -314,33 +496,23 @@ namespace SystemLivraria.forms
                     "Você não tem permissão para acessar esta tela.",
                     "Acesso negado",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
+                    MessageBoxIcon.Warning);
+
                 return;
             }
 
-            AbrirFormularioExcluir(new frmExcluir(nivelUsuario));
+            AbrirFormularioExcluir(
+                new frmExcluir(nivelUsuario));
+
             hideSubmenu();
-        }
-
-
-        private void frmDashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnl_tudo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void AbrirFormularioExcluir(Form novoForm)
         {
-            // Verifica se já existe um formulário do mesmo tipo
             foreach (Form formAberto in Application.OpenForms)
             {
-                if (formAberto.GetType() == novoForm.GetType()
-                    && !formAberto.IsDisposed)
+                if (formAberto.GetType() == novoForm.GetType() &&
+                    !formAberto.IsDisposed)
                 {
                     novoForm.Dispose();
 
@@ -350,18 +522,25 @@ namespace SystemLivraria.forms
                 }
             }
 
-            // Configura o formulário
             novoForm.TopLevel = false;
             novoForm.FormBorderStyle = FormBorderStyle.Sizable;
             novoForm.StartPosition = FormStartPosition.Manual;
-            novoForm.Location = new System.Drawing.Point(10, 10);
+            novoForm.Location = new Point(10, 10);
 
-            // Adiciona ao painel
             pnl_tudo.Controls.Add(novoForm);
 
-            // Exibe
             novoForm.Show();
             novoForm.BringToFront();
+        }
+
+        // Eventos mantidos porque podem estar vinculados no Designer.
+
+        private void frmDashboard_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void pnl_tudo_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }
