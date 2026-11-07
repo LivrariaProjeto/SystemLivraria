@@ -144,9 +144,7 @@
     <Compile Include="forms\Cadastro\frmCadFuncionarios.Designer.cs">
       <DependentUpon>frmCadFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Cadastro\frmCadProdutos.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="forms\Cadastro\frmCadProdutos.cs" />
     <Compile Include="forms\Cadastro\frmCadProdutos.Designer.cs">
       <DependentUpon>frmCadProdutos.cs</DependentUpon>
     </Compile>

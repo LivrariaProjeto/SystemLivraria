@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\systemlivraria\\forms\\cadastro\\frmexcluir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\cadastro\\frmexcluir.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\frmlogon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\forms\\cadastro\\frmcadusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\forms\\cadastro\\frmcadusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|c:\\users\\gustavo\\source\\repos\\systemlivraria\\systemlivraria\\systemlivraria\\classes\\usuariosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FB858CF-BF79-4154-B58E-36D64382798F}|SystemLivraria\\SystemLivraria.csproj|solutionrelative:systemlivraria\\classes\\usuariosservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,34 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmDashboard.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs*",
-              "RelativeToolTip": "SystemLivraria\\forms\\frmDashboard.cs*",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAmwHkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-06T02:20:10.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmLogon.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs*",
-              "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs*",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowHAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-06T02:18:55.322Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -68,41 +30,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmLogon.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmLogon.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmLogon.cs",
+              "RelativeToolTip": "SystemLivraria\\forms\\frmLogon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-07T00:45:17.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmExcluir.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmExcluir.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Cadastro\\frmExcluir.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmExcluir.cs*",
-              "RelativeToolTip": "SystemLivraria\\forms\\Cadastro\\frmExcluir.cs*",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAYwKgAAAAoAAAAAAAAAA==",
+              "Title": "frmDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs",
+              "RelativeDocumentMoniker": "SystemLivraria\\forms\\frmDashboard.cs",
+              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\frmDashboard.cs*",
+              "RelativeToolTip": "SystemLivraria\\forms\\frmDashboard.cs*",
+              "ViewState": "AgIAAEEEAAAAAAAAAAAIwHkEAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-05T18:10:34.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmCadUsuarios.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmCadUsuarios.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\forms\\Cadastro\\frmCadUsuarios.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\forms\\Cadastro\\frmCadUsuarios.cs*",
-              "RelativeToolTip": "SystemLivraria\\forms\\Cadastro\\frmCadUsuarios.cs*",
-              "ViewState": "AgIAAFECAAAAAAAAAAAYwH8CAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-06T02:18:31.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuariosService.cs",
-              "DocumentMoniker": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\UsuariosService.cs",
-              "RelativeDocumentMoniker": "SystemLivraria\\classes\\UsuariosService.cs",
-              "ToolTip": "C:\\Users\\gustavo\\source\\repos\\SystemLivraria\\SystemLivraria\\SystemLivraria\\classes\\UsuariosService.cs*",
-              "RelativeToolTip": "SystemLivraria\\classes\\UsuariosService.cs*",
-              "ViewState": "AgIAAOoAAAAAAAAAAAAgwBABAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-06T02:16:32.354Z",
+              "WhenOpened": "2026-11-07T00:40:36.018Z",
               "EditorCaption": ""
             }
           ]

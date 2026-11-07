@@ -17,6 +17,11 @@ namespace SystemLivraria.forms
         public frmLogon()
         {
             InitializeComponent();
+
+            FormClosed += delegate
+            {
+                Application.Exit();
+            };
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -92,7 +97,23 @@ namespace SystemLivraria.forms
                     sessao.Nivel,
                     sessao.IdUsuario);
 
-                principal.FormClosed += delegate { Close(); };
+                principal.FormClosed += delegate
+                {
+                    if (principal.SolicitouLogoff)
+                    {
+                        textBox1.Clear();
+                        textBox2.Clear();
+
+                        Show();
+                        WindowState = FormWindowState.Normal;
+                        Activate();
+                        textBox1.Focus();
+                    }
+                    else
+                    {
+                        Close();
+                    }
+                };
 
                 principal.Show();
                 textBox2.Clear();
