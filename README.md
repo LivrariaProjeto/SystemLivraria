@@ -25,7 +25,9 @@
   <a href="#banco-de-dados">Banco de dados</a> ·
   <a href="#relatorios">Relatórios</a>
 </p>
+
 ![Wave Animation](https://waveify.onrender.com/api/wave?color=%23007CF0&height=150&speed=4&width=1200&amplitude=20&frequency=2&waveType=default)
+
 ---
 
 ## Sobre o projeto
