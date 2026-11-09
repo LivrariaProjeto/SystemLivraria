@@ -25,7 +25,6 @@
   <a href="#banco-de-dados">Banco de dados</a> ·
   <a href="#relatorios">Relatórios</a>
 </p>
----
 
 ## Sobre o projeto
 
