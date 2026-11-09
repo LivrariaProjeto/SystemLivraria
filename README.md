@@ -4,6 +4,8 @@
 
 <h1 align="center">SystemLivraria</h1>
 
+![Wave Animation](https://waveify.onrender.com/api/wave?color=%23007CF0&height=150&speed=4&width=1200&amplitude=20&frequency=2&waveType=default)
+
 <p align="center">
   <strong>Sistema de gerenciamento de livraria desenvolvido em C# e Windows Forms.</strong><br>
   Projeto acadêmico de Desenvolvimento de Sistemas, com integração ao SQL Server, controle comercial e relatórios gerenciais.
