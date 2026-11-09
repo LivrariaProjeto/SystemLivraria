@@ -485,21 +485,8 @@ O repositório reúne uma implementação acadêmica em evolução. Entre os pon
 
 Esses itens são **sugestões de melhoria**, não recursos anunciados como já concluídos.
 
-## Como contribuir
-
-O projeto utiliza **Git e GitHub** para colaboração. Para propor alterações:
-
-1. Crie uma *branch* dedicada à tarefa.
-2. Faça as alterações no código, scripts ou documentação.
-3. Teste a compilação e, quando aplicável, os cenários de uso envolvidos.
-4. Envie um *pull request* descrevendo o que foi feito e como foi validado.
-
-Ao alterar o banco, documente a ordem e a compatibilidade das mudanças para que os demais integrantes consigam reproduzir o ambiente sem perda de dados.
-
 ## Autoria e finalidade
 
 Desenvolvido pela equipe do **Projeto Livraria**, no contexto do curso técnico de **Desenvolvimento de Sistemas**. A aplicação tem finalidade **acadêmica e demonstrativa**, reunindo técnicas de programação desktop, banco de dados relacional e desenvolvimento colaborativo.
-
-**Repositório oficial:** [github.com/LivrariaProjeto/SystemLivraria](https://github.com/LivrariaProjeto/SystemLivraria)
 
 **Licença:** não foi identificado um arquivo `LICENSE` na raiz consultada. Até que uma licença seja definida pelos responsáveis, não presuma permissões de redistribuição ou uso comercial apenas por o repositório ser público.
